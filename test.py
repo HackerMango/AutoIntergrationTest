@@ -52,7 +52,7 @@ for i in range(len(Test_Case_Data[0])):
                     Case_DesiredResult.append(Test_Case_Data[5][i].split(sep='\n'))
                     Case_LevelFlag.append(int(0))
                     i = i + 1
-                    if Test_Case_Data[1][i] == "用例" or i >= len(Test_Case_Data[0]) - 1:
+                    if Test_Case_Data[1][i] == "用例" or i >= len(Test_Case_Data[0]) - 1 or Test_Case_Data[1][i] == "功能\nFunction":
                         RearSteer_TestCase.Case_Level.append(Case_Level)
                         RearSteer_TestCase.Case_TestStep.append(Case_TestStep)
                         RearSteer_TestCase.Case_DesiredResult.append(Case_DesiredResult)
