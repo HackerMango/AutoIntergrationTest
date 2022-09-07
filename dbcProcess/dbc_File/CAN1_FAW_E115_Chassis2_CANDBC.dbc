@@ -1,0 +1,2311 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: Tester Gateway ECAS DMS SAS CDS1 ESC eBooster EPS
+
+
+BO_ 146 HCU_2_2: 8 Gateway
+ SG_ Checksum_HCU_2_2 : 0|8@1+ (1,0) [0|255] ""  CDS1,ESC
+ SG_ HCU_AccelerationPedalPosition : 40|8@1+ (0.4,0) [0|102] "%"  CDS1,ESC
+ SG_ HCU_CalcAccelerationPedalPositio : 48|8@1+ (0.4,0) [0|102] "%"  CDS1,ESC
+ SG_ HCU_AccelerationPedalOverride : 56|1@1+ (1,0) [0|1] ""  CDS1,ESC
+ SG_ HCU_KickdownReq : 57|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ LiveCounter_HCU_2_2 : 60|4@1+ (1,0) [0|15] ""  CDS1,ESC
+
+BO_ 264 HCU_2_4: 8 Gateway
+ SG_ Checksum_HCU_2_4 : 0|8@1+ (1,0) [0|255] ""  CDS1,ESC
+ SG_ HCU_AutoDrivingResponseSt_L12 : 24|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ HCU_AutoDrivingResponseSt_L3 : 25|1@1+ (1,0) [0|1] ""  CDS1,ESC
+ SG_ HCU_CapabilitySt_AutoDriving : 28|2@1+ (1,0) [0|3] ""  CDS1,ESC
+ SG_ HCU_GradientAccelerationPedal : 48|8@1+ (2,-253) [-253|257] "%/s" Vector__XXX
+ SG_ LiveCounter_HCU_2_4 : 60|4@1+ (1,0) [0|15] ""  CDS1,ESC
+
+BO_ 147 HCU_2_7: 8 Gateway
+ SG_ Checksum_HCU_2_7 : 0|8@1+ (1,0) [0|255] ""  CDS1,EPS
+ SG_ HCU_IndicatedDriverTorq_FrontAxl : 8|12@1+ (0.25,0) [0|1023.75] "Nm" Vector__XXX
+ SG_ HCU_IndicatedDriverTorq_RearAxle : 20|12@1+ (0.25,0) [0|1023.75] "Nm" Vector__XXX
+ SG_ HCU_WorkingMode : 32|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ HCU_ModeChangeEnable : 35|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HCU_EVReady : 44|2@1+ (1,0) [0|3] ""  CDS1,EPS
+ SG_ LiveCounter_HCU_2_7 : 60|4@1+ (1,0) [0|15] "Pulse"  CDS1,EPS
+
+BO_ 151 HCU_2_10: 8 Gateway
+ SG_ HCU_MCU1TMSpeed : 0|16@1+ (1,-30000) [-30000|35535] "rpm"  CDS1
+ SG_ HCU_MCU1ActTMTorque : 16|14@1+ (0.1,-800) [-800|838.3] "Nm"  CDS1
+ SG_ HCU_MCU1TMMAMTorque : 32|13@1+ (0.1,0) [0|819.1] "Nm"  CDS1
+ SG_ HCU_MCU1TMMAGTorque : 48|13@1+ (0.1,-800) [-800|19.1] "Nm"  CDS1
+
+BO_ 152 HCU_2_11: 8 Gateway
+ SG_ HCU_MCU2TMSpeed : 0|16@1+ (1,-30000) [-30000|35535] "rpm"  CDS1
+ SG_ HCU_MCU2ActTMTorque : 16|14@1+ (0.1,-800) [-800|838.3] "Nm"  CDS1
+ SG_ HCU_MCU2TMMAMTorque : 32|13@1+ (0.1,0) [0|819.1] "Nm"  CDS1
+ SG_ HCU_MCU2TMMAGTorque : 48|13@1+ (0.1,-800) [-800|19.1] "Nm"  CDS1
+
+BO_ 290 HCU_2_12: 8 Gateway
+ SG_ Checksum_HCU_2_12 : 0|8@1+ (1,0) [0|255] ""  CDS1,EPS
+ SG_ HCU_LeverInfo : 8|3@1+ (1,0) [0|7] ""  CDS1,EPS
+ SG_ HCU_HighVoltageStatus : 11|1@1+ (1,0) [0|1] ""  EPS
+ SG_ HCU_AutoParkingResponse_L12 : 32|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ HCU_AutoParkingResponse_L3 : 33|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ HCU_CapabilitySt_AutoParking : 34|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ Livecounter_HCU_2_12 : 60|4@1+ (1,0) [0|15] "pulse"  CDS1,EPS
+
+BO_ 288 EGSM_1: 8 Gateway
+ SG_ EGSM_ParkButton : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ EGSM_LeverPosition : 16|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ Checksum_EGSM_1 : 0|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ EGSM_SecurityButton : 10|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ EGSM_SecurityButtonErrorSt : 11|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ EGSM_ErrorStatus : 19|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ Livecounter_EGSM_1 : 60|4@1+ (1,0) [0|15] "Pulse"  CDS1
+
+BO_ 656 IC_1: 8 Gateway
+ SG_ IndicationSpeed_IC : 8|8@1+ (1,0) [0|255] "km/h"  CDS1
+ SG_ OdometerValue : 24|25@1+ (0.1,0) [0|3355443.1] "km"  SAS,CDS1,EPS
+
+BO_ 512 ACU_1: 8 Gateway
+ SG_ Checksum_ACU_1 : 0|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ CrashInfo : 8|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ SysSt_ACU : 16|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ SeatBeltSt_Driver : 22|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ LiveCounter_ACU_1 : 60|4@1+ (1,0) [0|15] ""  CDS1
+
+BO_ 586 DDCU_1: 8 Gateway
+ SG_ DoorLockSt_FL : 0|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ DoorSt_FL : 2|1@1+ (1,0) [0|1] ""  CDS1
+
+BO_ 588 PDCU_1: 8 Gateway
+ SG_ DoorLockSt_FR : 0|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ DoorSt_FR : 2|1@1+ (1,0) [0|1] ""  CDS1
+
+BO_ 590 RLDCU_1: 8 Gateway
+ SG_ DoorLockSt_RL : 0|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ DoorSt_RL : 2|1@1+ (1,0) [0|1] ""  CDS1
+
+BO_ 591 RRDCU_1: 8 Gateway
+ SG_ DoorLockSt_RR : 0|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ DoorSt_RR : 2|1@1+ (1,0) [0|1] ""  CDS1
+
+BO_ 418 PEPS_DMH: 8 Gateway
+ SG_ Checksum_PEPS_DMH : 0|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ PEPS_DMHSwitch : 12|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ LiveCounter_PEPS_DMH : 60|4@1+ (1,0) [0|15] ""  CDS1
+
+BO_ 578 PLG_1: 8 Gateway
+ SG_ LuggageDoorSt : 0|1@1+ (1,0) [0|1] ""  CDS1
+
+BO_ 546 ATC_2: 8 Gateway
+ SG_ AmbientTemp : 24|8@1+ (0.5,-40) [-40|87.5] "°„C"  CDS1
+
+BO_ 560 BCM1_1: 8 Gateway
+ SG_ PositionLightSt : 0|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LowBeamSt : 6|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ LowBeamSt_FL : 7|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ LowBeamSt_FR : 8|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HighBeamSt : 9|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ HighBeamSt_FL : 10|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ HighBeamSt_FR : 11|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ FogLightSt_FL : 14|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ FogLightSt_FR : 15|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ TurningSt_Left : 16|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ TurningSt_right : 17|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ TurningLightCmd_Left : 18|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ TurningLightCmd_Right : 19|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ HazardWarningSt : 22|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ WMMFaultSt : 33|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ RLSFalutSt : 34|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ WiperSt_Front : 37|3@1+ (1,0) [0|7] ""  CDS1
+ SG_ WiperSpeed_Front : 40|3@1+ (1,0) [0|7] ""  CDS1,ESC
+
+BO_ 562 BCM1_2: 8 Gateway
+ SG_ PowerMode : 4|4@1+ (1,0) [0|15] ""  ESC,eBooster
+ SG_ SysSt_PEPS : 24|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ EntryLoadingMode_RKECmd : 26|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ PEPS_RKEEngineCmd : 27|2@1+ (1,0) [0|3] ""  CDS1
+
+BO_ 564 BCM1_3: 8 Gateway
+ SG_ EngineHoodSt : 12|1@1+ (1,0) [0|1] ""  CDS1
+
+BO_ 571 BCM1_7: 8 Gateway
+ SG_ RainIntensity : 0|4@1+ (10,0) [0|150] "%"  CDS1
+ SG_ Brightness_L : 8|8@1+ (400,0) [0|102000] "LUX"  CDS1
+ SG_ Brightness_H : 16|10@1+ (6,0) [0|6138] "LUX"  CDS1
+
+BO_ 572 TPMS_1: 8 Gateway
+ SG_ TyrePressureWarning_FL : 8|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ TyrePressureWarning_FR : 10|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ TyrePressureWarning_RL : 12|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ TyrePressureWarning_RR : 14|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ TyrePressureValue_FL : 32|8@1+ (2.75,0) [0|701.25] "kpa"  CDS1
+ SG_ TyrePressureValue_FR : 40|8@1+ (2.75,0) [0|701.25] "kpa"  CDS1
+ SG_ TyrePressureValue_RL : 48|8@1+ (2.75,0) [0|701.25] "kpa"  CDS1
+ SG_ TyrePressureValue_RR : 56|8@1+ (2.75,0) [0|701.25] "kpa"  CDS1
+
+BO_ 282 HAD_3: 8 CDS1
+ SG_ Checksum_HAD_3 : 0|8@1+ (1,0) [0|255] ""  ESC,eBooster
+ SG_ HAD_AutoDrivingReq_L3 : 8|2@1+ (1,0) [0|3] ""  ESC,eBooster
+ SG_ HAD_SpeedChangeRequest_L3 : 10|11@1+ (0.01,-10.21) [-10.21|10.26] "m/s2"  ESC,eBooster
+ SG_ HAD_MaxAccGrad_L3 : 24|8@1+ (0.1,0) [0|25.5] "m/s2"  ESC,eBooster
+ SG_ HAD_MinAccGrad_L3 : 32|8@1+ (0.1,0) [0|25.5] "m/s2"  ESC,eBooster
+ SG_ HAD_MaxComfBand_L3 : 40|8@1+ (0.05,0) [0|12.75] "/s2"  ESC,eBooster
+ SG_ HAD_MinComfBand_L3 : 48|8@1+ (0.05,0) [0|12.75] "/s2"  ESC,eBooster
+ SG_ HAD_UseMaxComfBand_L3 : 56|1@1+ (1,0) [0|1] ""  ESC,eBooster
+ SG_ LiveCounter_HAD_3 : 60|4@1+ (1,0) [0|15] ""  ESC,eBooster
+
+BO_ 283 HAD_4: 8 CDS1
+ SG_ Checksum_HAD_4 : 0|8@1+ (1,0) [0|255] ""  ESC,eBooster
+ SG_ HAD_BrakeModeReq_L3 : 8|2@1+ (1,0) [0|3] ""  ESC,eBooster
+ SG_ HAD_DrivedownReq_L3 : 11|1@1+ (1,0) [0|1] ""  ESC,eBooster
+ SG_ HAD_SecureRequest_L3 : 13|2@1+ (1,0) [0|3] ""  ESC,eBooster
+ SG_ HAD_ErrorSt_AutoDriving_L3 : 16|2@1+ (1,0) [0|3] ""  ESC,eBooster
+ SG_ LiveCounter_HAD_4 : 60|4@1+ (1,0) [0|15] ""  ESC,eBooster
+
+BO_ 256 ADV_2: 8 CDS1
+ SG_ Checksum_ADV_2 : 0|8@1+ (1,0) [0|255] ""  EPS
+ SG_ ADV_ErrorSt : 8|1@1+ (1,0) [0|1] ""  EPS
+ SG_ ADV_AutoParkingModeReq : 9|3@1+ (1,0) [0|7] ""  EPS
+ SG_ ADV_AutoParkingRequestSt : 12|2@1+ (1,0) [0|3] ""  EPS
+ SG_ ADV_ErrorSt_APA : 16|2@1+ (1,0) [0|3] ""  EPS
+ SG_ ADV_ErrorSt_RPA : 18|2@1+ (1,0) [0|3] ""  EPS
+ SG_ ADV_ErrorSt_AVP : 20|2@1+ (1,0) [0|3] ""  EPS
+ SG_ ADV_WorkingSt_APA : 24|3@1+ (1,0) [0|7] ""  EPS
+ SG_ ADV_WorkingSt_RPA : 27|3@1+ (1,0) [0|7] ""  EPS
+ SG_ ADV_WorkingSt_AVP : 32|3@1+ (1,0) [0|7] ""  EPS
+ SG_ ADV_SteeringWheelAngleRequest : 40|15@1+ (0.04375,0) [0|1433.55625] "°„"  EPS
+ SG_ ADV_SteeringWheelAngleSignReques : 56|2@1+ (1,0) [0|3] ""  EPS
+ SG_ ADV_SteeringWheelAngleControlReq : 58|2@1+ (1,0) [0|3] ""  EPS
+ SG_ LiveCounter_ADV_2 : 60|4@1+ (1,0) [0|15] "Pulse"  EPS
+
+BO_ 278 HAD_6: 8 CDS1
+ SG_ Checksum_HAD_6 : 0|8@1+ (1,0) [0|255] ""  EPS
+ SG_ HAD_TorqueRequest : 8|10@1+ (0.01,0) [0|10.23] "Nm"  EPS
+ SG_ HAD_TorqueRequestSign : 18|1@1+ (1,0) [0|1] ""  EPS
+ SG_ HAD_TorqueReqSt : 19|1@1+ (1,0) [0|1] ""  EPS
+ SG_ HAD_WorkingSt_LKA : 22|2@1+ (1,0) [0|3] ""  EPS
+ SG_ HAD_ErrorSt_LKA : 24|1@1+ (1,0) [0|1] ""  EPS
+ SG_ HAD_AutoDrivingModeReq : 32|3@1+ (1,0) [0|7] ""  EPS
+ SG_ HAD_ErrorSt_SACC : 40|2@1+ (1,0) [0|3] ""  EPS
+ SG_ HAD_ErrorSt_HWP : 42|2@1+ (1,0) [0|3] ""  EPS
+ SG_ HAD_ErrorSt_TJP : 44|2@1+ (1,0) [0|3] ""  EPS
+ SG_ HAD_LDWSteeringVibrationReq : 47|1@1+ (1,0) [0|1] ""  EPS
+ SG_ HAD_WorkingSt_SACC : 50|3@1+ (1,0) [0|7] ""  EPS
+ SG_ HAD_WorkingSt_HWP : 53|3@1+ (1,0) [0|7] ""  EPS
+ SG_ HAD_WorkingSt_TJP : 56|3@1+ (1,0) [0|7] ""  EPS
+ SG_ HAD_ErrorSt_HAD : 59|1@1+ (1,0) [0|1] ""  EPS
+ SG_ LiveCounter_HAD_6 : 60|4@1+ (1,0) [0|15] ""  EPS
+
+BO_ 202 eBooster_ABS_1: 8 eBooster
+ SG_ Checksum_eBooster_ABS_1 : 0|8@1+ (1,0) [0|255] ""  CDS1,EPS
+ SG_ eB_WheelSpeed_FL : 8|15@1+ (0.01,0) [0|327.67] "km/h"  CDS1,EPS
+ SG_ eB_WheelSpeed_FR : 24|15@1+ (0.01,0) [0|327.67] "km/h"  CDS1,EPS
+ SG_ eB_VehiclSpeed : 40|15@1+ (0.01,0) [0|327.67] "km/h"  CDS1,EPS
+ SG_ eB_VehiclSpeed_Q : 55|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ eB_DrivingDirection : 56|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ LiveCounter_eBooster_ABS_1 : 60|4@1+ (1,0) [0|15] ""  CDS1,EPS
+
+BO_ 203 eBooster_ABS_2: 8 eBooster
+ SG_ Checksum_eBooster_ABS_2 : 0|8@1+ (1,0) [0|255] ""  CDS1,EPS
+ SG_ eB_WheelSpeed_RL : 8|15@1+ (0.01,0) [0|327.67] "km/h"  CDS1,EPS
+ SG_ eB_WheelSpeed_RR : 24|15@1+ (0.01,0) [0|327.67] "km/h"  CDS1,EPS
+ SG_ LiveCounter_eBooster_ABS_2 : 60|4@1+ (1,0) [0|15] ""  CDS1,EPS
+
+BO_ 315 eBooster_ABS_3: 8 eBooster
+ SG_ Checksum_eBooster_ABS_3 : 0|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ eB_WheelPulse_FL : 8|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ eB_WheelPulse_FR : 16|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ eB_WheelPulse_RL : 24|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ eB_WheelPulse_RR : 32|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ eB_WheelSpeedDirection_FL : 40|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ eB_WheelSpeedDirection_FR : 42|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ eB_WheelSpeedDirection_RL : 44|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ eB_WheelSpeedDirection_RR : 46|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ LiveCounter_eBooster_ABS_3 : 60|4@1+ (1,0) [0|15] ""  CDS1
+
+BO_ 307 ESC_2_2: 8 ESC
+ SG_ Checksum_ESC_2_2 : 0|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ ESC_WorkingSt_ESC : 8|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_ErrorSt_ESC : 9|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_Intervention_ESC : 10|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_ErrorSt_ABS : 11|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_Intervention_ABS : 12|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_Intervention_TCS : 14|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_ErrorSt_EBD : 15|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_AvailableSt_CDP : 16|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_Intervention_CDP_RWU : 17|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_LampCmd_EPB : 18|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ ESC_ErrotSt_EPB : 20|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ ESC_AvailableSt_HDC : 26|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_WorkingSt_HDC : 27|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ ErrorSt_AVH : 29|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ WorkingSt_AVH : 30|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ ESC_AvailableSt_HBA : 40|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_Intervention_HBA : 41|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_WorkingSt_HBB : 42|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ ESC_Intervention_HBB : 44|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_Intervention_EmergencyBrake : 45|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_VehicleStandstillSt : 46|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_BrakeLightCtrlCmd : 47|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_WorkingSt_EPB : 48|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ LiveCounter_ESC_2_2 : 60|4@1+ (1,0) [0|15] ""  CDS1
+
+BO_ 309 ESC_3_2: 8 ESC
+ SG_ Checksum_ESC_3_2 : 0|8@1+ (1,0) [0|255] ""  CDS1,EPS
+ SG_ ESC_YawRate : 8|12@1+ (0.05,-100) [-100|104.75] "deg/s"  CDS1,EPS
+ SG_ ESC_YRSSt : 20|1@1+ (1,0) [0|1] ""  CDS1,EPS
+ SG_ ESC_Acceleration_X : 21|11@1+ (0.027127,-21.593) [-21.593|33.935969] "m/s2"  CDS1,EPS
+ SG_ ESC_MasterCylinderPressure : 32|11@1+ (0.1,0) [0|204.7] "bar"  CDS1
+ SG_ ESC_EPBSwitch : 43|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ ESC_AvailableSt_EPBSwitch : 45|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_Acceleration_Y : 48|11@1+ (0.027127,-21.593) [-21.593|33.935969] "m/s2"  CDS1,EPS
+ SG_ ESC_ErrorSt_YRS : 59|1@1+ (1,0) [0|1] ""  CDS1,EPS
+ SG_ LiveCounter_ESC_3_2 : 60|4@1+ (1,0) [0|15] ""  CDS1,EPS
+
+BO_ 313 ESC_5_2: 8 ESC
+ SG_ Checksum_ESC_5_2 : 0|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ ESC_VLCSt_L3 : 41|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ ESC_VMC_Error_L3 : 44|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ ESC_AutoDriving_LC_Brakemode : 46|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ ESC_ShutOffFinished : 59|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ LiveCounter_ESC_5_1 : 60|4@1+ (1,0) [0|15] "Pulse"  CDS1
+
+BO_ 321 ESC_7_2: 8 ESC
+ SG_ Checksum_ESC_7_2 : 0|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ ESC_SuspendStatus_VMC_2 : 8|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ ESC_BrakeFunctionOverrideStatus_ : 11|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ LiveCounter_ESC_7_2 : 60|4@1+ (1,0) [0|15] ""  CDS1
+
+BO_ 274 IFC_4: 8 Gateway
+ SG_ Checksum_IFC_4 : 0|8@1+ (1,0) [0|255] ""  EPS
+ SG_ IFC_TorqueRequest : 8|10@1+ (0.01,0) [0|10.23] "Nm"  EPS
+ SG_ IFC_TorqueRequestSign : 18|1@1+ (1,0) [0|1] ""  EPS
+ SG_ IFC_TorqueReqSt : 19|1@1+ (1,0) [0|1] ""  EPS
+ SG_ HJAD_WorkingSt_LKA : 22|2@1+ (1,0) [0|3] ""  EPS
+ SG_ IFC_ErrorSt_LKA : 24|1@1+ (1,0) [0|1] ""  EPS
+ SG_ IFC_AutoDrivingModeReq : 32|3@1+ (1,0) [0|7] ""  EPS
+ SG_ IFC_ErrorSt_SACC : 40|2@1+ (1,0) [0|3] ""  EPS
+ SG_ IFC_ErrorSt_HWP : 42|2@1+ (1,0) [0|3] ""  EPS
+ SG_ IFC_ErrorSt_TJP : 44|2@1+ (1,0) [0|3] ""  EPS
+ SG_ LDWSteeringVibrationReq : 47|1@1+ (1,0) [0|1] ""  EPS
+ SG_ IFC_WorkingSt_SACC : 50|3@1+ (1,0) [0|7] ""  EPS
+ SG_ IFC_WorkingSt_HWP : 53|3@1+ (1,0) [0|7] ""  EPS
+ SG_ IFC_WorkingSt_TJP : 56|3@1+ (1,0) [0|7] ""  EPS
+ SG_ IFC_ErrorSt_FOU : 59|1@1+ (1,0) [0|1] ""  EPS
+ SG_ LiveCounter_IFC_4 : 60|4@1+ (1,0) [0|15] ""  EPS
+
+BO_ 279 IFC_5: 8 Gateway
+ SG_ Checksum_IFC_5 : 0|8@1+ (1,0) [0|255] ""  EPS
+ SG_ IFC_SteeringWheelAngleRequest : 40|15@1+ (0.04375,0) [0|1433.55625] "°„"  EPS
+ SG_ IFC_SteeringWheelAngleSignReques : 56|2@1+ (1,0) [0|3] ""  EPS
+ SG_ IFC_SteeringWheelAngleControlReq : 58|2@1+ (1,0) [0|3] ""  EPS
+ SG_ LiveCounter_IFC_5 : 60|4@1+ (1,0) [0|15] "Pulse"  EPS
+
+BO_ 341 EPS_2_1: 8 EPS
+ SG_ Checksum_EPS2_1 : 0|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ EPS2_HandSteeringTorque : 8|10@1+ (0.01,0) [0|10.23] "Nm"  CDS1
+ SG_ EPS2_HandSteeringTorqueSign : 18|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ EPS2_ErrorStatus : 19|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ EPS2_WorkingMode_DMS : 21|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ EPS2_ModeChangeEnable : 23|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ EPS2_HandOffStatus : 24|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ EPS2_HandOffValid : 25|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ EPS2_LKAStatus : 26|3@1+ (1,0) [0|7] ""  CDS1
+ SG_ EPS2_TorqueSensorAStatus : 29|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ EPS2_TorqueSensorBStatus : 30|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ EPS2_OverlayInputTorque : 40|10@1+ (0.01,0) [0|10.23] "Nm"  CDS1
+ SG_ EPS2_OverlayInputTorqueSign : 50|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ EPS2_AbortFeedback_HAD : 51|5@1+ (1,0) [0|31] ""  CDS1
+ SG_ LiveCounter_EPS2_1 : 60|4@1+ (1,0) [0|15] "Pulse"  CDS1
+
+BO_ 342 EPS_2_2: 8 EPS
+ SG_ Checksum_EPS2_2 : 0|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ EPS2_SACCStatus : 8|3@1+ (1,0) [0|7] ""  CDS1
+ SG_ EPS2_HWPStatus : 11|3@1+ (1,0) [0|7] ""  CDS1
+ SG_ EPS2_TJPStatus : 16|3@1+ (1,0) [0|7] ""  CDS1
+ SG_ EPS2_APAStatus : 19|3@1+ (1,0) [0|7] ""  CDS1
+ SG_ EPS2_RPAStatus : 24|3@1+ (1,0) [0|7] ""  CDS1
+ SG_ EPS2_AVPStatus : 27|3@1+ (1,0) [0|7] ""  CDS1
+ SG_ EPS2_DegradeLevel_HAD : 35|4@1+ (1,0) [0|15] ""  CDS1
+ SG_ EPS2_DriftWarning : 40|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ EPS2_AutoDrivingMode : 42|4@1+ (1,0) [0|15] ""  CDS1
+ SG_ LiveCounter_EPS2_2 : 60|4@1+ (1,0) [0|15] ""  CDS1
+
+BO_ 209 EPS_2_SAS_1: 8 EPS
+ SG_ Checksum_EPS2_SAS_1 : 0|8@1+ (1,0) [0|255] ""  CDS1
+ SG_ EPS_SteeringWheelAngle : 8|15@1+ (0.04375,0) [0|1433.55625] "°„"  CDS1
+ SG_ EPS_SteeringWheelAngleSign : 23|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ EPS_SteeringWheelSpeed : 24|15@1+ (0.04375,0) [0|1433.55625] "°„/s"  CDS1
+ SG_ EPS_SteeringWheelSpeedSign : 39|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ EPS_SAS_St : 56|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ LiveCounter_EPS2_SAS_1 : 60|4@1+ (1,0) [0|15] ""  CDS1
+
+BO_ 150 SAS_1: 8 SAS
+ SG_ Checksum_SAS_1 : 0|8@1+ (1,0) [0|255] ""  CDS1,Gateway,EPS
+ SG_ SAS_SteeringWheelAngle : 8|15@1+ (0.04375,0) [0|1433.55625] "°„"  CDS1,Gateway,EPS
+ SG_ SAS_SteeringWheelAngleSign : 23|1@1+ (1,0) [0|1] ""  CDS1,Gateway,EPS
+ SG_ SAS_SteeringWheelSpeed : 24|15@1+ (0.04375,0) [0|1433.55625] "°„/s"  CDS1,Gateway,EPS
+ SG_ SAS_SteeringWheelSpeedSign : 39|1@1+ (1,0) [0|1] ""  CDS1,Gateway,EPS
+ SG_ SAS_ID : 40|8@1+ (1,0) [0|255] ""  CDS1,Gateway,EPS
+ SG_ LiveCounter_SAS_1 : 48|8@1+ (1,0) [0|255] ""  CDS1,Gateway,EPS
+ SG_ SAS_Status : 56|2@1+ (1,0) [0|3] ""  CDS1,Gateway,EPS
+
+BO_ 665 EPS_2_Test: 8 EPS
+ SG_ EPS_B_A_ElectricLoad : 0|8@1+ (0.5,0) [0|127.5] "Ampere"  CDS1
+ SG_ EPS_B_B_ElectricLoad : 8|8@1+ (0.5,0) [0|127.5] "Ampere"  CDS1
+
+BO_ 316 eB_1: 8 eBooster
+ SG_ checksum_eBooster_1 : 0|8@1+ (1,0) [0|255] ""  Gateway,CDS1
+ SG_ eB_VLCSt_L3 : 8|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ eB_VMC_Error_L3 : 9|3@1+ (1,0) [0|3] ""  CDS1
+ SG_ eB_SuspendStatus_VMC : 19|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ eB_ShutOffFinished_L3 : 24|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ eB_BrakePedalStatus : 40|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ eB_BrakePedalStatus_Q : 41|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ eB_BrakePedalDominant : 43|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ eB_BrakePedalDominant_Q : 44|2@1+ (1,0) [0|3] ""  CDS1
+ SG_ eB_TargetGearReq_VMC_1 : 48|3@1+ (1,0) [0|7] ""  Gateway
+ SG_ Livecounter_eBooster_1 : 60|4@1+ (1,0) [0|15] ""  Gateway,CDS1
+
+BO_ 432 ECAS_2: 8 Gateway
+ SG_ ECAS_Height_FL : 0|8@1+ (1,-127) [-127|128] "mm" Vector__XXX
+ SG_ ECAS_Height_FR : 8|8@1+ (1,-127) [-127|128] "mm" Vector__XXX
+ SG_ ECAS_Height_RL : 16|8@1+ (1,-127) [-127|128] "mm" Vector__XXX
+ SG_ ECAS_Height_RR : 24|8@1+ (1,-127) [-127|128] "mm" Vector__XXX
+
+BO_ 529 ECAS_4: 8 Gateway
+ SG_ AxleLoad_Front : 0|12@1+ (1,800) [800|4895] "kg" Vector__XXX
+ SG_ AxleLoad_Rear : 12|12@1+ (1,800) [800|4895] "kg" Vector__XXX
+
+BO_ 532 DMS_1: 8 Gateway
+ SG_ Checksum_DMS_1 : 0|8@1+ (1,0) [0|255] ""  EPS
+ SG_ DMS_ESCModeChangeCmd : 16|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DMS_EPSModeChangeCmd : 20|2@1+ (1,0) [0|3] ""  EPS
+ SG_ DMS_ECASModeChangeCmd : 24|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DMS_AXGradient : 32|10@1+ (0.5,-100) [-100|411.5] "%" Vector__XXX
+ SG_ DMS_AXGradientAccuracy : 42|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DMS_HCUModeChangeCmd : 45|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DMS_AYGradient : 48|10@1+ (0.5,-100) [-100|411.5] "%" Vector__XXX
+ SG_ DMS_AYGradientAccuracy : 58|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ Livecounter_DMS_1 : 60|4@1+ (1,0) [0|15] ""  EPS
+
+BO_ 534 DMS_2: 8 Gateway
+ SG_ DMS_VehicleModeInfo : 8|4@1+ (1,0) [0|15] ""  CDS1
+ SG_ DMS_ErrorStatus : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DMS_ModeChangeInProcess : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+ SG_ DMS_IndividualMode_EPS : 16|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ DMS_IndividualMode_ECAS : 24|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DMS_IndividualMode_HCU : 27|3@1+ (1,0) [0|7] "" Vector__XXX
+ SG_ DMS_MainMode : 32|4@1+ (1,0) [0|15] "" Vector__XXX
+ SG_ DMS_TargetVehicleMode : 36|4@1+ (1,0) [0|15] ""  CDS1
+ SG_ DMS_TipInfo : 40|3@1+ (1,0) [0|7] "" Vector__XXX
+
+BO_ 167 ESC_eB_9: 8 ESC
+ SG_ Checksum_ESC_eB_9 : 0|8@1+ (1,0) [0|255] ""  CDS1,eBooster
+ SG_ ESC_DriveMain2BackupState_2 : 8|4@1+ (1,0) [0|15] ""  CDS1,eBooster
+ SG_ Livecounter_ESC_eB_9 : 60|4@1+ (1,0) [0|15] "Pulse"  CDS1,eBooster
+
+BO_ 164 ESC_eB_5: 8 ESC
+ SG_ Checksum_ESC_eB_5 : 0|8@1+ (1,0) [0|255] ""  Gateway,CDS1,eBooster
+ SG_ ESC_usedChannel_2 : 8|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_BrakeFxCapability_2 : 10|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_BrakeFxAvailability_2 : 12|2@1+ (1,0) [0|3] ""  Gateway,CDS1,eBooster
+ SG_ ESC_BrakeFxActual_2 : 14|14@1+ (8,-125000) [-125000|0] ""  Gateway,CDS1,eBooster
+ SG_ ESC_AccStabAvail_2 : 28|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_DecStabAvail_2 : 30|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_isBrkFctReqFxBrkDomin_2 : 32|1@1+ (1,0) [0|1] ""  CDS1,eBooster
+ SG_ ESC_DecStabAvailForDriver_2 : 33|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_DecStabActivity_2 : 35|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_AccStabActivity_2 : 37|1@1+ (1,0) [0|1] ""  CDS1,eBooster
+ SG_ ESC_YawRateStabAvailability_2 : 38|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_YawRateStabActivity_2 : 40|1@1+ (1,0) [0|1] ""  CDS1,eBooster
+ SG_ ESC_ParkBrakeCapability_2 : 41|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_ParkBrakeAvailability_2 : 43|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_ParkBrakeState_2 : 45|3@1+ (1,0) [0|7] ""  CDS1,eBooster
+ SG_ ESC_isBrkFctReqPrkBrkDomin_2 : 48|1@1+ (1,0) [0|1] ""  CDS1,eBooster
+ SG_ ESC_DecStabCpblty_2 : 49|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_DecStabCpbltyForDriver_2 : 51|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_ParkBrakeSupportRequest_2 : 53|1@1+ (1,0) [0|1] ""  CDS1,eBooster
+ SG_ Livecounter_ESC_eB_5 : 60|4@1+ (1,0) [0|15] "Pulse"  Gateway,CDS1,eBooster
+
+BO_ 165 ESC_eB_6: 8 ESC
+ SG_ Checksum_ESC_eB_6 : 0|8@1+ (1,0) [0|255] ""  CDS1,eBooster
+ SG_ ESC_DrvReqTarFxBrakeAvail_2 : 8|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_DrvReqTarFxBrake_2 : 10|14@1+ (8,-125000) [-125000|0] ""  CDS1,eBooster
+ SG_ ESC_DrvPressBrakePedalAvail_2 : 26|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_isDrvPressingBrakePedal_2 : 28|1@1+ (1,0) [0|1] ""  CDS1,eBooster
+ SG_ ESC_DrvReqFxBrkDomAvail_2 : 29|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_isDrvReqFxBrakeDominant_2 : 31|1@1+ (1,0) [0|1] ""  CDS1,eBooster
+ SG_ ESC_DriverRequestParkBrake_2 : 32|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_isDrvReqParkBrkDominant_2 : 34|1@1+ (1,0) [0|1] ""  CDS1,eBooster
+ SG_ ESC_DrvReqParkBrakeAvail_2 : 35|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_BrkDiscTempStatus_2 : 40|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ ESC_BrkDiscTempStatusAvail_2 : 42|2@1+ (1,0) [0|3] ""  CDS1,eBooster
+ SG_ Livecounter_ESC_eB_6 : 60|4@1+ (1,0) [0|15] "Pulse"  CDS1,eBooster
+
+BO_ 174 eB_ESC_7: 8 eBooster
+ SG_ Checksum_eB_ESC_7 : 0|8@1+ (1,0) [0|255] ""  ESC
+ SG_ eB_DriveBackup2MainState_2 : 8|4@1+ (1,0) [0|15] ""  CDS1,ESC
+ SG_ Livecounter_eB_ESC_7 : 60|4@1+ (1,0) [0|15] "Pulse"  ESC
+
+BO_ 175 eB_ESC_3: 8 eBooster
+ SG_ Checksum_eB_ESC_3 : 0|8@1+ (1,0) [0|255] ""  ESC
+ SG_ eB_usedChannel_2 : 8|2@1+ (1,0) [0|3] ""  ESC
+ SG_ eB_BrakeFxCapability_2 : 10|2@1+ (1,0) [0|3] ""  ESC
+ SG_ eB_BrakeFxAvailability_2 : 12|2@1+ (1,0) [0|3] ""  CDS1,ESC
+ SG_ eB_BrakeFxActual_2 : 14|14@1+ (8,-125000) [-125000|0] ""  ESC
+ SG_ eB_DecStabAvail_2 : 30|2@1+ (1,0) [0|3] ""  ESC
+ SG_ eB_isBrkFctReqFxBrkDomin_2 : 32|1@1+ (1,0) [0|1] ""  ESC
+ SG_ eB_DecStabAvailForDriver_2 : 33|2@1+ (1,0) [0|3] ""  ESC
+ SG_ eB_DecStabActivity_2 : 35|2@1+ (1,0) [0|3] ""  ESC
+ SG_ eB_DecStabCpblty_2 : 48|2@1+ (1,0) [0|3] ""  ESC
+ SG_ eB_DecStabCpbltyForDriver_2 : 50|2@1+ (1,0) [0|3] ""  ESC
+ SG_ Livecounter_eB_ESC_3 : 60|4@1+ (1,0) [0|15] "Pulse"  ESC
+
+BO_ 171 eB_ESC_4: 8 eBooster
+ SG_ Checksum_eB_ESC_4 : 0|8@1+ (1,0) [0|255] ""  ESC
+ SG_ eB_DrvReqTarFxBrakeAvail_2 : 8|2@1+ (1,0) [0|3] ""  CDS1,ESC
+ SG_ eB_DrvReqTarFxBrake_2 : 10|14@1+ (8,-125000) [-125000|0] ""  CDS1,ESC
+ SG_ eB_DrvPressBrakePedalAvail_2 : 26|2@1+ (1,0) [0|3] ""  ESC
+ SG_ eB_isDrvPressingBrakePedal_2 : 28|1@1+ (1,0) [0|1] ""  ESC
+ SG_ eB_DrvReqFxBrkDomAvail_2 : 29|2@1+ (1,0) [0|3] ""  ESC
+ SG_ eB_isDrvReqFxBrakeDominant_2 : 31|1@1+ (1,0) [0|1] ""  ESC
+ SG_ eB_BrakeFxTarget : 46|14@1+ (8,-125000) [-125000|0] ""  CDS1
+ SG_ Livecounter_eB_ESC_4 : 60|4@1+ (1,0) [0|15] "Pulse"  ESC
+
+BO_ 311 ESC_4_2: 8 ESC
+ SG_ Checksum_ESC_4_2 : 0|8@1+ (1,0) [0|255] ""  CDS1,Gateway
+ SG_ ESC_TorqueReq_VMC_2 : 31|17@1+ (0.25,-13000) [-13000|19767.75] "Nm"  CDS1,Gateway
+ SG_ ESC_TorqueReqSt_VMC_2 : 48|2@1+ (1,0) [0|3] ""  CDS1,Gateway
+ SG_ ESC_TargetGearReq_VMC_2 : 50|3@1+ (1,0) [0|7] ""  CDS1,Gateway
+ SG_ LiveCounter_ESC_4_2 : 60|4@1+ (1,0) [0|15] ""  CDS1,Gateway
+
+BO_ 576 BCM2_1: 8 Gateway
+ SG_ PositionLightSt_RL : 0|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ PositionLightSt_RR : 1|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ FogLightSt_Rear : 2|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ FogLightSt_RL : 3|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ FogLightSt_RR : 4|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ FoglightFaultSt_Rear : 5|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ TurnLightFaultSt_RL : 12|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ TurnLightFaultSt_RR : 13|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ WiperSt_Rear : 16|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ PositionLightFaultSt_Rear : 17|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ BrakeLightSt_RL : 18|1@1+ (1,0) [0|1] ""  CDS1
+ SG_ BrakeLightSt_RR : 19|1@1+ (1,0) [0|1] ""  CDS1
+
+BO_ 688 GW_Config: 8 Gateway
+ SG_ GW_IgnitionOffTime : 0|12@1+ (1,0) [0|4095] "minute"  CDS1
+ SG_ GW_RemoteVehicleMode : 12|1@1+ (1,0) [0|1] ""  CDS1,EPS
+ SG_ GW_OTAMode : 16|3@1+ (1,0) [0|7] ""  CDS1,EPS
+
+BO_ 192 ABS_1: 8 Gateway
+ SG_ Checksum_ABS_1 : 0|8@1+ (1,0) [0|255] ""  CDS1,EPS
+ SG_ WheelSpeed_FL : 8|15@1+ (0.01,0) [0|327.67] "km/h"  CDS1,EPS
+ SG_ WheelSpeed_FR : 24|15@1+ (0.01,0) [0|327.67] "km/h"  CDS1,EPS
+ SG_ VehiclSpeed : 40|15@1+ (0.01,0) [0|327.67] "km/h"  CDS1,EPS
+ SG_ LiveCounter_ABS_1 : 60|4@1+ (1,0) [0|15] ""  CDS1,EPS
+
+BO_ 194 ABS_2: 8 Gateway
+ SG_ Checksum_ABS_2 : 0|8@1+ (1,0) [0|255] ""  CDS1,EPS
+ SG_ WheelSpeed_RL : 8|15@1+ (0.01,0) [0|327.67] "km/h"  CDS1,EPS
+ SG_ WheelSpeed_RR : 24|15@1+ (0.01,0) [0|327.67] "km/h"  CDS1,EPS
+ SG_ MasterCylinderPressure : 40|11@1+ (0.1,0) [0|204.7] "bar"  CDS1
+ SG_ LiveCounter_ABS_2 : 60|4@1+ (1,0) [0|15] ""  CDS1,EPS
+
+BO_ 308 ESC_3_1: 8 Gateway
+ SG_ Checksum_ESC_3_1 : 0|8@1+ (1,0) [0|255] ""  CDS1,EPS
+ SG_ YawRate : 8|12@1+ (0.05,-100) [-100|104.75] "deg/s"  CDS1,EPS
+ SG_ YRSSt : 20|1@1+ (1,0) [0|1] ""  CDS1,EPS
+ SG_ Acceleration_X : 21|11@1+ (0.027127,-21.593) [-21.593|33.935969] "m/s2"  CDS1,EPS
+ SG_ Acceleration_Y : 48|11@1+ (0.027127,-21.593) [-21.593|33.935969] "m/s2"  CDS1,EPS
+ SG_ ErrorSt_YRS : 59|1@1+ (1,0) [0|1] ""  CDS1,EPS
+ SG_ LiveCounter_ESC_3_1 : 60|4@1+ (1,0) [0|15] ""  CDS1,EPS
+
+
+
+CM_ SG_ 146 Checksum_HCU_2_2 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 146 HCU_AccelerationPedalPosition "This signal indicates the actual acceleration pedal position";
+CM_ SG_ 146 HCU_CalcAccelerationPedalPositio "This signal indicates the calculated acceleration pedal position in cruise control mode.";
+CM_ SG_ 146 HCU_AccelerationPedalOverride "This signal indicates the torque demanded by the driver is higher than the torque demanded by ACC.";
+CM_ SG_ 146 HCU_KickdownReq "This signal is used to show the fast acceleration request from the driver. ";
+CM_ SG_ 146 LiveCounter_HCU_2_2 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 264 Checksum_HCU_2_4 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 264 HCU_AutoDrivingResponseSt_L12 "The signal indicates if HCU can response the L12 autodriving request or not.";
+CM_ SG_ 264 HCU_AutoDrivingResponseSt_L3 "The signal indicates if HCU can response the L3 autodriving request or not.";
+CM_ SG_ 264 HCU_CapabilitySt_AutoDriving "The signal is the capability of HCU for auto driving functions.";
+CM_ SG_ 264 HCU_GradientAccelerationPedal "Gradient of the standardized acceleration pedal angle";
+CM_ SG_ 264 LiveCounter_HCU_2_4 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 147 HCU_IndicatedDriverTorq_FrontAxl "The indicated driver torque for front axle is calculated mainly according to the acceleration pedal position and motor speed in normal mode. It is calculated from the driver vehicle speed request and the actual vehicle speed in cruise control mode. ";
+CM_ SG_ 147 HCU_IndicatedDriverTorq_RearAxle "The indicated driver torque for rear axle is calculated mainly according to the acceleration pedal position and motor speed in normal mode. It is calculated from the driver vehicle speed request and the actual vehicle speed in cruise control mode. ";
+CM_ SG_ 147 HCU_WorkingMode "This signal indicates the current working mode of HCU as the feedback to the  command of Drive Mode Selection ECU";
+CM_ SG_ 147 HCU_ModeChangeEnable "This signal indicates whether HCU can change the working mode in the current condition";
+CM_ SG_ 147 HCU_EVReady "EV system can run or not";
+CM_ SG_ 151 HCU_MCU1TMSpeed "The TM Speed of MCU1";
+CM_ SG_ 151 HCU_MCU1ActTMTorque "The Actual TM Drive Torque of MCU1";
+CM_ SG_ 151 HCU_MCU1TMMAMTorque "The TM Maximum Available Motoring Torque of MCU1";
+CM_ SG_ 151 HCU_MCU1TMMAGTorque "The TM Maximum Available Generating Torque of MCU1";
+CM_ SG_ 152 HCU_MCU2TMSpeed "The TM Speed of MCU2";
+CM_ SG_ 152 HCU_MCU2ActTMTorque "The Actual TM Drive Torque of MCU2";
+CM_ SG_ 152 HCU_MCU2TMMAMTorque "The TM Maximum Available Motoring Torque of MCU2";
+CM_ SG_ 152 HCU_MCU2TMMAGTorque "The TM Maximum Available Generating Torque of MCU2";
+CM_ SG_ 290 Checksum_HCU_2_12 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 290 HCU_LeverInfo "This signal indicate Lever info for display";
+CM_ SG_ 290 HCU_HighVoltageStatus "The vehcle high-voltage working status";
+CM_ SG_ 290 HCU_AutoParkingResponse_L12 "The signal indicates if HCU can response the L12 autoparking request";
+CM_ SG_ 290 HCU_AutoParkingResponse_L3 "The signal indicates if HCU can response the L3 autoparking request";
+CM_ SG_ 290 HCU_CapabilitySt_AutoParking "The signal is the capability of HCU for auto parking functions.";
+CM_ SG_ 290 Livecounter_HCU_2_12 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 288 Checksum_EGSM_1 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 288 EGSM_SecurityButton "This signal indicate the security button in the knob is pressed or not.";
+CM_ SG_ 288 EGSM_SecurityButtonErrorSt "This signal indicate the security button in the knob is error or not.";
+CM_ SG_ 288 EGSM_ErrorStatus "Indicate the SBW system error";
+CM_ SG_ 288 Livecounter_EGSM_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 656 IndicationSpeed_IC "The signal describes the displayed vehicle speed on the cluster. IC receives VehicleSpeed_ABS and gives out the display value.";
+CM_ SG_ 656 OdometerValue "This signal is drive distance since prime start .,Signal Initial=last value";
+CM_ SG_ 512 Checksum_ACU_1 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 512 CrashInfo "This signal indicates the crash is happened or not. ECUs received the crash info for crash mode.";
+CM_ SG_ 512 SysSt_ACU "The signal is sent to IC to display the ACU system information. ";
+CM_ SG_ 512 SeatBeltSt_Driver "The signal is sent to indicate the Driver Seat Belt is buckled or Unbuckled.";
+CM_ SG_ 512 LiveCounter_ACU_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 586 DoorLockSt_FL "This signal indicates the lock state of driver door.";
+CM_ SG_ 586 DoorSt_FL "This signal indicates the state of driver door.";
+CM_ SG_ 588 DoorLockSt_FR "This signal indicates the lock state of passenger door.";
+CM_ SG_ 588 DoorSt_FR "This signal indicates the state of passenger door.";
+CM_ SG_ 590 DoorLockSt_RL "This signal indicates the lock state of RL door.";
+CM_ SG_ 590 DoorSt_RL "This signal indicates the state of RL door.";
+CM_ SG_ 591 DoorLockSt_RR "This signal indicates the lock state of RR door.";
+CM_ SG_ 591 DoorSt_RR "This signal indicates the state of RR door.";
+CM_ SG_ 418 PEPS_DMHSwitch "DMH Switch";
+CM_ SG_ 418 LiveCounter_PEPS_DMH "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 578 LuggageDoorSt "This signal indicates luggage door status";
+CM_ SG_ 546 AmbientTemp "The signal indicate ambient temperature.";
+CM_ SG_ 560 PositionLightSt "The signal indicates the status of position light.";
+CM_ SG_ 560 LowBeamSt "The signal  indicates the status of low beam indicator.";
+CM_ SG_ 560 LowBeamSt_FL "The signal  indicates the status of front left low beam indicator.";
+CM_ SG_ 560 LowBeamSt_FR "The signal  indicates the status of front right low beam indicator.";
+CM_ SG_ 560 HighBeamSt "The signal  indicates the status of high beam indicator.";
+CM_ SG_ 560 HighBeamSt_FL "The signal  indicates the status of front left high beam indicator.";
+CM_ SG_ 560 HighBeamSt_FR "The signal  indicates the status of front right high beam indicator.";
+CM_ SG_ 560 FogLightSt_FL "The signal is indicates the status of front left fog indicator.";
+CM_ SG_ 560 FogLightSt_FR "The signal is indicates the status of front right fog indicator.";
+CM_ SG_ 560 TurningSt_Left "The signal indicates the driving status of the left turn light.";
+CM_ SG_ 560 TurningSt_right "The signal indicates the driving status of the right turn light.";
+CM_ SG_ 560 TurningLightCmd_Left "BCM1 control the flash frequency according to turn light error signal and turn light flash mode.";
+CM_ SG_ 560 TurningLightCmd_Right "BCM1 control the flash frequency according to turn light error signal and turn light flash mode.";
+CM_ SG_ 560 HazardWarningSt "The signal indicates Indicates the Hazard Warning is active or not";
+CM_ SG_ 560 WMMFaultSt "This signal shows WMM (wiper controller module)  fault status. ";
+CM_ SG_ 560 RLSFalutSt "This signal shows RLS (rain light sensor) fault status. ";
+CM_ SG_ 560 WiperSt_Front "The signal indicates front wiper status.";
+CM_ SG_ 560 WiperSpeed_Front "This signal informs about the wiper speed requested by the Sensor according to rain intensity or other factors";
+CM_ SG_ 562 PowerMode "The signal indicates the vehicle power mode.";
+CM_ SG_ 562 SysSt_PEPS "The signal indicates PEPS related function is normal or not.";
+CM_ SG_ 562 EntryLoadingMode_RKECmd "RKE command of entry loading mode";
+CM_ SG_ 562 PEPS_RKEEngineCmd "Indicates the command by combined buttons operation on key. Pressing lock button for 1 time and DMH button for 2 times within 3 seconds, the vehicle would be started.  This signal is used only for HAD to park out automatically, not park in.";
+CM_ SG_ 564 EngineHoodSt "This signal shows engine hood status.";
+CM_ SG_ 571 RainIntensity "This signal delivers information about rain intensity: from 0% (no rain) to 100% (very heavy rain).";
+CM_ SG_ 571 Brightness_L "This signal  indicate the low precision light intensity expressed in 8 Bit.";
+CM_ SG_ 571 Brightness_H "This signal  indicate the high precision light intensity expressed in 10 Bit.";
+CM_ SG_ 572 TyrePressureWarning_FL "This signal is send to IC to indicate the warning status of front left tyre pressure.";
+CM_ SG_ 572 TyrePressureWarning_FR "This signal is send to IC to indicate the warning status of front right tyre pressure.";
+CM_ SG_ 572 TyrePressureWarning_RL "This signal is send to IC to indicate the warning status of rear left tyre pressure.";
+CM_ SG_ 572 TyrePressureWarning_RR "This signal is send to IC to indicate the warning status of rear right tyre pressure.";
+CM_ SG_ 572 TyrePressureValue_FL "This signal  indicates the front left tyre pressure value.";
+CM_ SG_ 572 TyrePressureValue_FR "This signal  indicates the front right tyre pressure value.";
+CM_ SG_ 572 TyrePressureValue_RL "This signal  indicates the rear left tyre pressure value.";
+CM_ SG_ 572 TyrePressureValue_RR "This signal  indicates the rear right tyre pressure value.";
+CM_ SG_ 282 Checksum_HAD_3 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 282 HAD_AutoDrivingReq_L3 "This signal indicates the acceleration or deceleration command is from L1L2 function or L3 function.";
+CM_ SG_ 282 HAD_SpeedChangeRequest_L3 "This signal is the value of acceleration request or deceleration request(L3).";
+CM_ SG_ 282 HAD_MaxAccGrad_L3 "The maximum acceleration gradient allowed by HAD";
+CM_ SG_ 282 HAD_MinAccGrad_L3 "The minimum acceleration gradient allowed by HAD";
+CM_ SG_ 282 HAD_MaxComfBand_L3 "Upper limit for acceleration comfort zone ";
+CM_ SG_ 282 HAD_MinComfBand_L3 "Low limit for acceleartion comfort zone";
+CM_ SG_ 282 HAD_UseMaxComfBand_L3 "HAD request to use the upper limit value of acceleration comfort zone.
+";
+CM_ SG_ 282 LiveCounter_HAD_3 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 283 Checksum_HAD_4 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 283 HAD_BrakeModeReq_L3 "This signal indicate HAD request to brake cosily or urgently.
+This signal is only used for L3 function";
+CM_ SG_ 283 HAD_DrivedownReq_L3 "HAD request to quit autodriving funciton.
+This signal is only used for L3 function.";
+CM_ SG_ 283 HAD_SecureRequest_L3 "HAD request to stop the car safely.
+This signal is only used for L3 function";
+CM_ SG_ 283 HAD_ErrorSt_AutoDriving_L3 "This signal indicates the L3 autodriving function error status.
+This signal is only used for L3 function";
+CM_ SG_ 283 LiveCounter_HAD_4 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 256 ADV_ErrorSt "This signal indicates ADV is error or not.If the value of this signal is °∞Error°Æ,EPS shoud ignore this message and rESCond the message from ADV.";
+CM_ SG_ 256 ADV_AutoParkingModeReq "Auto parking mode request";
+CM_ SG_ 256 ADV_AutoParkingRequestSt "Auto Parking request status";
+CM_ SG_ 256 ADV_ErrorSt_APA "ADV system capbility for TJP";
+CM_ SG_ 256 ADV_ErrorSt_RPA "ADV system capbility for APA/RPA";
+CM_ SG_ 256 ADV_ErrorSt_AVP "ADV system capbility for AVP";
+CM_ SG_ 256 ADV_WorkingSt_APA "This signal indicates the APA working status.,Signal Initial=last value";
+CM_ SG_ 256 ADV_WorkingSt_RPA "This signal indicates the RPA working status.,Signal Initial=last value";
+CM_ SG_ 256 ADV_WorkingSt_AVP "This signal indicates the AVP working status.,Signal Initial=last value";
+CM_ SG_ 256 ADV_SteeringWheelAngleRequest "Steering Wheel Angle Request";
+CM_ SG_ 256 ADV_SteeringWheelAngleSignReques "Steering Wheel Angle Sign Request";
+CM_ SG_ 256 ADV_SteeringWheelAngleControlReq "Steering Wheel Angle Control Request";
+CM_ SG_ 278 Checksum_HAD_6 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 278 HAD_TorqueRequest "This signal is the request steering wheel torque by LKA.in case of No Request: LKA_TorqueRequest = 0x3FE";
+CM_ SG_ 278 HAD_TorqueRequestSign "This signal Indicates sign of LKA steering torque";
+CM_ SG_ 278 HAD_TorqueReqSt "This signal indicates the status of the torque request from LKA 
+";
+CM_ SG_ 278 HAD_WorkingSt_LKA "This signal indicates the LKA working status.,Signal Initial=last value";
+CM_ SG_ 278 HAD_ErrorSt_LKA "This signal indicates the LKA error status.";
+CM_ SG_ 278 HAD_AutoDrivingModeReq "Auto driving mode request";
+CM_ SG_ 278 HAD_ErrorSt_SACC "HAD system capbility for SACC/LCA/HWA/TJA";
+CM_ SG_ 278 HAD_ErrorSt_HWP "HAD system capbility for HWP";
+CM_ SG_ 278 HAD_ErrorSt_TJP "HAD system capbility forTJP";
+CM_ SG_ 278 HAD_LDWSteeringVibrationReq "This signal indicates the request the steering vibration function. ";
+CM_ SG_ 278 HAD_WorkingSt_SACC "This signal indicates theSACCworking status.,Signal Initial=last value";
+CM_ SG_ 278 HAD_WorkingSt_HWP "This signal indicates the HWP working status.,Signal Initial=last value";
+CM_ SG_ 278 HAD_WorkingSt_TJP "This signal indicates the TJP working status.,Signal Initial=last value";
+CM_ SG_ 278 HAD_ErrorSt_HAD "This signal indicates HAD is error or not.If the value of this signal is °∞Error°Æ,EPS shoud ignore this message and respond the message from HAD.";
+CM_ SG_ 278 LiveCounter_HAD_6 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 202 Checksum_eBooster_ABS_1 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 202 eB_WheelSpeed_FL "This signal is front left wheel speed which sent by ABS without filtering. ";
+CM_ SG_ 202 eB_WheelSpeed_FR "This signal is front right wheel speed which sent by ABS without filtering.";
+CM_ SG_ 202 eB_VehiclSpeed "The signal describes the raw vehicle speed calculated by ABS. The ABS calculates the vehicle speed based on the raw wheel speed signals from the wheel speed sensors. The vehicle speed output could be the average of the wheel speeds of the driven axle.";
+CM_ SG_ 202 eB_VehiclSpeed_Q "Qualifier for VehicleSpeed";
+CM_ SG_ 202 eB_DrivingDirection "The signal indicates driving direction of the vehicle.";
+CM_ SG_ 202 LiveCounter_eBooster_ABS_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 203 Checksum_eBooster_ABS_2 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 203 eB_WheelSpeed_RL "This signal is rear left wheel speed which sent by ABS without filtering.";
+CM_ SG_ 203 eB_WheelSpeed_RR "This signal is rear right wheel speed which sent by ABS without filtering.";
+CM_ SG_ 203 LiveCounter_eBooster_ABS_2 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 315 Checksum_eBooster_ABS_3 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 315 eB_WheelPulse_FL "This signal is the front left wheel speed pulse(raw data).";
+CM_ SG_ 315 eB_WheelPulse_FR "This signal is the front right wheel speed pulse(raw data).";
+CM_ SG_ 315 eB_WheelPulse_RL "This signal is the rear left wheel speed pulse(raw data).";
+CM_ SG_ 315 eB_WheelPulse_RR "This signal is the rear right wheel speed pulse(raw data).";
+CM_ SG_ 315 eB_WheelSpeedDirection_FL "This signal is the the front left wheel speed direction.";
+CM_ SG_ 315 eB_WheelSpeedDirection_FR "This signal is the the front right wheel speed direction.";
+CM_ SG_ 315 eB_WheelSpeedDirection_RL "This signal is the the rear left wheel speed direction.";
+CM_ SG_ 315 eB_WheelSpeedDirection_RR "This signal is the the rear right  wheel speed direction.";
+CM_ SG_ 315 LiveCounter_eBooster_ABS_3 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 307 Checksum_ESC_2_2 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 307 ESC_WorkingSt_ESC "This signal indicates the ESC system working status.";
+CM_ SG_ 307 ESC_ErrorSt_ESC "This signal indicates the ESC function error status,including VDC and TCS.";
+CM_ SG_ 307 ESC_Intervention_ESC "The signal is indicates if the ESC function is intervention or not.";
+CM_ SG_ 307 ESC_ErrorSt_ABS "This signal indicates the ABS function error status.";
+CM_ SG_ 307 ESC_Intervention_ABS "The signal indicates if the ABS function is intervention or not.";
+CM_ SG_ 307 ESC_Intervention_TCS "The signal indicates if the TCS function is intervention or not.";
+CM_ SG_ 307 ESC_ErrorSt_EBD "This signal indicates the EBD function error status.";
+CM_ SG_ 307 ESC_AvailableSt_CDP "This signal Indicates if the CDP function is available or not";
+CM_ SG_ 307 ESC_Intervention_CDP_RWU "The signal is indicates if the CDP or RWU or SRU function is intervention or not.";
+CM_ SG_ 307 ESC_LampCmd_EPB "The signal indicates the lamp indication of EPB.";
+CM_ SG_ 307 ESC_ErrotSt_EPB "This signal indicates the EPB error status.";
+CM_ SG_ 307 ESC_AvailableSt_HDC "This signal indicates if the HDC function is available or not";
+CM_ SG_ 307 ESC_WorkingSt_HDC "The signal indicates the working status of HDC.";
+CM_ SG_ 307 ErrorSt_AVH "This signal indicates if the AVH function is error or not";
+CM_ SG_ 307 WorkingSt_AVH "The signal indicates the woking status of AVH.
+When AVH is standby , it means AVH is On, but not active braking.
+When AVH is active , it means AVH is On and active braking.
+When AVH is inactive, it  means AVH already on but not ready intervention";
+CM_ SG_ 307 ESC_AvailableSt_HBA "This signal indicates if the HBA is available or not";
+CM_ SG_ 307 ESC_Intervention_HBA "This signal Indicates if the HBA is intervention or not.";
+CM_ SG_ 307 ESC_WorkingSt_HBB "This signal indicates the working status of HBB.";
+CM_ SG_ 307 ESC_Intervention_HBB "This signal indicates if the HBB function is intervention or not";
+CM_ SG_ 307 ESC_Intervention_EmergencyBrake "The signal is indicates if the EmergencyBrake is Intervention or not.
+This signal is used to light the flash when the pressure is over 50kph and  brake deceleration over 0.6G or ABS is intervention";
+CM_ SG_ 307 ESC_VehicleStandstillSt "The signal indicates the vehicle whether is in standstill or not.";
+CM_ SG_ 307 ESC_BrakeLightCtrlCmd "The signal indicates the brake light control command.";
+CM_ SG_ 307 ESC_WorkingSt_EPB "The signal indicates the working status of EPB.";
+CM_ SG_ 307 LiveCounter_ESC_2_2 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 309 Checksum_ESC_3_2 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 309 ESC_YawRate "This signal indicates the yaw rate data (real data; sign depends on mounting position)
+anticlockwise=positive, clockwise=negative";
+CM_ SG_ 309 ESC_YRSSt "This signal indicates the status of yaw rate sensor";
+CM_ SG_ 309 ESC_Acceleration_X "The signal is LongitudinalAcceleration(exact value).Positive value represents  forward,  negative value represents backward. ";
+CM_ SG_ 309 ESC_MasterCylinderPressure "The signal indicates the actual pressure in the master cylinder.";
+CM_ SG_ 309 ESC_EPBSwitch "Indicates the EPB switch is pressed or not.";
+CM_ SG_ 309 ESC_AvailableSt_EPBSwitch "This signal indicates the available status of EPB switch";
+CM_ SG_ 309 ESC_Acceleration_Y "The signal is Lateral Acceleration(exact value).Positive value represents right side of vehicle, negative value represents  left side of vehicle. ";
+CM_ SG_ 309 ESC_ErrorSt_YRS "This signal indicates if the YRS is error or not.";
+CM_ SG_ 309 LiveCounter_ESC_3_2 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 313 Checksum_ESC_5_2 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 313 ESC_VLCSt_L3 "This signal indicates the vehicle longitudinal control status for L3 autodriving function.";
+CM_ SG_ 313 ESC_VMC_Error_L3 "This signal indicates VMC system in ESC is available for L3 autodriving function or not.";
+CM_ SG_ 313 ESC_AutoDriving_LC_Brakemode "This signal indicates Longitudinal controller brake mode
+Only used in L3 function";
+CM_ SG_ 313 ESC_ShutOffFinished "Indicates  that the shut off of VMC is finished.";
+CM_ SG_ 313 LiveCounter_ESC_5_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 321 Checksum_ESC_7_2 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 321 ESC_SuspendStatus_VMC_2 "This signal indicates if the VMC system is suspend";
+CM_ SG_ 321 ESC_BrakeFunctionOverrideStatus_ "This signal indicates whether the brake function request override superior system";
+CM_ SG_ 321 LiveCounter_ESC_7_2 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 274 Checksum_IFC_4 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 274 IFC_TorqueRequest "This signal is the request steering wheel torque by LKA or LCA.in case of No Request: TorqueRequest_LKALCA = 0x3FE";
+CM_ SG_ 274 IFC_TorqueRequestSign "This signal Indicates sign of LKA or LCA steering torque";
+CM_ SG_ 274 IFC_TorqueReqSt "This signal indicates the status of the torque request from LKA or LCA 
+";
+CM_ SG_ 274 HJAD_WorkingSt_LKA "This signal indicates the LKA working status.,Signal Initial=last value";
+CM_ SG_ 274 IFC_ErrorSt_LKA "This signal indicates the LKA error status.";
+CM_ SG_ 274 IFC_AutoDrivingModeReq "This signal is the Source of Torque request to EPS";
+CM_ SG_ 274 IFC_ErrorSt_SACC "IFC system capbility for SACC/LCA/HWA/TJA";
+CM_ SG_ 274 IFC_ErrorSt_HWP "IFC system capbility for HWP";
+CM_ SG_ 274 IFC_ErrorSt_TJP "IFC system capbility forTJP";
+CM_ SG_ 274 LDWSteeringVibrationReq "This signal indicates the request the steering vibration function. ";
+CM_ SG_ 274 IFC_WorkingSt_SACC "This signal indicates theSACCworking status.,Signal Initial=last value";
+CM_ SG_ 274 IFC_WorkingSt_HWP "This signal indicates the HWP working status.,Signal Initial=last value";
+CM_ SG_ 274 IFC_WorkingSt_TJP "This signal indicates the TJP working status.,Signal Initial=last value";
+CM_ SG_ 274 IFC_ErrorSt_FOU "This signal indicates FOU is error or not.If the value of this signal is °∞Error°Æ,EPS shoud ignore this message and respond the message from FOU.";
+CM_ SG_ 274 LiveCounter_IFC_4 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 279 Checksum_IFC_5 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 279 IFC_SteeringWheelAngleRequest "Steering Wheel Angle Request";
+CM_ SG_ 279 IFC_SteeringWheelAngleSignReques "Steering Wheel Angle Sign Request";
+CM_ SG_ 279 IFC_SteeringWheelAngleControlReq "The status of steering wheel angle request.";
+CM_ SG_ 341 EPS2_HandSteeringTorque "The signal indicates the torque measured by the torque sensor at the steering wheel. In case of a sensor error, the default value (0x3FF) of the signal is set";
+CM_ SG_ 341 EPS2_HandSteeringTorqueSign "Indicates sign of hand steering torque (+/-)
+Hand steering torque to left = positive
+Hand steering torque to right = negative
+";
+CM_ SG_ 341 EPS2_ErrorStatus "Error indication of the EPS system";
+CM_ SG_ 341 EPS2_WorkingMode_DMS "Indicates the current working mode of EPS as the feedback to the  command of Drive Mode Selection ECU";
+CM_ SG_ 341 EPS2_ModeChangeEnable "Indicates whether EPS can change the working mode in the current condition";
+CM_ SG_ 341 EPS2_HandOffStatus "Detect if the driver is controlling the steering wheel";
+CM_ SG_ 341 EPS2_HandOffValid "Indicates if the hand off signal is valid or not.";
+CM_ SG_ 341 EPS2_LKAStatus "The signal indicates the status of LDP(LKA) function ";
+CM_ SG_ 341 EPS2_TorqueSensorAStatus "The signal indicates the status of torque sensor.";
+CM_ SG_ 341 EPS2_TorqueSensorBStatus "The signal indicates the status of torque sensor.";
+CM_ SG_ 341 EPS2_OverlayInputTorque "The signal indicates the actual applied overlay toque in EPS.";
+CM_ SG_ 341 EPS2_OverlayInputTorqueSign "Indicates sign of OverlayInputTorque (+/-)
+Hand steering torque to left = positive
+Hand steering torque to right = negative
+";
+CM_ SG_ 341 EPS2_AbortFeedback_HAD "EPS APA Abort Feedback";
+CM_ SG_ 342 Checksum_EPS2_2 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 342 EPS2_SACCStatus "The signal indicates the status of SACC/LCA/HWA/TJA function ";
+CM_ SG_ 342 EPS2_HWPStatus "The signal indicates the status of SACCfunction ";
+CM_ SG_ 342 EPS2_TJPStatus "The signal indicates the status of TJA function ";
+CM_ SG_ 342 EPS2_APAStatus "The signal indicates the status of APA function ";
+CM_ SG_ 342 EPS2_RPAStatus "The signal indicates the status of RPA function ";
+CM_ SG_ 342 EPS2_AVPStatus "The signal indicates the status of AVP function ";
+CM_ SG_ 342 EPS2_DegradeLevel_HAD "EPS capability description under different faults for autonomous Driving";
+CM_ SG_ 342 EPS2_DriftWarning "Indicates the vehicle is drifted over threshold value or not ";
+CM_ SG_ 342 EPS2_AutoDrivingMode "Which auto driving/parking mode is active";
+CM_ SG_ 342 LiveCounter_EPS2_2 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 209 Checksum_EPS2_SAS_1 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 209 EPS_SteeringWheelAngle "This signal indicates the angle of steering wheel .";
+CM_ SG_ 209 EPS_SteeringWheelAngleSign "This signal shows the direction of steering wheel angle, it's used in pairs with °∞SteeringWheelAngle°±.";
+CM_ SG_ 209 EPS_SteeringWheelSpeed "This signal indicates the teering wheel rotation speed.";
+CM_ SG_ 209 EPS_SteeringWheelSpeedSign "This signal shows the direction of steering wheel speed, it's used in pairs with °∞SteeringWheelSpeed°±. ";
+CM_ SG_ 209 EPS_SAS_St "The signal indicates the status of SAS. ";
+CM_ SG_ 209 LiveCounter_EPS2_SAS_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 150 Checksum_SAS_1 "Checksum of message SAS_1";
+CM_ SG_ 150 SAS_SteeringWheelAngle "Angle of steering wheel (raw data)";
+CM_ SG_ 150 SAS_SteeringWheelAngleSign "Sign of steering wheel angle (+/-)
+definition according to DIN 70000 / ISO 8855
+wheel position to left = positive
+wheel position to right = negative
+wheel position straightforward = 0 (positive)";
+CM_ SG_ 150 SAS_SteeringWheelSpeed "Steering wheel rotation speed (raw data)";
+CM_ SG_ 150 SAS_SteeringWheelSpeedSign "Sign of steering wheel speed (+/-)
+definition according to DIN 70000 / ISO 8855
+wheel to left = positive
+wheel to right = negative
+wheel straightforward = 0 (positive)";
+CM_ SG_ 150 SAS_ID "ID of steering angle sensor (used in combination with class 2 sensor),Signal Initial=last value";
+CM_ SG_ 150 LiveCounter_SAS_1 "Live counter for SAS_1";
+CM_ SG_ 150 SAS_Status "Status of steering angle sensor (used in combination with class 3 sensor)";
+CM_ SG_ 665 EPS_B_A_ElectricLoad "The signal indicates the load of the electric steering motor. If the load could not be measured or an error is detected on the motor, the invalid value of the signal is sethe
+This message is only used for tuning,so it won't be sended in normal mode.";
+CM_ SG_ 665 EPS_B_B_ElectricLoad "The signal indicates the load of the electric steering motor. If the load could not be measured or an error is detected on the motor, the invalid value of the signal is sethe
+This message is only used for tuning,so it won't be sended in normal mode.";
+CM_ SG_ 316 checksum_eBooster_1 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 316 eB_VLCSt_L3 "This signal indicates the vehicle longitudinal control status for L3 autodriving function.";
+CM_ SG_ 316 eB_VMC_Error_L3 "This signal indicates VMC system in ESC is available for L3 autodriving function or not.";
+CM_ SG_ 316 eB_SuspendStatus_VMC "This signal indicates if the VMC system is suspend";
+CM_ SG_ 316 eB_ShutOffFinished_L3 "Indicates  that the shut off of VMC is finished.";
+CM_ SG_ 316 eB_BrakePedalStatus "Indacates whether the pedal is applied by the driver.";
+CM_ SG_ 316 eB_BrakePedalStatus_Q "Qualifier for eB_BrakePedalStatus";
+CM_ SG_ 316 eB_BrakePedalDominant "Indacates  the pedal is applied request by the driver is dominant or not.";
+CM_ SG_ 316 eB_BrakePedalDominant_Q "Qualifier for BrakePedalDominant";
+CM_ SG_ 316 eB_TargetGearReq_VMC_1 "eBooster request to change the lever  position.";
+CM_ SG_ 316 Livecounter_eBooster_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 432 ECAS_Height_FL "Height of front left corner";
+CM_ SG_ 432 ECAS_Height_FR "Height of front right corner";
+CM_ SG_ 432 ECAS_Height_RL "Height of rear left corner";
+CM_ SG_ 432 ECAS_Height_RR "Height of rear right corner";
+CM_ SG_ 529 AxleLoad_Front "the load of front axle";
+CM_ SG_ 529 AxleLoad_Rear "the load of rear axle";
+CM_ SG_ 532 Checksum_DMS_1 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 532 DMS_ESCModeChangeCmd "The command of changing ESC working mode from Drive Mode Selection ECU";
+CM_ SG_ 532 DMS_EPSModeChangeCmd "The command of changing EPS working mode from Drive Mode Selection ECU";
+CM_ SG_ 532 DMS_ECASModeChangeCmd "The command of changing ECAS working mode from Drive Mode Selection ECU";
+CM_ SG_ 532 DMS_AXGradient "Indicates the longitudinal gradient calculated from DMS";
+CM_ SG_ 532 DMS_AXGradientAccuracy "Indicates the longitudinal gradient signal form DMS is accurate or not";
+CM_ SG_ 532 DMS_HCUModeChangeCmd "The command of changing HCU working mode from Drive Mode Selection ECU";
+CM_ SG_ 532 DMS_AYGradient "Indicates the lateral gradient calculated from DMS";
+CM_ SG_ 532 DMS_AYGradientAccuracy "Indicates the lateral gradient signal form DMS is accurate or not";
+CM_ SG_ 532 Livecounter_DMS_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 534 DMS_VehicleModeInfo "The signal indicates the vehicle mode.";
+CM_ SG_ 534 DMS_ErrorStatus "DMS error status";
+CM_ SG_ 534 DMS_ModeChangeInProcess "DMS Mode Change In Process";
+CM_ SG_ 534 DMS_IndividualMode_EPS "DMS feedbacks HU request which changing the mode in individual mode,Signal Initial=last value";
+CM_ SG_ 534 DMS_IndividualMode_ECAS "DMS feedbacks HU request which changing the mode in individual mode,Signal Initial=last value";
+CM_ SG_ 534 DMS_IndividualMode_HCU "DMS feedbacks HU request which changing the mode in individual mode,Signal Initial=last value";
+CM_ SG_ 534 DMS_MainMode "DMS feedbacks HU request which changing the main mode,Signal Initial=last value";
+CM_ SG_ 534 DMS_TargetVehicleMode "Indicates the target vehicle mode of DMS";
+CM_ SG_ 534 DMS_TipInfo "Indicates the tip information which should display  in the cluster.";
+CM_ SG_ 167 ESC_DriveMain2BackupState_2 "overall status for automated driving from ESP to iBooster";
+CM_ SG_ 164 ESC_usedChannel_2 "which channel is used";
+CM_ SG_ 164 ESC_BrakeFxCapability_2 "overall brake force performance capability";
+CM_ SG_ 164 ESC_BrakeFxAvailability_2 "availability to process external Fx request";
+CM_ SG_ 164 ESC_BrakeFxActual_2 "estimated current longitudinal brake force";
+CM_ SG_ 164 ESC_AccStabAvail_2 "longitudinal drive stability control availability";
+CM_ SG_ 164 ESC_DecStabAvail_2 "longitudinal deceleration stabilization availability for external request";
+CM_ SG_ 164 ESC_isBrkFctReqFxBrkDomin_2 "if brake system internal brake force request is dominant";
+CM_ SG_ 164 ESC_DecStabAvailForDriver_2 "longitudinal deceleration stabilization availability for driver";
+CM_ SG_ 164 ESC_DecStabActivity_2 "longitudinal deceleration stability control status";
+CM_ SG_ 164 ESC_AccStabActivity_2 "longitudinal drive stability control status";
+CM_ SG_ 164 ESC_YawRateStabAvailability_2 "lateral stability control availability";
+CM_ SG_ 164 ESC_YawRateStabActivity_2 "lateral stability control status";
+CM_ SG_ 164 ESC_ParkBrakeCapability_2 "overall park brake capability";
+CM_ SG_ 164 ESC_ParkBrakeAvailability_2 "availability of praking brake ";
+CM_ SG_ 164 ESC_ParkBrakeState_2 "the status of parking brake";
+CM_ SG_ 164 ESC_isBrkFctReqPrkBrkDomin_2 "if brake system internal park request is dominant";
+CM_ SG_ 164 ESC_DecStabCpblty_2 "longitudinal deceleration stabilization capability for external request";
+CM_ SG_ 164 ESC_DecStabCpbltyForDriver_2 "longitudinal deceleration stabilization capability for driver";
+CM_ SG_ 165 ESC_DrvReqTarFxBrakeAvail_2 "quality of °∞DrvReqTarFxBrake°±";
+CM_ SG_ 165 ESC_DrvReqTarFxBrake_2 "brake force requested by driver over brake pedal";
+CM_ SG_ 165 ESC_DrvPressBrakePedalAvail_2 "quality of °∞isDrvPressingBrakePedal°±";
+CM_ SG_ 165 ESC_isDrvPressingBrakePedal_2 "if driver applied brake pedal";
+CM_ SG_ 165 ESC_DrvReqFxBrkDomAvail_2 "quality of °∞isDrvReqFxBrakeDominant°±";
+CM_ SG_ 165 ESC_isDrvReqFxBrakeDominant_2 "if driver's brake request is dominant ";
+CM_ SG_ 165 ESC_DriverRequestParkBrake_2 "driver request to park brake";
+CM_ SG_ 165 ESC_isDrvReqParkBrkDominant_2 "if driver's park brake request is dominant ";
+CM_ SG_ 165 ESC_DrvReqParkBrakeAvail_2 "quality of °∞DriverRequestParkBrake°±";
+CM_ SG_ 165 ESC_BrkDiscTempStatus_2 "estimated brake disc thermal level status";
+CM_ SG_ 165 ESC_BrkDiscTempStatusAvail_2 "quatlity of °∞BrkDiscTempStatus°±";
+CM_ SG_ 174 eB_DriveBackup2MainState_2 "longitudinal deceleration stabilization availability for external request";
+CM_ SG_ 175 eB_usedChannel_2 "which channel is used";
+CM_ SG_ 175 eB_BrakeFxCapability_2 "overall brake force performance capability";
+CM_ SG_ 175 eB_BrakeFxAvailability_2 "availability to process external Fx request";
+CM_ SG_ 175 eB_BrakeFxActual_2 "estimated current longitudinal brake force";
+CM_ SG_ 175 eB_DecStabAvail_2 "longitudinal deceleration stabilization availability for external request";
+CM_ SG_ 175 eB_isBrkFctReqFxBrkDomin_2 "if brake system internal brake force request is dominant";
+CM_ SG_ 175 eB_DecStabAvailForDriver_2 "longitudinal deceleration stabilization availability for driver";
+CM_ SG_ 175 eB_DecStabActivity_2 "longitudinal deceleration stability control status";
+CM_ SG_ 175 eB_DecStabCpblty_2 "longitudinal deceleration stabilization capability for external request";
+CM_ SG_ 175 eB_DecStabCpbltyForDriver_2 "longitudinal deceleration stabilization capability for driver";
+CM_ SG_ 171 eB_DrvReqTarFxBrakeAvail_2 "quality of °∞DrvReqTarFxBrake°±";
+CM_ SG_ 171 eB_DrvReqTarFxBrake_2 "brake force requested by driver over brake pedal";
+CM_ SG_ 171 eB_DrvPressBrakePedalAvail_2 "quality of °∞isDrvPressingBrakePedal°±";
+CM_ SG_ 171 eB_isDrvPressingBrakePedal_2 "if driver applied brake pedal";
+CM_ SG_ 171 eB_DrvReqFxBrkDomAvail_2 "quality of °∞isDrvReqFxBrakeDominant°±";
+CM_ SG_ 171 eB_isDrvReqFxBrakeDominant_2 "if driver's brake request is dominant ";
+CM_ SG_ 171 eB_BrakeFxTarget "Target brake force request from superior system";
+CM_ SG_ 311 Checksum_ESC_4_2 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 311 ESC_TorqueReq_VMC_2 "This signal indicates the target torque request (wheel side vehcle level)";
+CM_ SG_ 311 ESC_TorqueReqSt_VMC_2 "This signal indicates the status of signal ESC_TorqueReq_VMC.";
+CM_ SG_ 311 ESC_TargetGearReq_VMC_2 "ESC request to change the lever  position.";
+CM_ SG_ 311 LiveCounter_ESC_4_2 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 576 PositionLightSt_RL "The signal indicates the status of rear left position light.";
+CM_ SG_ 576 PositionLightSt_RR "The signal indicates the status of rear right position light.";
+CM_ SG_ 576 FogLightSt_Rear "The signal is indicates the status of rear fog indicator.";
+CM_ SG_ 576 FogLightSt_RL "The signal is indicates the status of rear left fog indicator.";
+CM_ SG_ 576 FogLightSt_RR "This signal shows rear fog light light fault status. ";
+CM_ SG_ 576 FoglightFaultSt_Rear "This signal shows rear fog light light fault status. ";
+CM_ SG_ 576 TurnLightFaultSt_RL "The signal indicates the fault status of rear left turn light.";
+CM_ SG_ 576 TurnLightFaultSt_RR "The signal indicates the fault status of rear right turn light.";
+CM_ SG_ 576 WiperSt_Rear "This signal shows rear wiper status. ";
+CM_ SG_ 576 PositionLightFaultSt_Rear "This signal shows rear position light light fault status. ";
+CM_ SG_ 576 BrakeLightSt_RL "indicates the rear left brake light status";
+CM_ SG_ 576 BrakeLightSt_RR "indicates the rear right brake light status";
+CM_ SG_ 688 GW_IgnitionOffTime "Indicates the time between last KL15 off and this KL15 on. If the counter is overflow, it still sends 4093. The counter will be reset when KL15 Off";
+CM_ SG_ 688 GW_RemoteVehicleMode "The signal indicates the vehicle is in remote  mode or not";
+CM_ SG_ 688 GW_OTAMode "The signal indicates the vehicle is in OTA  mode or not";
+CM_ SG_ 192 Checksum_ABS_1 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 192 WheelSpeed_FL "This signal is front left wheel speed which sent by ABS without filtering. ";
+CM_ SG_ 192 WheelSpeed_FR "This signal is front right wheel speed which sent by ABS without filtering.";
+CM_ SG_ 192 VehiclSpeed "The signal describes the raw vehicle speed calculated by ABS. The ABS calculates the vehicle speed based on the raw wheel speed signals from the wheel speed sensors. The vehicle speed output could be the average of the wheel speeds of the driven axle.";
+CM_ SG_ 192 LiveCounter_ABS_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 194 Checksum_ABS_2 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 194 WheelSpeed_RL "This signal is rear left wheel speed which sent by ABS without filtering.";
+CM_ SG_ 194 WheelSpeed_RR "This signal is rear right wheel speed which sent by ABS without filtering.";
+CM_ SG_ 194 MasterCylinderPressure "The signal indicates the actual pressure in the master cylinder.";
+CM_ SG_ 194 LiveCounter_ABS_2 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+CM_ SG_ 308 Checksum_ESC_3_1 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 308 YawRate "This signal indicates the yaw rate data (real data; sign depends on mounting position)
+anticlockwise=positive, clockwise=negative";
+CM_ SG_ 308 YRSSt "This signal indicates the status of yaw rate sensor";
+CM_ SG_ 308 Acceleration_X "The signal is LongitudinalAcceleration(exact value).Positive value represents  forward,  negative value represents backward. ";
+CM_ SG_ 308 Acceleration_Y "The signal is Lateral Acceleration(exact value).Positive value represents right side of vehicle, negative value represents  left side of vehicle. ";
+CM_ SG_ 308 ErrorSt_YRS "This signal indicates if the YRS is error or not.";
+CM_ SG_ 308 LiveCounter_ESC_3_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 °≠15, 0, 1 °≠";
+BA_DEF_ BO_  "TpJ1939VarDlc" ENUM  "No","Yes";
+BA_DEF_  "ProtocolType" STRING ;
+BA_DEF_ BU_  "NmAsrCanMsgReducedTime" INT 0 65535;
+BA_DEF_ SG_  "GenSigStartValue" INT 0 1000000000;
+BA_DEF_ BO_  "NmAsrMessage" ENUM  "no","yes";
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 50000;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 50000;
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+BA_DEF_ BO_  "CanTpSTmin" INT 0 0;
+BA_DEF_ BO_  "CanTpBs" INT 0 255;
+BA_DEF_ BO_  "CanTpFcFrameId" HEX 0 2147483647;
+BA_DEF_ BO_  "DiagUUDTResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 50000;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 65535;
+BA_DEF_ BU_  "NmAsrNode" ENUM  "no","yes";
+BA_DEF_ BU_  "NmAsrNodeIdentifier" HEX 0 255;
+BA_DEF_  "NmAsrBaseAddress" HEX 0 2047;
+BA_DEF_  "NmAsrMessageCount" INT 1 256;
+BA_DEF_  "NmType" STRING ;
+BA_DEF_  "NmAsrCanMsgCycleOffset" INT 0 65535;
+BA_DEF_  "Baudrate" INT 0 1000000;
+BA_DEF_  "Manufacturer" STRING ;
+BA_DEF_  "NmAsrWaitBusSleepTime" INT 0 65535;
+BA_DEF_  "NmAsrTimeoutTime" INT 0 65535;
+BA_DEF_  "NmAsrRepeatMessageTime" INT 0 65535;
+BA_DEF_  "NmAsrCanMsgCycleTime" INT 0 65535;
+BA_DEF_  "VersionNumber" INT 0 99;
+BA_DEF_  "VersionYear" INT 1 99;
+BA_DEF_  "VersionMonth" INT 1 12;
+BA_DEF_  "VersionDay" INT 1 31;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 50000;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","not_used","not_used","not_used","not_used","Cyclic","not_used","IfActive","NoMsgSendType","Spontaneous","CyclicAndSpontaneous","NoMsgSendType";
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "BusType" STRING ;
+BA_DEF_ BO_  "FAWChineseMsgName" STRING ;
+BA_DEF_ SG_  "GenSigInvalidValue" INT 0 0;
+BA_DEF_ SG_  "GenSigStartRemark" STRING ;
+BA_DEF_ SG_  "GenSigInvalidRemark" STRING ;
+BA_DEF_ SG_  "FAWChineseSigName" STRING ;
+BA_DEF_ SG_  "FAWRouteSigName" STRING ;
+BA_DEF_ SG_  "GenSigEvent" STRING ;
+BA_DEF_ SG_  "GenSigExtEvent" STRING ;
+BA_DEF_ SG_  "SystemSignalLongSymbol" STRING ;
+BA_DEF_REL_ BU_SG_REL_  "GenSigTimeoutTime" INT 0 5000;
+BA_DEF_REL_ BU_SG_REL_  "GenSigFirstTimeoutTime" INT 0 50000;
+BA_DEF_DEF_  "TpJ1939VarDlc" "No";
+BA_DEF_DEF_  "ProtocolType" "*";
+BA_DEF_DEF_  "NmAsrCanMsgReducedTime" 50;
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "NmAsrMessage" "no";
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_DEF_DEF_  "DiagState" "No";
+BA_DEF_DEF_  "CanTpSTmin" 1;
+BA_DEF_DEF_  "CanTpBs" 0;
+BA_DEF_DEF_  "CanTpFcFrameId" 2147483647;
+BA_DEF_DEF_  "DiagUUDTResponse" "No";
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "NmAsrNode" "no";
+BA_DEF_DEF_  "NmAsrNodeIdentifier" 0;
+BA_DEF_DEF_  "NmAsrBaseAddress" 1280;
+BA_DEF_DEF_  "NmAsrMessageCount" 128;
+BA_DEF_DEF_  "NmType" "NmAsr";
+BA_DEF_DEF_  "NmAsrCanMsgCycleOffset" 0;
+BA_DEF_DEF_  "Baudrate" 500000;
+BA_DEF_DEF_  "Manufacturer" "FAW";
+BA_DEF_DEF_  "NmAsrWaitBusSleepTime" 750;
+BA_DEF_DEF_  "NmAsrTimeoutTime" 1000;
+BA_DEF_DEF_  "NmAsrRepeatMessageTime" 400;
+BA_DEF_DEF_  "NmAsrCanMsgCycleTime" 100;
+BA_DEF_DEF_  "VersionNumber" 0;
+BA_DEF_DEF_  "VersionYear" 1;
+BA_DEF_DEF_  "VersionMonth" 1;
+BA_DEF_DEF_  "VersionDay" 1;
+BA_DEF_DEF_  "GenSigSendType" "NoSigSendType";
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenMsgSendType" "NoMsgSendType";
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_  "FAWChineseMsgName" "";
+BA_DEF_DEF_  "GenSigInvalidValue" 0;
+BA_DEF_DEF_  "GenSigStartRemark" "";
+BA_DEF_DEF_  "GenSigInvalidRemark" "";
+BA_DEF_DEF_  "FAWChineseSigName" "";
+BA_DEF_DEF_  "FAWRouteSigName" "";
+BA_DEF_DEF_  "GenSigEvent" "";
+BA_DEF_DEF_  "GenSigExtEvent" "";
+BA_DEF_DEF_REL_ "GenSigTimeoutTime" 0;
+BA_DEF_DEF_REL_ "GenSigFirstTimeoutTime" 0;
+BA_DEF_DEF_  "SystemSignalLongSymbol" "";
+BA_ "VersionYear" 20;
+BA_ "VersionMonth" 4;
+BA_ "VersionDay" 17;
+BA_ "VersionNumber" 2.4;
+BA_ "DBName" "CAN3_FAW_E115_Chassis2_CANDBC";
+BA_ "GenMsgSendType" BO_ 146 0;
+BA_ "GenMsgCycleTime" BO_ 146 10;
+BA_ "GenMsgSendType" BO_ 264 0;
+BA_ "GenMsgCycleTime" BO_ 264 20;
+BA_ "GenMsgSendType" BO_ 147 0;
+BA_ "GenMsgCycleTime" BO_ 147 10;
+BA_ "GenMsgSendType" BO_ 151 0;
+BA_ "GenMsgCycleTime" BO_ 151 10;
+BA_ "GenMsgSendType" BO_ 152 0;
+BA_ "GenMsgCycleTime" BO_ 152 10;
+BA_ "GenMsgSendType" BO_ 290 0;
+BA_ "GenMsgCycleTime" BO_ 290 20;
+BA_ "GenMsgSendType" BO_ 288 0;
+BA_ "GenMsgCycleTime" BO_ 288 20;
+BA_ "GenMsgSendType" BO_ 656 0;
+BA_ "GenMsgCycleTime" BO_ 656 100;
+BA_ "GenMsgCycleTime" BO_ 512 100;
+BA_ "GenMsgSendType" BO_ 512 0;
+BA_ "GenMsgCycleTime" BO_ 586 100;
+BA_ "GenMsgSendType" BO_ 586 0;
+BA_ "GenMsgCycleTime" BO_ 588 100;
+BA_ "GenMsgSendType" BO_ 588 0;
+BA_ "GenMsgCycleTime" BO_ 590 100;
+BA_ "GenMsgSendType" BO_ 590 0;
+BA_ "GenMsgCycleTime" BO_ 591 100;
+BA_ "GenMsgSendType" BO_ 591 0;
+BA_ "GenMsgSendType" BO_ 418 0;
+BA_ "GenMsgCycleTime" BO_ 418 50;
+BA_ "GenMsgCycleTime" BO_ 578 100;
+BA_ "GenMsgSendType" BO_ 578 0;
+BA_ "GenMsgSendType" BO_ 546 0;
+BA_ "GenMsgCycleTime" BO_ 546 100;
+BA_ "GenMsgCycleTime" BO_ 560 100;
+BA_ "GenMsgSendType" BO_ 560 0;
+BA_ "GenMsgCycleTime" BO_ 562 100;
+BA_ "GenMsgSendType" BO_ 562 0;
+BA_ "GenMsgCycleTime" BO_ 564 100;
+BA_ "GenMsgSendType" BO_ 564 0;
+BA_ "GenMsgSendType" BO_ 571 0;
+BA_ "GenMsgCycleTime" BO_ 571 100;
+BA_ "GenMsgSendType" BO_ 572 0;
+BA_ "GenMsgCycleTime" BO_ 572 100;
+BA_ "GenMsgSendType" BO_ 282 0;
+BA_ "GenMsgCycleTime" BO_ 282 20;
+BA_ "GenMsgSendType" BO_ 283 0;
+BA_ "GenMsgCycleTime" BO_ 283 20;
+BA_ "GenMsgSendType" BO_ 256 0;
+BA_ "GenMsgCycleTime" BO_ 256 20;
+BA_ "GenMsgSendType" BO_ 278 0;
+BA_ "GenMsgCycleTime" BO_ 278 20;
+BA_ "GenMsgSendType" BO_ 202 0;
+BA_ "GenMsgCycleTime" BO_ 202 10;
+BA_ "GenMsgSendType" BO_ 203 0;
+BA_ "GenMsgCycleTime" BO_ 203 10;
+BA_ "GenMsgSendType" BO_ 315 0;
+BA_ "GenMsgCycleTime" BO_ 315 20;
+BA_ "GenMsgSendType" BO_ 307 0;
+BA_ "GenMsgCycleTime" BO_ 307 20;
+BA_ "GenMsgSendType" BO_ 309 0;
+BA_ "GenMsgCycleTime" BO_ 309 20;
+BA_ "GenMsgSendType" BO_ 313 0;
+BA_ "GenMsgCycleTime" BO_ 313 20;
+BA_ "GenMsgSendType" BO_ 321 0;
+BA_ "GenMsgCycleTime" BO_ 321 20;
+BA_ "GenMsgSendType" BO_ 274 0;
+BA_ "GenMsgCycleTime" BO_ 274 20;
+BA_ "GenMsgSendType" BO_ 279 0;
+BA_ "GenMsgCycleTime" BO_ 279 20;
+BA_ "GenMsgSendType" BO_ 341 0;
+BA_ "GenMsgCycleTime" BO_ 341 20;
+BA_ "GenMsgSendType" BO_ 342 0;
+BA_ "GenMsgCycleTime" BO_ 342 20;
+BA_ "GenMsgSendType" BO_ 209 0;
+BA_ "GenMsgCycleTime" BO_ 209 10;
+BA_ "GenMsgSendType" BO_ 150 0;
+BA_ "GenMsgCycleTime" BO_ 150 10;
+BA_ "GenMsgSendType" BO_ 665 0;
+BA_ "GenMsgCycleTime" BO_ 665 20;
+BA_ "GenMsgSendType" BO_ 316 0;
+BA_ "GenMsgCycleTime" BO_ 316 20;
+BA_ "GenMsgSendType" BO_ 432 0;
+BA_ "GenMsgCycleTime" BO_ 432 50;
+BA_ "GenMsgSendType" BO_ 529 0;
+BA_ "GenMsgCycleTime" BO_ 529 100;
+BA_ "GenMsgCycleTime" BO_ 532 100;
+BA_ "GenMsgSendType" BO_ 532 0;
+BA_ "GenMsgSendType" BO_ 534 0;
+BA_ "GenMsgCycleTime" BO_ 534 100;
+BA_ "GenMsgSendType" BO_ 167 0;
+BA_ "GenMsgCycleTime" BO_ 167 10;
+BA_ "GenMsgSendType" BO_ 164 0;
+BA_ "GenMsgCycleTime" BO_ 164 10;
+BA_ "GenMsgSendType" BO_ 165 0;
+BA_ "GenMsgCycleTime" BO_ 165 10;
+BA_ "GenMsgSendType" BO_ 174 0;
+BA_ "GenMsgCycleTime" BO_ 174 10;
+BA_ "GenMsgSendType" BO_ 175 0;
+BA_ "GenMsgCycleTime" BO_ 175 10;
+BA_ "GenMsgSendType" BO_ 171 0;
+BA_ "GenMsgCycleTime" BO_ 171 10;
+BA_ "GenMsgSendType" BO_ 311 0;
+BA_ "GenMsgCycleTime" BO_ 311 20;
+BA_ "GenMsgSendType" BO_ 576 0;
+BA_ "GenMsgCycleTime" BO_ 576 100;
+BA_ "GenMsgSendType" BO_ 688 0;
+BA_ "GenMsgCycleTime" BO_ 688 100;
+BA_ "GenMsgSendType" BO_ 192 0;
+BA_ "GenMsgCycleTime" BO_ 192 10;
+BA_ "GenMsgSendType" BO_ 194 0;
+BA_ "GenMsgCycleTime" BO_ 194 10;
+BA_ "GenMsgSendType" BO_ 308 0;
+BA_ "GenMsgCycleTime" BO_ 308 20;
+BA_ "GenSigStartRemark" SG_ 146 Checksum_HCU_2_2 "V";
+BA_ "GenSigInvalidRemark" SG_ 146 HCU_AccelerationPedalPosition "250";
+BA_ "GenSigStartRemark" SG_ 146 HCU_AccelerationPedalPosition "250";
+BA_ "GenSigInvalidValue" SG_ 146 HCU_AccelerationPedalPosition 255;
+BA_ "GenSigStartValue" SG_ 146 HCU_AccelerationPedalPosition 254;
+BA_ "GenSigInvalidRemark" SG_ 146 HCU_CalcAccelerationPedalPositio "250";
+BA_ "GenSigStartRemark" SG_ 146 HCU_CalcAccelerationPedalPositio "250";
+BA_ "GenSigInvalidValue" SG_ 146 HCU_CalcAccelerationPedalPositio 255;
+BA_ "GenSigStartValue" SG_ 146 HCU_CalcAccelerationPedalPositio 254;
+BA_ "SystemSignalLongSymbol" SG_ 146 HCU_CalcAccelerationPedalPositio "HCU_CalcAccelerationPedalPosition";
+BA_ "GenSigStartRemark" SG_ 264 Checksum_HCU_2_4 "V";
+BA_ "GenSigInvalidRemark" SG_ 264 HCU_GradientAccelerationPedal "O";
+BA_ "GenSigStartRemark" SG_ 264 HCU_GradientAccelerationPedal "O";
+BA_ "GenSigInvalidValue" SG_ 264 HCU_GradientAccelerationPedal 255;
+BA_ "GenSigStartValue" SG_ 264 HCU_GradientAccelerationPedal 254;
+BA_ "GenSigStartRemark" SG_ 147 Checksum_HCU_2_7 "V";
+BA_ "GenSigInvalidRemark" SG_ 147 HCU_IndicatedDriverTorq_FrontAxl "O";
+BA_ "GenSigStartRemark" SG_ 147 HCU_IndicatedDriverTorq_FrontAxl "O";
+BA_ "GenSigInvalidValue" SG_ 147 HCU_IndicatedDriverTorq_FrontAxl 4095;
+BA_ "GenSigStartValue" SG_ 147 HCU_IndicatedDriverTorq_FrontAxl 4094;
+BA_ "SystemSignalLongSymbol" SG_ 147 HCU_IndicatedDriverTorq_FrontAxl "HCU_IndicatedDriverTorq_FrontAxle";
+BA_ "GenSigInvalidRemark" SG_ 147 HCU_IndicatedDriverTorq_RearAxle "O";
+BA_ "GenSigStartRemark" SG_ 147 HCU_IndicatedDriverTorq_RearAxle "O";
+BA_ "GenSigInvalidValue" SG_ 147 HCU_IndicatedDriverTorq_RearAxle 4095;
+BA_ "GenSigStartValue" SG_ 147 HCU_IndicatedDriverTorq_RearAxle 4094;
+BA_ "GenSigInvalidValue" SG_ 147 HCU_WorkingMode 7;
+BA_ "GenSigInvalidRemark" SG_ 151 HCU_MCU1TMSpeed "60000";
+BA_ "GenSigStartRemark" SG_ 151 HCU_MCU1TMSpeed "60000";
+BA_ "GenSigInvalidValue" SG_ 151 HCU_MCU1TMSpeed 65535;
+BA_ "GenSigStartValue" SG_ 151 HCU_MCU1TMSpeed 65534;
+BA_ "GenSigInvalidRemark" SG_ 151 HCU_MCU1ActTMTorque "16000";
+BA_ "GenSigStartRemark" SG_ 151 HCU_MCU1ActTMTorque "16000";
+BA_ "GenSigInvalidValue" SG_ 151 HCU_MCU1ActTMTorque 16383;
+BA_ "GenSigStartValue" SG_ 151 HCU_MCU1ActTMTorque 16382;
+BA_ "GenSigInvalidRemark" SG_ 151 HCU_MCU1TMMAMTorque "8000";
+BA_ "GenSigStartRemark" SG_ 151 HCU_MCU1TMMAMTorque "8000";
+BA_ "GenSigInvalidValue" SG_ 151 HCU_MCU1TMMAMTorque 8191;
+BA_ "GenSigStartValue" SG_ 151 HCU_MCU1TMMAMTorque 8190;
+BA_ "GenSigInvalidRemark" SG_ 151 HCU_MCU1TMMAGTorque "8000";
+BA_ "GenSigStartRemark" SG_ 151 HCU_MCU1TMMAGTorque "8000";
+BA_ "GenSigInvalidValue" SG_ 151 HCU_MCU1TMMAGTorque 8191;
+BA_ "GenSigStartValue" SG_ 151 HCU_MCU1TMMAGTorque 8190;
+BA_ "GenSigInvalidRemark" SG_ 152 HCU_MCU2TMSpeed "60000";
+BA_ "GenSigStartRemark" SG_ 152 HCU_MCU2TMSpeed "60000";
+BA_ "GenSigInvalidValue" SG_ 152 HCU_MCU2TMSpeed 65535;
+BA_ "GenSigStartValue" SG_ 152 HCU_MCU2TMSpeed 65534;
+BA_ "GenSigInvalidRemark" SG_ 152 HCU_MCU2ActTMTorque "16000";
+BA_ "GenSigStartRemark" SG_ 152 HCU_MCU2ActTMTorque "16000";
+BA_ "GenSigInvalidValue" SG_ 152 HCU_MCU2ActTMTorque 16383;
+BA_ "GenSigStartValue" SG_ 152 HCU_MCU2ActTMTorque 16382;
+BA_ "GenSigInvalidRemark" SG_ 152 HCU_MCU2TMMAMTorque "8000";
+BA_ "GenSigStartRemark" SG_ 152 HCU_MCU2TMMAMTorque "8000";
+BA_ "GenSigInvalidValue" SG_ 152 HCU_MCU2TMMAMTorque 8191;
+BA_ "GenSigStartValue" SG_ 152 HCU_MCU2TMMAMTorque 8190;
+BA_ "GenSigInvalidRemark" SG_ 152 HCU_MCU2TMMAGTorque "8000";
+BA_ "GenSigStartRemark" SG_ 152 HCU_MCU2TMMAGTorque "8000";
+BA_ "GenSigInvalidValue" SG_ 152 HCU_MCU2TMMAGTorque 8191;
+BA_ "GenSigStartValue" SG_ 152 HCU_MCU2TMMAGTorque 8190;
+BA_ "GenSigStartRemark" SG_ 290 Checksum_HCU_2_12 "V";
+BA_ "GenSigInvalidValue" SG_ 290 HCU_LeverInfo 7;
+BA_ "GenSigStartValue" SG_ 290 HCU_LeverInfo 5;
+BA_ "GenSigStartRemark" SG_ 288 Checksum_EGSM_1 "V";
+BA_ "GenSigInvalidRemark" SG_ 656 IndicationSpeed_IC "O";
+BA_ "GenSigStartRemark" SG_ 656 IndicationSpeed_IC "O";
+BA_ "GenSigInvalidValue" SG_ 656 IndicationSpeed_IC 255;
+BA_ "GenSigStartValue" SG_ 656 IndicationSpeed_IC 254;
+BA_ "GenSigInvalidRemark" SG_ 656 OdometerValue "O";
+BA_ "GenSigStartRemark" SG_ 656 OdometerValue "L";
+BA_ "GenSigInvalidValue" SG_ 656 OdometerValue 33554431;
+BA_ "GenSigStartRemark" SG_ 512 Checksum_ACU_1 "V";
+BA_ "GenSigEvent" SG_ 512 CrashInfo "Y";
+BA_ "GenSigSendType" SG_ 512 CrashInfo 1;
+BA_ "GenSigEvent" SG_ 512 SeatBeltSt_Driver "Y";
+BA_ "GenSigSendType" SG_ 512 SeatBeltSt_Driver 1;
+BA_ "GenSigStartRemark" SG_ 418 Checksum_PEPS_DMH "V";
+BA_ "GenSigEvent" SG_ 578 LuggageDoorSt "Y";
+BA_ "GenSigSendType" SG_ 578 LuggageDoorSt 1;
+BA_ "GenSigInvalidRemark" SG_ 546 AmbientTemp "O";
+BA_ "GenSigStartRemark" SG_ 546 AmbientTemp "O";
+BA_ "GenSigInvalidValue" SG_ 546 AmbientTemp 255;
+BA_ "GenSigStartValue" SG_ 546 AmbientTemp 254;
+BA_ "GenSigEvent" SG_ 560 TurningSt_Left "Y";
+BA_ "GenSigSendType" SG_ 560 TurningSt_Left 1;
+BA_ "GenSigEvent" SG_ 560 TurningSt_right "Y";
+BA_ "GenSigSendType" SG_ 560 TurningSt_right 1;
+BA_ "GenSigInvalidValue" SG_ 562 PowerMode 15;
+BA_ "GenSigEvent" SG_ 562 EntryLoadingMode_RKECmd "Y";
+BA_ "GenSigSendType" SG_ 562 EntryLoadingMode_RKECmd 1;
+BA_ "GenSigEvent" SG_ 562 PEPS_RKEEngineCmd "Y";
+BA_ "GenSigSendType" SG_ 562 PEPS_RKEEngineCmd 1;
+BA_ "GenSigEvent" SG_ 564 EngineHoodSt "Y";
+BA_ "GenSigSendType" SG_ 564 EngineHoodSt 1;
+BA_ "GenSigInvalidRemark" SG_ 571 RainIntensity "10";
+BA_ "GenSigStartRemark" SG_ 571 RainIntensity "10";
+BA_ "GenSigInvalidValue" SG_ 571 RainIntensity 15;
+BA_ "GenSigStartValue" SG_ 571 RainIntensity 14;
+BA_ "GenSigInvalidRemark" SG_ 571 Brightness_L "O";
+BA_ "GenSigStartRemark" SG_ 571 Brightness_L "O";
+BA_ "GenSigInvalidValue" SG_ 571 Brightness_L 255;
+BA_ "GenSigStartValue" SG_ 571 Brightness_L 254;
+BA_ "GenSigInvalidRemark" SG_ 571 Brightness_H "O";
+BA_ "GenSigStartRemark" SG_ 571 Brightness_H "O";
+BA_ "GenSigInvalidValue" SG_ 571 Brightness_H 1023;
+BA_ "GenSigStartValue" SG_ 571 Brightness_H 1022;
+BA_ "GenSigInvalidRemark" SG_ 572 TyrePressureValue_FL "O";
+BA_ "GenSigStartRemark" SG_ 572 TyrePressureValue_FL "O";
+BA_ "GenSigInvalidValue" SG_ 572 TyrePressureValue_FL 255;
+BA_ "GenSigStartValue" SG_ 572 TyrePressureValue_FL 254;
+BA_ "GenSigInvalidRemark" SG_ 572 TyrePressureValue_FR "O";
+BA_ "GenSigStartRemark" SG_ 572 TyrePressureValue_FR "O";
+BA_ "GenSigInvalidValue" SG_ 572 TyrePressureValue_FR 255;
+BA_ "GenSigStartValue" SG_ 572 TyrePressureValue_FR 254;
+BA_ "GenSigInvalidRemark" SG_ 572 TyrePressureValue_RL "O";
+BA_ "GenSigStartRemark" SG_ 572 TyrePressureValue_RL "O";
+BA_ "GenSigInvalidValue" SG_ 572 TyrePressureValue_RL 255;
+BA_ "GenSigStartValue" SG_ 572 TyrePressureValue_RL 254;
+BA_ "GenSigInvalidRemark" SG_ 572 TyrePressureValue_RR "O";
+BA_ "GenSigStartRemark" SG_ 572 TyrePressureValue_RR "O";
+BA_ "GenSigInvalidValue" SG_ 572 TyrePressureValue_RR 255;
+BA_ "GenSigStartValue" SG_ 572 TyrePressureValue_RR 254;
+BA_ "GenSigStartRemark" SG_ 282 Checksum_HAD_3 "V";
+BA_ "GenSigInvalidRemark" SG_ 282 HAD_SpeedChangeRequest_L3 "2042";
+BA_ "GenSigStartRemark" SG_ 282 HAD_SpeedChangeRequest_L3 "2042";
+BA_ "GenSigInvalidValue" SG_ 282 HAD_SpeedChangeRequest_L3 2047;
+BA_ "GenSigStartValue" SG_ 282 HAD_SpeedChangeRequest_L3 2046;
+BA_ "GenSigInvalidRemark" SG_ 282 HAD_MaxAccGrad_L3 "127";
+BA_ "GenSigStartRemark" SG_ 282 HAD_MaxAccGrad_L3 "127";
+BA_ "GenSigInvalidValue" SG_ 282 HAD_MaxAccGrad_L3 255;
+BA_ "GenSigStartValue" SG_ 282 HAD_MaxAccGrad_L3 254;
+BA_ "GenSigInvalidRemark" SG_ 282 HAD_MinAccGrad_L3 "127";
+BA_ "GenSigStartRemark" SG_ 282 HAD_MinAccGrad_L3 "127";
+BA_ "GenSigInvalidValue" SG_ 282 HAD_MinAccGrad_L3 255;
+BA_ "GenSigStartValue" SG_ 282 HAD_MinAccGrad_L3 254;
+BA_ "GenSigInvalidRemark" SG_ 282 HAD_MaxComfBand_L3 "90";
+BA_ "GenSigStartRemark" SG_ 282 HAD_MaxComfBand_L3 "90";
+BA_ "GenSigInvalidValue" SG_ 282 HAD_MaxComfBand_L3 255;
+BA_ "GenSigStartValue" SG_ 282 HAD_MaxComfBand_L3 254;
+BA_ "GenSigInvalidRemark" SG_ 282 HAD_MinComfBand_L3 "90";
+BA_ "GenSigStartRemark" SG_ 282 HAD_MinComfBand_L3 "90";
+BA_ "GenSigInvalidValue" SG_ 282 HAD_MinComfBand_L3 255;
+BA_ "GenSigStartValue" SG_ 282 HAD_MinComfBand_L3 254;
+BA_ "GenSigStartRemark" SG_ 283 Checksum_HAD_4 "V";
+BA_ "GenSigStartRemark" SG_ 256 Checksum_ADV_2 "V";
+BA_ "GenSigStartRemark" SG_ 256 ADV_WorkingSt_APA "L";
+BA_ "GenSigStartRemark" SG_ 256 ADV_WorkingSt_RPA "L";
+BA_ "GenSigStartRemark" SG_ 256 ADV_WorkingSt_AVP "L";
+BA_ "GenSigInvalidRemark" SG_ 256 ADV_SteeringWheelAngleRequest "O";
+BA_ "GenSigInvalidValue" SG_ 256 ADV_SteeringWheelAngleRequest 32767;
+BA_ "SystemSignalLongSymbol" SG_ 256 ADV_SteeringWheelAngleSignReques "ADV_SteeringWheelAngleSignRequest";
+BA_ "SystemSignalLongSymbol" SG_ 256 ADV_SteeringWheelAngleControlReq "ADV_SteeringWheelAngleControlRequest";
+BA_ "GenSigStartRemark" SG_ 278 Checksum_HAD_6 "V";
+BA_ "GenSigInvalidRemark" SG_ 278 HAD_TorqueRequest "O";
+BA_ "GenSigStartRemark" SG_ 278 HAD_TorqueRequest "O";
+BA_ "GenSigInvalidValue" SG_ 278 HAD_TorqueRequest 1023;
+BA_ "GenSigStartValue" SG_ 278 HAD_TorqueRequest 1022;
+BA_ "GenSigStartRemark" SG_ 278 HAD_WorkingSt_LKA "L";
+BA_ "GenSigStartRemark" SG_ 278 HAD_WorkingSt_SACC "L";
+BA_ "GenSigStartRemark" SG_ 278 HAD_WorkingSt_HWP "L";
+BA_ "GenSigStartRemark" SG_ 278 HAD_WorkingSt_TJP "L";
+BA_ "GenSigStartRemark" SG_ 202 Checksum_eBooster_ABS_1 "V";
+BA_ "GenSigInvalidRemark" SG_ 202 eB_WheelSpeed_FL "O";
+BA_ "GenSigStartRemark" SG_ 202 eB_WheelSpeed_FL "O";
+BA_ "GenSigInvalidValue" SG_ 202 eB_WheelSpeed_FL 32767;
+BA_ "GenSigStartValue" SG_ 202 eB_WheelSpeed_FL 32766;
+BA_ "GenSigInvalidRemark" SG_ 202 eB_WheelSpeed_FR "O";
+BA_ "GenSigStartRemark" SG_ 202 eB_WheelSpeed_FR "O";
+BA_ "GenSigInvalidValue" SG_ 202 eB_WheelSpeed_FR 32767;
+BA_ "GenSigStartValue" SG_ 202 eB_WheelSpeed_FR 32766;
+BA_ "GenSigInvalidRemark" SG_ 202 eB_VehiclSpeed "O";
+BA_ "GenSigStartRemark" SG_ 202 eB_VehiclSpeed "O";
+BA_ "GenSigInvalidValue" SG_ 202 eB_VehiclSpeed 32767;
+BA_ "GenSigStartValue" SG_ 202 eB_VehiclSpeed 32766;
+BA_ "GenSigInvalidValue" SG_ 202 eB_VehiclSpeed_Q 3;
+BA_ "GenSigInvalidValue" SG_ 202 eB_DrivingDirection 3;
+BA_ "GenSigStartRemark" SG_ 203 Checksum_eBooster_ABS_2 "V";
+BA_ "GenSigInvalidRemark" SG_ 203 eB_WheelSpeed_RL "O";
+BA_ "GenSigStartRemark" SG_ 203 eB_WheelSpeed_RL "O";
+BA_ "GenSigInvalidValue" SG_ 203 eB_WheelSpeed_RL 32767;
+BA_ "GenSigStartValue" SG_ 203 eB_WheelSpeed_RL 32766;
+BA_ "GenSigInvalidRemark" SG_ 203 eB_WheelSpeed_RR "O";
+BA_ "GenSigStartRemark" SG_ 203 eB_WheelSpeed_RR "O";
+BA_ "GenSigInvalidValue" SG_ 203 eB_WheelSpeed_RR 32767;
+BA_ "GenSigStartValue" SG_ 203 eB_WheelSpeed_RR 32766;
+BA_ "GenSigStartRemark" SG_ 315 Checksum_eBooster_ABS_3 "V";
+BA_ "GenSigInvalidRemark" SG_ 315 eB_WheelPulse_FL "O";
+BA_ "GenSigStartRemark" SG_ 315 eB_WheelPulse_FL "O";
+BA_ "GenSigInvalidValue" SG_ 315 eB_WheelPulse_FL 255;
+BA_ "GenSigStartValue" SG_ 315 eB_WheelPulse_FL 254;
+BA_ "GenSigInvalidRemark" SG_ 315 eB_WheelPulse_FR "O";
+BA_ "GenSigStartRemark" SG_ 315 eB_WheelPulse_FR "O";
+BA_ "GenSigInvalidValue" SG_ 315 eB_WheelPulse_FR 255;
+BA_ "GenSigStartValue" SG_ 315 eB_WheelPulse_FR 254;
+BA_ "GenSigInvalidRemark" SG_ 315 eB_WheelPulse_RL "O";
+BA_ "GenSigStartRemark" SG_ 315 eB_WheelPulse_RL "O";
+BA_ "GenSigInvalidValue" SG_ 315 eB_WheelPulse_RL 255;
+BA_ "GenSigStartValue" SG_ 315 eB_WheelPulse_RL 254;
+BA_ "GenSigInvalidRemark" SG_ 315 eB_WheelPulse_RR "O";
+BA_ "GenSigStartRemark" SG_ 315 eB_WheelPulse_RR "O";
+BA_ "GenSigInvalidValue" SG_ 315 eB_WheelPulse_RR 255;
+BA_ "GenSigStartValue" SG_ 315 eB_WheelPulse_RR 254;
+BA_ "GenSigInvalidValue" SG_ 315 eB_WheelSpeedDirection_FL 3;
+BA_ "GenSigInvalidValue" SG_ 315 eB_WheelSpeedDirection_FR 3;
+BA_ "GenSigInvalidValue" SG_ 315 eB_WheelSpeedDirection_RL 3;
+BA_ "GenSigInvalidValue" SG_ 315 eB_WheelSpeedDirection_RR 3;
+BA_ "GenSigStartRemark" SG_ 307 Checksum_ESC_2_2 "V";
+BA_ "GenSigStartValue" SG_ 307 ESC_WorkingSt_ESC 1;
+BA_ "GenSigStartValue" SG_ 307 ESC_AvailableSt_HBA 1;
+BA_ "GenSigStartRemark" SG_ 309 Checksum_ESC_3_2 "V";
+BA_ "GenSigInvalidRemark" SG_ 309 ESC_YawRate "4000";
+BA_ "GenSigStartRemark" SG_ 309 ESC_YawRate "4000";
+BA_ "GenSigInvalidValue" SG_ 309 ESC_YawRate 4095;
+BA_ "GenSigStartValue" SG_ 309 ESC_YawRate 4094;
+BA_ "GenSigInvalidRemark" SG_ 309 ESC_Acceleration_X "1592";
+BA_ "GenSigStartRemark" SG_ 309 ESC_Acceleration_X "1592";
+BA_ "GenSigInvalidValue" SG_ 309 ESC_Acceleration_X 2047;
+BA_ "GenSigStartValue" SG_ 309 ESC_Acceleration_X 2046;
+BA_ "GenSigInvalidRemark" SG_ 309 ESC_MasterCylinderPressure "2000";
+BA_ "GenSigStartRemark" SG_ 309 ESC_MasterCylinderPressure "2000";
+BA_ "GenSigInvalidValue" SG_ 309 ESC_MasterCylinderPressure 2047;
+BA_ "GenSigStartValue" SG_ 309 ESC_MasterCylinderPressure 2046;
+BA_ "GenSigInvalidValue" SG_ 309 ESC_EPBSwitch 3;
+BA_ "GenSigInvalidRemark" SG_ 309 ESC_Acceleration_Y "1592";
+BA_ "GenSigStartRemark" SG_ 309 ESC_Acceleration_Y "1592";
+BA_ "GenSigInvalidValue" SG_ 309 ESC_Acceleration_Y 2047;
+BA_ "GenSigStartValue" SG_ 309 ESC_Acceleration_Y 2046;
+BA_ "GenSigStartRemark" SG_ 313 Checksum_ESC_5_2 "V";
+BA_ "GenSigStartRemark" SG_ 321 Checksum_ESC_7_2 "V";
+BA_ "SystemSignalLongSymbol" SG_ 321 ESC_BrakeFunctionOverrideStatus_ "ESC_BrakeFunctionOverrideStatus_2";
+BA_ "GenSigStartRemark" SG_ 274 Checksum_IFC_4 "V";
+BA_ "GenSigInvalidRemark" SG_ 274 IFC_TorqueRequest "O";
+BA_ "GenSigStartRemark" SG_ 274 IFC_TorqueRequest "O";
+BA_ "GenSigInvalidValue" SG_ 274 IFC_TorqueRequest 1023;
+BA_ "GenSigStartValue" SG_ 274 IFC_TorqueRequest 1022;
+BA_ "GenSigStartRemark" SG_ 274 HJAD_WorkingSt_LKA "L";
+BA_ "GenSigStartRemark" SG_ 274 IFC_WorkingSt_SACC "L";
+BA_ "GenSigStartRemark" SG_ 274 IFC_WorkingSt_HWP "L";
+BA_ "GenSigStartRemark" SG_ 274 IFC_WorkingSt_TJP "L";
+BA_ "GenSigStartRemark" SG_ 279 Checksum_IFC_5 "V";
+BA_ "GenSigInvalidRemark" SG_ 279 IFC_SteeringWheelAngleRequest "O";
+BA_ "GenSigInvalidValue" SG_ 279 IFC_SteeringWheelAngleRequest 32767;
+BA_ "SystemSignalLongSymbol" SG_ 279 IFC_SteeringWheelAngleSignReques "IFC_SteeringWheelAngleSignRequest";
+BA_ "SystemSignalLongSymbol" SG_ 279 IFC_SteeringWheelAngleControlReq "IFC_SteeringWheelAngleControlRequest";
+BA_ "GenSigStartRemark" SG_ 341 Checksum_EPS2_1 "V";
+BA_ "GenSigInvalidRemark" SG_ 341 EPS2_HandSteeringTorque "1000";
+BA_ "GenSigStartRemark" SG_ 341 EPS2_HandSteeringTorque "1000";
+BA_ "GenSigInvalidValue" SG_ 341 EPS2_HandSteeringTorque 1023;
+BA_ "GenSigStartValue" SG_ 341 EPS2_HandSteeringTorque 1022;
+BA_ "GenSigInvalidValue" SG_ 341 EPS2_WorkingMode_DMS 3;
+BA_ "GenSigInvalidRemark" SG_ 341 EPS2_OverlayInputTorque "1000";
+BA_ "GenSigStartRemark" SG_ 341 EPS2_OverlayInputTorque "1000";
+BA_ "GenSigInvalidValue" SG_ 341 EPS2_OverlayInputTorque 1023;
+BA_ "GenSigStartValue" SG_ 341 EPS2_OverlayInputTorque 1022;
+BA_ "GenSigStartRemark" SG_ 342 Checksum_EPS2_2 "V";
+BA_ "GenSigStartRemark" SG_ 209 Checksum_EPS2_SAS_1 "V";
+BA_ "GenSigInvalidRemark" SG_ 209 EPS_SteeringWheelAngle "O";
+BA_ "GenSigInvalidValue" SG_ 209 EPS_SteeringWheelAngle 32767;
+BA_ "GenSigInvalidRemark" SG_ 209 EPS_SteeringWheelSpeed "O";
+BA_ "GenSigInvalidValue" SG_ 209 EPS_SteeringWheelSpeed 32767;
+BA_ "GenSigStartValue" SG_ 209 EPS_SAS_St 1;
+BA_ "GenSigStartRemark" SG_ 150 Checksum_SAS_1 "V";
+BA_ "GenSigInvalidRemark" SG_ 150 SAS_SteeringWheelAngle "O";
+BA_ "GenSigInvalidValue" SG_ 150 SAS_SteeringWheelAngle 32767;
+BA_ "GenSigInvalidRemark" SG_ 150 SAS_SteeringWheelSpeed "O";
+BA_ "GenSigInvalidValue" SG_ 150 SAS_SteeringWheelSpeed 32767;
+BA_ "GenSigInvalidRemark" SG_ 150 SAS_ID "O";
+BA_ "GenSigStartRemark" SG_ 150 SAS_ID "L";
+BA_ "GenSigInvalidValue" SG_ 150 SAS_ID 255;
+BA_ "GenSigStartValue" SG_ 150 SAS_Status 1;
+BA_ "GenSigInvalidRemark" SG_ 665 EPS_B_A_ElectricLoad "250";
+BA_ "GenSigStartRemark" SG_ 665 EPS_B_A_ElectricLoad "250";
+BA_ "GenSigInvalidValue" SG_ 665 EPS_B_A_ElectricLoad 255;
+BA_ "GenSigStartValue" SG_ 665 EPS_B_A_ElectricLoad 254;
+BA_ "GenSigInvalidRemark" SG_ 665 EPS_B_B_ElectricLoad "250";
+BA_ "GenSigStartRemark" SG_ 665 EPS_B_B_ElectricLoad "250";
+BA_ "GenSigInvalidValue" SG_ 665 EPS_B_B_ElectricLoad 255;
+BA_ "GenSigStartValue" SG_ 665 EPS_B_B_ElectricLoad 254;
+BA_ "GenSigStartRemark" SG_ 316 checksum_eBooster_1 "V";
+BA_ "GenSigInvalidRemark" SG_ 432 ECAS_Height_FL "O";
+BA_ "GenSigStartRemark" SG_ 432 ECAS_Height_FL "O";
+BA_ "GenSigInvalidValue" SG_ 432 ECAS_Height_FL 255;
+BA_ "GenSigStartValue" SG_ 432 ECAS_Height_FL 254;
+BA_ "GenSigInvalidRemark" SG_ 432 ECAS_Height_FR "O";
+BA_ "GenSigStartRemark" SG_ 432 ECAS_Height_FR "O";
+BA_ "GenSigInvalidValue" SG_ 432 ECAS_Height_FR 255;
+BA_ "GenSigStartValue" SG_ 432 ECAS_Height_FR 254;
+BA_ "GenSigInvalidRemark" SG_ 432 ECAS_Height_RL "O";
+BA_ "GenSigStartRemark" SG_ 432 ECAS_Height_RL "O";
+BA_ "GenSigInvalidValue" SG_ 432 ECAS_Height_RL 255;
+BA_ "GenSigStartValue" SG_ 432 ECAS_Height_RL 254;
+BA_ "GenSigInvalidRemark" SG_ 432 ECAS_Height_RR "O";
+BA_ "GenSigStartRemark" SG_ 432 ECAS_Height_RR "O";
+BA_ "GenSigInvalidValue" SG_ 432 ECAS_Height_RR 255;
+BA_ "GenSigStartValue" SG_ 432 ECAS_Height_RR 254;
+BA_ "GenSigInvalidRemark" SG_ 529 AxleLoad_Front "2400";
+BA_ "GenSigStartRemark" SG_ 529 AxleLoad_Front "2400";
+BA_ "GenSigInvalidValue" SG_ 529 AxleLoad_Front 4095;
+BA_ "GenSigStartValue" SG_ 529 AxleLoad_Front 4094;
+BA_ "GenSigInvalidRemark" SG_ 529 AxleLoad_Rear "2400";
+BA_ "GenSigStartRemark" SG_ 529 AxleLoad_Rear "2400";
+BA_ "GenSigInvalidValue" SG_ 529 AxleLoad_Rear 4095;
+BA_ "GenSigStartValue" SG_ 529 AxleLoad_Rear 4094;
+BA_ "GenSigStartRemark" SG_ 532 Checksum_DMS_1 "V";
+BA_ "GenSigEvent" SG_ 532 DMS_ESCModeChangeCmd "Y";
+BA_ "GenSigSendType" SG_ 532 DMS_ESCModeChangeCmd 1;
+BA_ "GenSigEvent" SG_ 532 DMS_EPSModeChangeCmd "Y";
+BA_ "GenSigSendType" SG_ 532 DMS_EPSModeChangeCmd 1;
+BA_ "GenSigEvent" SG_ 532 DMS_ECASModeChangeCmd "Y";
+BA_ "GenSigSendType" SG_ 532 DMS_ECASModeChangeCmd 1;
+BA_ "GenSigInvalidRemark" SG_ 532 DMS_AXGradient "400";
+BA_ "GenSigStartRemark" SG_ 532 DMS_AXGradient "400";
+BA_ "GenSigInvalidValue" SG_ 532 DMS_AXGradient 1023;
+BA_ "GenSigStartValue" SG_ 532 DMS_AXGradient 1022;
+BA_ "GenSigEvent" SG_ 532 DMS_HCUModeChangeCmd "Y";
+BA_ "GenSigSendType" SG_ 532 DMS_HCUModeChangeCmd 1;
+BA_ "GenSigInvalidRemark" SG_ 532 DMS_AYGradient "400";
+BA_ "GenSigStartRemark" SG_ 532 DMS_AYGradient "400";
+BA_ "GenSigInvalidValue" SG_ 532 DMS_AYGradient 1023;
+BA_ "GenSigStartValue" SG_ 532 DMS_AYGradient 1022;
+BA_ "GenSigInvalidValue" SG_ 534 DMS_VehicleModeInfo 15;
+BA_ "GenSigStartRemark" SG_ 534 DMS_IndividualMode_EPS "L";
+BA_ "GenSigStartRemark" SG_ 534 DMS_IndividualMode_ECAS "L";
+BA_ "GenSigStartRemark" SG_ 534 DMS_IndividualMode_HCU "L";
+BA_ "GenSigStartRemark" SG_ 534 DMS_MainMode "L";
+BA_ "GenSigInvalidValue" SG_ 534 DMS_TargetVehicleMode 15;
+BA_ "GenSigStartRemark" SG_ 167 Checksum_ESC_eB_9 "V";
+BA_ "GenSigStartRemark" SG_ 164 Checksum_ESC_eB_5 "V";
+BA_ "GenSigStartRemark" SG_ 165 Checksum_ESC_eB_6 "V";
+BA_ "GenSigStartRemark" SG_ 174 Checksum_eB_ESC_7 "V";
+BA_ "GenSigStartRemark" SG_ 175 Checksum_eB_ESC_3 "V";
+BA_ "GenSigStartRemark" SG_ 171 Checksum_eB_ESC_4 "V";
+BA_ "GenSigStartRemark" SG_ 311 Checksum_ESC_4_2 "V";
+BA_ "GenSigInvalidRemark" SG_ 311 ESC_TorqueReq_VMC_2 "104000";
+BA_ "GenSigStartRemark" SG_ 311 ESC_TorqueReq_VMC_2 "104000";
+BA_ "GenSigInvalidValue" SG_ 311 ESC_TorqueReq_VMC_2 131071;
+BA_ "GenSigStartValue" SG_ 311 ESC_TorqueReq_VMC_2 131070;
+BA_ "GenSigInvalidRemark" SG_ 688 GW_IgnitionOffTime "O";
+BA_ "GenSigStartRemark" SG_ 688 GW_IgnitionOffTime "O";
+BA_ "GenSigInvalidValue" SG_ 688 GW_IgnitionOffTime 4095;
+BA_ "GenSigStartValue" SG_ 688 GW_IgnitionOffTime 4094;
+BA_ "GenSigStartRemark" SG_ 192 Checksum_ABS_1 "V";
+BA_ "GenSigInvalidRemark" SG_ 192 WheelSpeed_FL "O";
+BA_ "GenSigStartRemark" SG_ 192 WheelSpeed_FL "O";
+BA_ "GenSigInvalidValue" SG_ 192 WheelSpeed_FL 32767;
+BA_ "GenSigStartValue" SG_ 192 WheelSpeed_FL 32766;
+BA_ "GenSigInvalidRemark" SG_ 192 WheelSpeed_FR "O";
+BA_ "GenSigStartRemark" SG_ 192 WheelSpeed_FR "O";
+BA_ "GenSigInvalidValue" SG_ 192 WheelSpeed_FR 32767;
+BA_ "GenSigStartValue" SG_ 192 WheelSpeed_FR 32766;
+BA_ "GenSigInvalidRemark" SG_ 192 VehiclSpeed "O";
+BA_ "GenSigStartRemark" SG_ 192 VehiclSpeed "O";
+BA_ "GenSigInvalidValue" SG_ 192 VehiclSpeed 32767;
+BA_ "GenSigStartValue" SG_ 192 VehiclSpeed 32766;
+BA_ "GenSigStartRemark" SG_ 194 Checksum_ABS_2 "V";
+BA_ "GenSigInvalidRemark" SG_ 194 WheelSpeed_RL "O";
+BA_ "GenSigStartRemark" SG_ 194 WheelSpeed_RL "O";
+BA_ "GenSigInvalidValue" SG_ 194 WheelSpeed_RL 32767;
+BA_ "GenSigStartValue" SG_ 194 WheelSpeed_RL 32766;
+BA_ "GenSigInvalidRemark" SG_ 194 WheelSpeed_RR "O";
+BA_ "GenSigStartRemark" SG_ 194 WheelSpeed_RR "O";
+BA_ "GenSigInvalidValue" SG_ 194 WheelSpeed_RR 32767;
+BA_ "GenSigStartValue" SG_ 194 WheelSpeed_RR 32766;
+BA_ "GenSigInvalidRemark" SG_ 194 MasterCylinderPressure "2000";
+BA_ "GenSigStartRemark" SG_ 194 MasterCylinderPressure "2000";
+BA_ "GenSigInvalidValue" SG_ 194 MasterCylinderPressure 2047;
+BA_ "GenSigStartValue" SG_ 194 MasterCylinderPressure 2046;
+BA_ "GenSigStartRemark" SG_ 308 Checksum_ESC_3_1 "V";
+BA_ "GenSigInvalidRemark" SG_ 308 YawRate "4000";
+BA_ "GenSigStartRemark" SG_ 308 YawRate "4000";
+BA_ "GenSigInvalidValue" SG_ 308 YawRate 4095;
+BA_ "GenSigStartValue" SG_ 308 YawRate 4094;
+BA_ "GenSigInvalidRemark" SG_ 308 Acceleration_X "1592";
+BA_ "GenSigStartRemark" SG_ 308 Acceleration_X "1592";
+BA_ "GenSigInvalidValue" SG_ 308 Acceleration_X 2047;
+BA_ "GenSigStartValue" SG_ 308 Acceleration_X 2046;
+BA_ "GenSigInvalidRemark" SG_ 308 Acceleration_Y "1592";
+BA_ "GenSigStartRemark" SG_ 308 Acceleration_Y "1592";
+BA_ "GenSigInvalidValue" SG_ 308 Acceleration_Y 2047;
+BA_ "GenSigStartValue" SG_ 308 Acceleration_Y 2046;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 146 Checksum_HCU_2_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 146 Checksum_HCU_2_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 146 HCU_AccelerationPedalPosition 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 146 HCU_AccelerationPedalPosition 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 146 HCU_CalcAccelerationPedalPositio 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 146 HCU_CalcAccelerationPedalPositio 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 146 HCU_AccelerationPedalOverride 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 146 HCU_AccelerationPedalOverride 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 146 HCU_KickdownReq 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 146 LiveCounter_HCU_2_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 146 LiveCounter_HCU_2_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 264 Checksum_HCU_2_4 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 264 Checksum_HCU_2_4 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 264 HCU_AutoDrivingResponseSt_L12 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 264 HCU_AutoDrivingResponseSt_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 264 HCU_AutoDrivingResponseSt_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 264 HCU_CapabilitySt_AutoDriving 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 264 HCU_CapabilitySt_AutoDriving 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 264 LiveCounter_HCU_2_4 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 264 LiveCounter_HCU_2_4 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 147 Checksum_HCU_2_7 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 147 Checksum_HCU_2_7 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 147 HCU_EVReady 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 147 HCU_EVReady 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 147 LiveCounter_HCU_2_7 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 147 LiveCounter_HCU_2_7 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 151 HCU_MCU1TMSpeed 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 151 HCU_MCU1ActTMTorque 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 151 HCU_MCU1TMMAMTorque 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 151 HCU_MCU1TMMAGTorque 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 152 HCU_MCU2TMSpeed 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 152 HCU_MCU2ActTMTorque 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 152 HCU_MCU2TMMAMTorque 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 152 HCU_MCU2TMMAGTorque 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 290 Checksum_HCU_2_12 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 290 Checksum_HCU_2_12 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 290 HCU_LeverInfo 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 290 HCU_LeverInfo 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 290 HCU_HighVoltageStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 290 HCU_AutoParkingResponse_L12 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 290 HCU_AutoParkingResponse_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 290 HCU_CapabilitySt_AutoParking 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 290 Livecounter_HCU_2_12 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 290 Livecounter_HCU_2_12 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 288 Checksum_EGSM_1 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 288 EGSM_SecurityButton 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 288 EGSM_SecurityButtonErrorSt 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 288 EGSM_ErrorStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 288 Livecounter_EGSM_1 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 656 IndicationSpeed_IC 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ SAS SG_ 656 OdometerValue 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 656 OdometerValue 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 656 OdometerValue 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 512 Checksum_ACU_1 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 512 CrashInfo 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 512 SysSt_ACU 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 512 SeatBeltSt_Driver 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 512 LiveCounter_ACU_1 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 586 DoorLockSt_FL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 586 DoorSt_FL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 588 DoorLockSt_FR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 588 DoorSt_FR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 590 DoorLockSt_RL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 590 DoorSt_RL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 591 DoorLockSt_RR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 591 DoorSt_RR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 418 Checksum_PEPS_DMH 500;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 418 PEPS_DMHSwitch 500;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 418 LiveCounter_PEPS_DMH 500;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 578 LuggageDoorSt 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 546 AmbientTemp 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 560 LowBeamSt 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 560 HighBeamSt 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 560 TurningSt_Left 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 560 TurningSt_right 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 560 TurningLightCmd_Left 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 560 TurningLightCmd_Right 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 560 HazardWarningSt 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 560 WMMFaultSt 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 560 RLSFalutSt 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 560 WiperSt_Front 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 560 WiperSpeed_Front 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 560 WiperSpeed_Front 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 562 PowerMode 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 562 PowerMode 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 562 SysSt_PEPS 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 562 PEPS_RKEEngineCmd 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 564 EngineHoodSt 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 571 RainIntensity 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 571 Brightness_L 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 571 Brightness_H 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 572 TyrePressureWarning_FL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 572 TyrePressureWarning_FR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 572 TyrePressureWarning_RL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 572 TyrePressureWarning_RR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 572 TyrePressureValue_FL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 572 TyrePressureValue_FR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 572 TyrePressureValue_RL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 572 TyrePressureValue_RR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 282 Checksum_HAD_3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 282 Checksum_HAD_3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 282 HAD_AutoDrivingReq_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 282 HAD_AutoDrivingReq_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 282 HAD_SpeedChangeRequest_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 282 HAD_SpeedChangeRequest_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 282 HAD_MaxAccGrad_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 282 HAD_MaxAccGrad_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 282 HAD_MinAccGrad_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 282 HAD_MinAccGrad_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 282 HAD_MaxComfBand_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 282 HAD_MaxComfBand_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 282 HAD_MinComfBand_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 282 HAD_MinComfBand_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 282 HAD_UseMaxComfBand_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 282 HAD_UseMaxComfBand_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 282 LiveCounter_HAD_3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 282 LiveCounter_HAD_3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 283 Checksum_HAD_4 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 283 Checksum_HAD_4 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 283 HAD_BrakeModeReq_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 283 HAD_BrakeModeReq_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 283 HAD_DrivedownReq_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 283 HAD_DrivedownReq_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 283 HAD_SecureRequest_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 283 HAD_SecureRequest_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 283 HAD_ErrorSt_AutoDriving_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 283 HAD_ErrorSt_AutoDriving_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 283 LiveCounter_HAD_4 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 283 LiveCounter_HAD_4 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 Checksum_ADV_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_ErrorSt 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_AutoParkingModeReq 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_AutoParkingRequestSt 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_ErrorSt_APA 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_ErrorSt_RPA 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_ErrorSt_AVP 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_WorkingSt_APA 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_WorkingSt_RPA 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_WorkingSt_AVP 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_SteeringWheelAngleRequest 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_SteeringWheelAngleSignReques 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 ADV_SteeringWheelAngleControlReq 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 256 LiveCounter_ADV_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 Checksum_HAD_6 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_TorqueRequest 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_TorqueRequestSign 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_TorqueReqSt 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_WorkingSt_LKA 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_ErrorSt_LKA 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_AutoDrivingModeReq 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_ErrorSt_SACC 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_ErrorSt_HWP 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_ErrorSt_TJP 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_LDWSteeringVibrationReq 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_WorkingSt_SACC 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_WorkingSt_HWP 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_WorkingSt_TJP 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 HAD_ErrorSt_HAD 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 278 LiveCounter_HAD_6 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 202 Checksum_eBooster_ABS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 202 Checksum_eBooster_ABS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 202 eB_WheelSpeed_FL 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 202 eB_WheelSpeed_FL 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 202 eB_WheelSpeed_FR 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 202 eB_WheelSpeed_FR 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 202 eB_VehiclSpeed 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 202 eB_VehiclSpeed 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 202 eB_VehiclSpeed_Q 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 202 eB_DrivingDirection 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 202 LiveCounter_eBooster_ABS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 202 LiveCounter_eBooster_ABS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 203 Checksum_eBooster_ABS_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 203 Checksum_eBooster_ABS_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 203 eB_WheelSpeed_RL 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 203 eB_WheelSpeed_RL 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 203 eB_WheelSpeed_RR 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 203 eB_WheelSpeed_RR 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 203 LiveCounter_eBooster_ABS_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 203 LiveCounter_eBooster_ABS_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 315 Checksum_eBooster_ABS_3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 315 eB_WheelPulse_FL 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 315 eB_WheelPulse_FR 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 315 eB_WheelPulse_RL 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 315 eB_WheelPulse_RR 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 315 eB_WheelSpeedDirection_FL 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 315 eB_WheelSpeedDirection_FR 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 315 eB_WheelSpeedDirection_RL 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 315 eB_WheelSpeedDirection_RR 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 315 LiveCounter_eBooster_ABS_3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 Checksum_ESC_2_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_WorkingSt_ESC 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_ErrorSt_ESC 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_Intervention_ESC 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_ErrorSt_ABS 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_Intervention_ABS 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_Intervention_TCS 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_ErrorSt_EBD 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_AvailableSt_CDP 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_Intervention_CDP_RWU 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_ErrotSt_EPB 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_AvailableSt_HDC 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_WorkingSt_HDC 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_VehicleStandstillSt 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 ESC_WorkingSt_EPB 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 307 LiveCounter_ESC_2_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 309 Checksum_ESC_3_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 309 Checksum_ESC_3_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 309 ESC_YawRate 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 309 ESC_YawRate 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 309 ESC_YRSSt 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 309 ESC_YRSSt 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 309 ESC_Acceleration_X 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 309 ESC_Acceleration_X 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 309 ESC_MasterCylinderPressure 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 309 ESC_EPBSwitch 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 309 ESC_AvailableSt_EPBSwitch 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 309 ESC_Acceleration_Y 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 309 ESC_Acceleration_Y 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 309 ESC_ErrorSt_YRS 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 309 ESC_ErrorSt_YRS 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 309 LiveCounter_ESC_3_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 309 LiveCounter_ESC_3_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 313 Checksum_ESC_5_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 313 ESC_VLCSt_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 313 ESC_VMC_Error_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 313 ESC_AutoDriving_LC_Brakemode 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 313 ESC_ShutOffFinished 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 313 LiveCounter_ESC_5_1 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 321 Checksum_ESC_7_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 321 ESC_SuspendStatus_VMC_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 321 ESC_BrakeFunctionOverrideStatus_ 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 321 LiveCounter_ESC_7_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 Checksum_IFC_4 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_TorqueRequest 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_TorqueRequestSign 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_TorqueReqSt 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 HJAD_WorkingSt_LKA 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_ErrorSt_LKA 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_AutoDrivingModeReq 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_ErrorSt_SACC 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_ErrorSt_HWP 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_ErrorSt_TJP 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 LDWSteeringVibrationReq 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_WorkingSt_SACC 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_WorkingSt_HWP 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_WorkingSt_TJP 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 IFC_ErrorSt_FOU 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 274 LiveCounter_IFC_4 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 279 Checksum_IFC_5 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 279 IFC_SteeringWheelAngleRequest 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 279 IFC_SteeringWheelAngleSignReques 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 279 IFC_SteeringWheelAngleControlReq 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 279 LiveCounter_IFC_5 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 341 Checksum_EPS2_1 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 341 EPS2_HandSteeringTorque 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 341 EPS2_HandSteeringTorqueSign 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 341 EPS2_ErrorStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 341 EPS2_HandOffStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 341 EPS2_HandOffValid 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 341 EPS2_LKAStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 341 EPS2_OverlayInputTorque 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 341 EPS2_OverlayInputTorqueSign 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 341 EPS2_AbortFeedback_HAD 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 341 LiveCounter_EPS2_1 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 342 Checksum_EPS2_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 342 EPS2_SACCStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 342 EPS2_HWPStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 342 EPS2_TJPStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 342 EPS2_APAStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 342 EPS2_RPAStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 342 EPS2_AVPStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 342 EPS2_DegradeLevel_HAD 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 342 EPS2_DriftWarning 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 342 EPS2_AutoDrivingMode 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 342 LiveCounter_EPS2_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 209 Checksum_EPS2_SAS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 209 EPS_SteeringWheelAngle 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 209 EPS_SteeringWheelAngleSign 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 209 EPS_SteeringWheelSpeed 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 209 EPS_SteeringWheelSpeedSign 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 209 EPS_SAS_St 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 209 LiveCounter_EPS2_SAS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 150 Checksum_SAS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 150 Checksum_SAS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 150 SAS_SteeringWheelAngle 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 150 SAS_SteeringWheelAngle 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 150 SAS_SteeringWheelAngleSign 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 150 SAS_SteeringWheelAngleSign 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 150 SAS_SteeringWheelSpeed 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 150 SAS_SteeringWheelSpeed 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 150 SAS_SteeringWheelSpeedSign 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 150 SAS_SteeringWheelSpeedSign 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 150 SAS_ID 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 150 SAS_ID 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 150 LiveCounter_SAS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 150 LiveCounter_SAS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 150 SAS_Status 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 150 SAS_Status 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 316 checksum_eBooster_1 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 316 checksum_eBooster_1 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 316 eB_VLCSt_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 316 eB_VMC_Error_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 316 eB_SuspendStatus_VMC 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 316 eB_ShutOffFinished_L3 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 316 eB_BrakePedalStatus 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 316 eB_BrakePedalStatus_Q 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 316 eB_BrakePedalDominant 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 316 eB_BrakePedalDominant_Q 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 316 eB_TargetGearReq_VMC_1 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 316 Livecounter_eBooster_1 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 316 Livecounter_eBooster_1 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 532 Checksum_DMS_1 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 532 DMS_EPSModeChangeCmd 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 532 Livecounter_DMS_1 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 534 DMS_VehicleModeInfo 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 534 DMS_TargetVehicleMode 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 167 Checksum_ESC_eB_9 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 167 ESC_DriveMain2BackupState_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 167 Livecounter_ESC_eB_9 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 164 Checksum_ESC_eB_5 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 164 Checksum_ESC_eB_5 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 Checksum_ESC_eB_5 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_usedChannel_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_BrakeFxCapability_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 164 ESC_BrakeFxAvailability_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 164 ESC_BrakeFxAvailability_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_BrakeFxAvailability_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 164 ESC_BrakeFxActual_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 164 ESC_BrakeFxActual_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_BrakeFxActual_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_AccStabAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_DecStabAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_isBrkFctReqFxBrkDomin_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_DecStabAvailForDriver_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_DecStabActivity_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_AccStabActivity_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_YawRateStabAvailability_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_YawRateStabActivity_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_ParkBrakeCapability_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_ParkBrakeAvailability_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_ParkBrakeState_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_isBrkFctReqPrkBrkDomin_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_DecStabCpblty_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_DecStabCpbltyForDriver_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 ESC_ParkBrakeSupportRequest_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 164 Livecounter_ESC_eB_5 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 164 Livecounter_ESC_eB_5 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 164 Livecounter_ESC_eB_5 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 Checksum_ESC_eB_6 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 ESC_DrvReqTarFxBrakeAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 ESC_DrvReqTarFxBrake_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 ESC_DrvPressBrakePedalAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 ESC_isDrvPressingBrakePedal_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 ESC_DrvReqFxBrkDomAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 ESC_isDrvReqFxBrakeDominant_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 ESC_DriverRequestParkBrake_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 ESC_isDrvReqParkBrkDominant_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 ESC_DrvReqParkBrakeAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 ESC_BrkDiscTempStatus_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 ESC_BrkDiscTempStatusAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ eBooster SG_ 165 Livecounter_ESC_eB_6 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 174 Checksum_eB_ESC_7 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 174 eB_DriveBackup2MainState_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 174 Livecounter_eB_ESC_7 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 Checksum_eB_ESC_3 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 eB_usedChannel_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 eB_BrakeFxCapability_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 175 eB_BrakeFxAvailability_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 eB_BrakeFxAvailability_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 eB_BrakeFxActual_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 eB_DecStabAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 eB_isBrkFctReqFxBrkDomin_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 eB_DecStabAvailForDriver_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 eB_DecStabActivity_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 eB_DecStabCpblty_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 eB_DecStabCpbltyForDriver_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 175 Livecounter_eB_ESC_3 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 171 Checksum_eB_ESC_4 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 171 eB_DrvReqTarFxBrakeAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 171 eB_DrvReqTarFxBrakeAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 171 eB_DrvReqTarFxBrake_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 171 eB_DrvReqTarFxBrake_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 171 eB_DrvPressBrakePedalAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 171 eB_isDrvPressingBrakePedal_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 171 eB_DrvReqFxBrkDomAvail_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 171 eB_isDrvReqFxBrakeDominant_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 171 eB_BrakeFxTarget 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ ESC SG_ 171 Livecounter_eB_ESC_4 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 311 Checksum_ESC_4_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 311 ESC_TorqueReq_VMC_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 311 ESC_TorqueReqSt_VMC_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 311 ESC_TargetGearReq_VMC_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 311 LiveCounter_ESC_4_2 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 PositionLightSt_RL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 PositionLightSt_RR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 FogLightSt_Rear 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 FogLightSt_RL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 FogLightSt_RR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 FoglightFaultSt_Rear 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 TurnLightFaultSt_RL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 TurnLightFaultSt_RR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 WiperSt_Rear 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 PositionLightFaultSt_Rear 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 BrakeLightSt_RL 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ CDS1 SG_ 576 BrakeLightSt_RR 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 688 GW_RemoteVehicleMode 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 688 GW_OTAMode 1000;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 192 Checksum_ABS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 192 WheelSpeed_FL 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 192 WheelSpeed_FR 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 192 VehiclSpeed 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 192 LiveCounter_ABS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 194 Checksum_ABS_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 194 WheelSpeed_RL 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 194 WheelSpeed_RR 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 194 LiveCounter_ABS_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 308 Checksum_ESC_3_1 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 308 YawRate 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 308 YRSSt 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 308 Acceleration_X 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 308 Acceleration_Y 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 308 ErrorSt_YRS 200;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ EPS SG_ 308 LiveCounter_ESC_3_1 200;
+VAL_ 146 HCU_AccelerationPedalPosition 255 "SNA" ;
+VAL_ 146 HCU_CalcAccelerationPedalPositio 255 "SNA" ;
+VAL_ 146 HCU_AccelerationPedalOverride 1 "Active" 0 "Inactive" ;
+VAL_ 146 HCU_KickdownReq 1 "Active" 0 "Inactive" ;
+VAL_ 264 HCU_AutoDrivingResponseSt_L12 1 "Response" 0 "No response" ;
+VAL_ 264 HCU_AutoDrivingResponseSt_L3 1 "Response" 0 "No response" ;
+VAL_ 264 HCU_CapabilitySt_AutoDriving 3 "Reserved" 2 "Fault" 1 "Reduced" 0 "Normal" ;
+VAL_ 264 HCU_GradientAccelerationPedal 255 "SNA" ;
+VAL_ 147 HCU_IndicatedDriverTorq_FrontAxl 4095 "SNA" ;
+VAL_ 147 HCU_IndicatedDriverTorq_RearAxle 4095 "SNA" ;
+VAL_ 147 HCU_WorkingMode 7 "Invalid value" 6 "Extreme" 5 "Sand" 4 "Off Road" 3 "Grass Gravel Snow" 2 "Sport" 1 "ECO" 0 "Comfort" ;
+VAL_ 147 HCU_ModeChangeEnable 1 "Enable" 0 "Disable" ;
+VAL_ 147 HCU_EVReady 3 "Reserved" 2 "Enable running(always on)" 1 "Preparing" 0 "Not useable(always off)" ;
+VAL_ 151 HCU_MCU1TMSpeed 65535 "SNA" ;
+VAL_ 151 HCU_MCU1ActTMTorque 16383 "SNA" ;
+VAL_ 151 HCU_MCU1TMMAMTorque 8191 "SNA" ;
+VAL_ 151 HCU_MCU1TMMAGTorque 8191 "SNA" ;
+VAL_ 152 HCU_MCU2TMSpeed 65535 "SNA" ;
+VAL_ 152 HCU_MCU2ActTMTorque 16383 "SNA" ;
+VAL_ 152 HCU_MCU2TMMAMTorque 8191 "SNA" ;
+VAL_ 152 HCU_MCU2TMMAGTorque 8191 "SNA" ;
+VAL_ 290 HCU_LeverInfo 7 "Invalid Value" 6 "Reserved" 5 "No connection" 4 "Reserved" 3 "D" 2 "N" 1 "R" 0 "P" ;
+VAL_ 290 HCU_HighVoltageStatus 1 "ON" 0 "OFF" ;
+VAL_ 290 HCU_AutoParkingResponse_L12 1 "Response" 0 "No response" ;
+VAL_ 290 HCU_AutoParkingResponse_L3 1 "Response" 0 "No response" ;
+VAL_ 290 HCU_CapabilitySt_AutoParking 3 "Reserved" 2 "Fault" 1 "Reduced" 0 "Normal" ;
+VAL_ 288 EGSM_SecurityButton 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 288 EGSM_SecurityButtonErrorSt 1 "Error" 0 "No Error" ;
+VAL_ 288 EGSM_ErrorStatus 1 "Error" 0 "No error" ;
+VAL_ 656 IndicationSpeed_IC 255 "SNA" ;
+VAL_ 656 OdometerValue 33554431 "SNA" ;
+VAL_ 512 CrashInfo 1 "Crash" 0 "No Crash" ;
+VAL_ 512 SysSt_ACU 3 "Reserved" 2 "Factory mode" 1 "Error" 0 "No error" ;
+VAL_ 512 SeatBeltSt_Driver 3 "Reserved" 2 "Reserved" 1 "Buckled" 0 "Unbuckled" ;
+VAL_ 586 DoorLockSt_FL 3 "Reserved" 2 "Reserved" 1 "Unlock" 0 "Lock" ;
+VAL_ 586 DoorSt_FL 1 "Open" 0 "Close" ;
+VAL_ 588 DoorLockSt_FR 3 "Reserved" 2 "Reserved" 1 "Unlock" 0 "Lock" ;
+VAL_ 588 DoorSt_FR 1 "Open" 0 "Close" ;
+VAL_ 590 DoorLockSt_RL 3 "Reserved" 2 "Reserved" 1 "Unlock" 0 "Lock" ;
+VAL_ 590 DoorSt_RL 1 "Open" 0 "Close" ;
+VAL_ 591 DoorLockSt_RR 3 "Reserved" 2 "Reserved" 1 "Unlock" 0 "Lock" ;
+VAL_ 591 DoorSt_RR 1 "Open" 0 "Close" ;
+VAL_ 418 PEPS_DMHSwitch 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 578 LuggageDoorSt 1 "Open" 0 "Close" ;
+VAL_ 546 AmbientTemp 255 "SNA" ;
+VAL_ 560 PositionLightSt 1 "On" 0 "Off" ;
+VAL_ 560 LowBeamSt 1 "On" 0 "Off" ;
+VAL_ 560 LowBeamSt_FL 1 "On" 0 "Off" ;
+VAL_ 560 LowBeamSt_FR 1 "On" 0 "Off" ;
+VAL_ 560 HighBeamSt 1 "On" 0 "Off" ;
+VAL_ 560 HighBeamSt_FL 1 "On" 0 "Off" ;
+VAL_ 560 HighBeamSt_FR 1 "On" 0 "Off" ;
+VAL_ 560 FogLightSt_FL 1 "On" 0 "Off" ;
+VAL_ 560 FogLightSt_FR 1 "On" 0 "Off" ;
+VAL_ 560 TurningSt_Left 1 "Active" 0 "Inactive" ;
+VAL_ 560 TurningSt_right 1 "Active" 0 "Inactive" ;
+VAL_ 560 TurningLightCmd_Left 1 "On" 0 "Off" ;
+VAL_ 560 TurningLightCmd_Right 1 "On" 0 "Off" ;
+VAL_ 560 HazardWarningSt 1 "Active" 0 "Inactive" ;
+VAL_ 560 WMMFaultSt 1 "Fault" 0 "No fault" ;
+VAL_ 560 RLSFalutSt 1 "Fault" 0 "No fault" ;
+VAL_ 560 WiperSt_Front 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "High Speed" 3 "Low Speed" 2 "Interval or auto lever" 1 "Tip" 0 "Off" ;
+VAL_ 560 WiperSpeed_Front 7 "60 times/min" 6 "57 times/min" 5 "54 times/min" 4 "51 times/min" 3 "48 times/min" 2 "45 times/min" 1 "42 times/min" 0 "No wipe" ;
+VAL_ 562 PowerMode 15 "Invalid value" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Reserved" 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "IgnitionOn " 3 "Reserved" 2 "Reserved" 1 "Reserved" 0 "Off" ;
+VAL_ 562 SysSt_PEPS 3 "Reserved" 2 "Reserved" 1 "Fault" 0 "No Fault" ;
+VAL_ 562 EntryLoadingMode_RKECmd 1 "Active" 0 "Inactive" ;
+VAL_ 562 PEPS_RKEEngineCmd 3 "Reserved" 2 "Reserved" 1 "Engine Start" 0 "Inactive" ;
+VAL_ 564 EngineHoodSt 1 "Open" 0 "Close" ;
+VAL_ 571 RainIntensity 15 "SNA" ;
+VAL_ 571 Brightness_L 255 "SNA" ;
+VAL_ 571 Brightness_H 1023 "SNA" ;
+VAL_ 572 TyrePressureWarning_FL 1 "Warning" 0 "No Warning" ;
+VAL_ 572 TyrePressureWarning_FR 1 "Warning" 0 "No Warning" ;
+VAL_ 572 TyrePressureWarning_RL 1 "Warning" 0 "No Warning" ;
+VAL_ 572 TyrePressureWarning_RR 1 "Warning" 0 "No Warning" ;
+VAL_ 572 TyrePressureValue_FL 255 "SNA" ;
+VAL_ 572 TyrePressureValue_FR 255 "SNA" ;
+VAL_ 572 TyrePressureValue_RL 255 "SNA" ;
+VAL_ 572 TyrePressureValue_RR 255 "SNA" ;
+VAL_ 282 HAD_AutoDrivingReq_L3 3 "Reserved" 2 "L3Request" 1 "L1L2Request" 0 "No Request" ;
+VAL_ 282 HAD_SpeedChangeRequest_L3 2047 "SNA" ;
+VAL_ 282 HAD_MaxAccGrad_L3 255 "SNA" ;
+VAL_ 282 HAD_MinAccGrad_L3 255 "SNA" ;
+VAL_ 282 HAD_MaxComfBand_L3 255 "SNA" ;
+VAL_ 282 HAD_MinComfBand_L3 255 "SNA" ;
+VAL_ 282 HAD_UseMaxComfBand_L3 1 "Active" 0 "Inactive" ;
+VAL_ 283 HAD_BrakeModeReq_L3 3 "Reserved" 2 "Emergency" 1 "Comfortable" 0 "LongControlOff" ;
+VAL_ 283 HAD_DrivedownReq_L3 1 "Drive down request" 0 "No request" ;
+VAL_ 283 HAD_SecureRequest_L3 3 "Reserved" 2 "Release secure request" 1 "Secure request" 0 "No request" ;
+VAL_ 283 HAD_ErrorSt_AutoDriving_L3 3 "Reserved" 2 "Error" 1 "Reduced" 0 "No Error" ;
+VAL_ 256 ADV_ErrorSt 1 "Error" 0 "No Error" ;
+VAL_ 256 ADV_AutoParkingModeReq 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "AVP" 2 "RPA" 1 "APA" 0 "No request" ;
+VAL_ 256 ADV_AutoParkingRequestSt 3 "Reserved" 2 "Auto Parking Active" 1 "Auto Parking Request" 0 "No Request" ;
+VAL_ 256 ADV_ErrorSt_APA 3 "Reserved" 2 "Error" 1 "Derate" 0 "Normal" ;
+VAL_ 256 ADV_ErrorSt_RPA 3 "Reserved" 2 "Error" 1 "Derate" 0 "Normal" ;
+VAL_ 256 ADV_ErrorSt_AVP 3 "Reserved" 2 "Error" 1 "Derate" 0 "Normal" ;
+VAL_ 256 ADV_WorkingSt_APA 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Exit" 3 "Active" 2 "Available" 1 "Standby" 0 "Off" ;
+VAL_ 256 ADV_WorkingSt_RPA 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Exit" 3 "Active" 2 "Available" 1 "Standby" 0 "Off" ;
+VAL_ 256 ADV_WorkingSt_AVP 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Exit" 3 "Active" 2 "Available" 1 "Standby" 0 "Off" ;
+VAL_ 256 ADV_SteeringWheelAngleRequest 32767 "SNA" ;
+VAL_ 256 ADV_SteeringWheelAngleSignReques 3 "Reserved" 2 "Right (Negative)" 1 "Left (Positive)" 0 "No Request" ;
+VAL_ 256 ADV_SteeringWheelAngleControlReq 3 "Reserved" 2 "Reserved" 1 "EPS control request" 0 "No Request" ;
+VAL_ 278 HAD_TorqueRequest 1023 "SNA" ;
+VAL_ 278 HAD_TorqueRequestSign 1 "Right (Negative)" 0 "Left (Positive)" ;
+VAL_ 278 HAD_TorqueReqSt 1 "Torque Request" 0 "Inactive" ;
+VAL_ 278 HAD_WorkingSt_LKA 3 "Exit" 2 "Active" 1 "Standby" 0 "Off" ;
+VAL_ 278 HAD_ErrorSt_LKA 1 "Error" 0 "No Error" ;
+VAL_ 278 HAD_AutoDrivingModeReq 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "TJP" 3 "HWP" 2 "SACC" 1 "LKA" 0 "No request" ;
+VAL_ 278 HAD_ErrorSt_SACC 3 "Reserved" 2 "Error" 1 "Derate" 0 "Normal" ;
+VAL_ 278 HAD_ErrorSt_HWP 3 "Reserved" 2 "Error" 1 "Derate" 0 "Normal" ;
+VAL_ 278 HAD_ErrorSt_TJP 3 "Reserved" 2 "Error" 1 "Derate" 0 "Normal" ;
+VAL_ 278 HAD_LDWSteeringVibrationReq 1 "Request" 0 "No Request" ;
+VAL_ 278 HAD_WorkingSt_SACC 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Exit" 3 "Active" 2 "Available" 1 "Standby" 0 "Off" ;
+VAL_ 278 HAD_WorkingSt_HWP 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Exit" 3 "Active" 2 "Available" 1 "Standby" 0 "Off" ;
+VAL_ 278 HAD_WorkingSt_TJP 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Exit" 3 "Active" 2 "Available" 1 "Standby" 0 "Off" ;
+VAL_ 278 HAD_ErrorSt_HAD 1 "Error" 0 "No Error" ;
+VAL_ 202 eB_WheelSpeed_FL 32767 "SNA" ;
+VAL_ 202 eB_WheelSpeed_FR 32767 "SNA" ;
+VAL_ 202 eB_VehiclSpeed 32767 "SNA" ;
+VAL_ 202 eB_VehiclSpeed_Q 1 "Faulty" 0 "Normal" ;
+VAL_ 202 eB_DrivingDirection 3 "Invalid Value" 2 "Backward" 1 "Forward" 0 "Stop" ;
+VAL_ 203 eB_WheelSpeed_RL 32767 "SNA" ;
+VAL_ 203 eB_WheelSpeed_RR 32767 "SNA" ;
+VAL_ 315 eB_WheelPulse_FL 255 "SNA" ;
+VAL_ 315 eB_WheelPulse_FR 255 "SNA" ;
+VAL_ 315 eB_WheelPulse_RL 255 "SNA" ;
+VAL_ 315 eB_WheelPulse_RR 255 "SNA" ;
+VAL_ 315 eB_WheelSpeedDirection_FL 3 "Invalid Value" 2 "Backward" 1 "Forward" 0 "Stop" ;
+VAL_ 315 eB_WheelSpeedDirection_FR 3 "Invalid Value" 2 "Backward" 1 "Forward" 0 "Stop" ;
+VAL_ 315 eB_WheelSpeedDirection_RL 3 "Invalid Value" 2 "Backward" 1 "Forward" 0 "Stop" ;
+VAL_ 315 eB_WheelSpeedDirection_RR 3 "Invalid Value" 2 "Backward" 1 "Forward" 0 "Stop" ;
+VAL_ 307 ESC_WorkingSt_ESC 1 "On" 0 "Off" ;
+VAL_ 307 ESC_ErrorSt_ESC 1 "Error" 0 "No Error" ;
+VAL_ 307 ESC_Intervention_ESC 1 "Intervention" 0 "No Intervention" ;
+VAL_ 307 ESC_ErrorSt_ABS 1 "Error" 0 "No Error" ;
+VAL_ 307 ESC_Intervention_ABS 1 "Intervention" 0 "No Intervention" ;
+VAL_ 307 ESC_Intervention_TCS 1 "Intervention" 0 "No Intervention" ;
+VAL_ 307 ESC_ErrorSt_EBD 1 "Error" 0 "No error" ;
+VAL_ 307 ESC_AvailableSt_CDP 1 "Available" 0 "Not Available" ;
+VAL_ 307 ESC_Intervention_CDP_RWU 1 "Intervention" 0 "No intervention" ;
+VAL_ 307 ESC_LampCmd_EPB 3 "Reserved" 2 "On" 1 "Flash" 0 "Off" ;
+VAL_ 307 ESC_ErrotSt_EPB 3 "Reserved" 2 "Test mode" 1 "Error " 0 "No error" ;
+VAL_ 307 ESC_AvailableSt_HDC 1 "Available" 0 "Not Available" ;
+VAL_ 307 ESC_WorkingSt_HDC 3 "Error" 2 "Intervention" 1 "Standby" 0 "Off" ;
+VAL_ 307 ErrorSt_AVH 1 "No error" 0 "Error" ;
+VAL_ 307 WorkingSt_AVH 3 "Inactive" 2 "Intervention" 1 "Stand By" 0 "Off" ;
+VAL_ 307 ESC_AvailableSt_HBA 1 "Available" 0 "Not Available" ;
+VAL_ 307 ESC_Intervention_HBA 1 "Intervention" 0 "No Intervention" ;
+VAL_ 307 ESC_WorkingSt_HBB 3 "HBB Disabled" 2 "Reserved" 1 "HBB_FailedBoost" 0 "HBB Normal Mode" ;
+VAL_ 307 ESC_Intervention_HBB 1 "Intervention" 0 "No intervention" ;
+VAL_ 307 ESC_Intervention_EmergencyBrake 1 "Intervention" 0 "No intervention" ;
+VAL_ 307 ESC_VehicleStandstillSt 1 "The vehicle is in standstill." 0 "The vehicle is not  in standstill." ;
+VAL_ 307 ESC_BrakeLightCtrlCmd 1 "Illuminate" 0 "Not illuminate" ;
+VAL_ 307 ESC_WorkingSt_EPB 3 "Unknown" 2 "Locked" 1 "Releasing/Locking" 0 "Released" ;
+VAL_ 309 ESC_YawRate 4095 "SNA" ;
+VAL_ 309 ESC_YRSSt 1 "Not Calibrated" 0 "Calibrated" ;
+VAL_ 309 ESC_Acceleration_X 2047 "SNA" ;
+VAL_ 309 ESC_MasterCylinderPressure 2047 "SNA" ;
+VAL_ 309 ESC_EPBSwitch 3 "Invalid" 2 "Down" 1 "Up" 0 "No press" ;
+VAL_ 309 ESC_AvailableSt_EPBSwitch 1 "Available" 0 "Not available" ;
+VAL_ 309 ESC_Acceleration_Y 2047 "SNA" ;
+VAL_ 309 ESC_ErrorSt_YRS 1 "Error" 0 "No Error" ;
+VAL_ 313 ESC_VLCSt_L3 1 "Active" 0 "Inactive" ;
+VAL_ 313 ESC_VMC_Error_L3 3 "Availablewithfault" 2 "Available" 1 "Not Available" 0 "Not initialized" ;
+VAL_ 313 ESC_AutoDriving_LC_Brakemode 3 "Reserved" 2 "Emergency" 1 "Comfortable" 0 "Inactive" ;
+VAL_ 313 ESC_ShutOffFinished 1 "Active" 0 "Inactive" ;
+VAL_ 321 ESC_SuspendStatus_VMC_2 3 "Reserved" 2 "Other suspend" 1 "HCU Suspend" 0 "Normal" ;
+VAL_ 321 ESC_BrakeFunctionOverrideStatus_ 1 "Active" 0 "Inactive" ;
+VAL_ 274 IFC_TorqueRequest 1023 "SNA" ;
+VAL_ 274 IFC_TorqueRequestSign 1 "Right (Negative)" 0 "Left (Positive)" ;
+VAL_ 274 IFC_TorqueReqSt 1 "Torque Request" 0 "Inactive" ;
+VAL_ 274 HJAD_WorkingSt_LKA 3 "Exit" 2 "Active" 1 "Standby" 0 "Off" ;
+VAL_ 274 IFC_ErrorSt_LKA 1 "Error" 0 "No Error" ;
+VAL_ 274 IFC_AutoDrivingModeReq 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "Reserved" 2 "SACC" 1 "LKA" 0 "No request" ;
+VAL_ 274 IFC_ErrorSt_SACC 3 "Reserved" 2 "Error" 1 "Derate" 0 "Normal" ;
+VAL_ 274 IFC_ErrorSt_HWP 3 "Reserved" 2 "Error" 1 "Derate" 0 "Normal" ;
+VAL_ 274 IFC_ErrorSt_TJP 3 "Reserved" 2 "Error" 1 "Derate" 0 "Normal" ;
+VAL_ 274 LDWSteeringVibrationReq 1 "Request" 0 "No Request" ;
+VAL_ 274 IFC_WorkingSt_SACC 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Exit" 3 "Active" 2 "Available" 1 "Standby" 0 "Off" ;
+VAL_ 274 IFC_WorkingSt_HWP 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Exit" 3 "Active" 2 "Available" 1 "Standby" 0 "Off" ;
+VAL_ 274 IFC_WorkingSt_TJP 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Exit" 3 "Active" 2 "Available" 1 "Standby" 0 "Off" ;
+VAL_ 274 IFC_ErrorSt_FOU 1 "Error" 0 "No Error" ;
+VAL_ 279 IFC_SteeringWheelAngleRequest 32767 "SNA" ;
+VAL_ 279 IFC_SteeringWheelAngleSignReques 3 "Reserved" 2 "Right (Negative)" 1 "Left (Positive)" 0 "No Request" ;
+VAL_ 279 IFC_SteeringWheelAngleControlReq 3 "Reserved" 2 "Reserved" 1 "Steering Angle Request" 0 "No Request" ;
+VAL_ 341 EPS2_HandSteeringTorque 1023 "SNA" ;
+VAL_ 341 EPS2_HandSteeringTorqueSign 1 "Right (Negative)" 0 "Left (Positive)" ;
+VAL_ 341 EPS2_ErrorStatus 3 "Reserved" 2 "Critical Error(lose)" 1 "General Error(Derate)" 0 "No Error" ;
+VAL_ 341 EPS2_WorkingMode_DMS 3 "Invalid value" 2 "Comfort" 1 "Sport" 0 "Auto" ;
+VAL_ 341 EPS2_ModeChangeEnable 1 "Enable" 0 "Disable" ;
+VAL_ 341 EPS2_HandOffStatus 1 "Hands On" 0 "Hands Off" ;
+VAL_ 341 EPS2_HandOffValid 1 "Invalid" 0 "Valid" ;
+VAL_ 341 EPS2_LKAStatus 7 "Reserved" 6 "Reserved" 5 "Transit" 4 "Not configured" 3 "Permanently fail" 2 "Active" 1 "Available for control" 0 "Temporary inhibit" ;
+VAL_ 341 EPS2_TorqueSensorAStatus 1 "Error" 0 "No error" ;
+VAL_ 341 EPS2_TorqueSensorBStatus 1 "Error" 0 "No error" ;
+VAL_ 341 EPS2_OverlayInputTorque 1023 "SNA" ;
+VAL_ 341 EPS2_OverlayInputTorqueSign 1 "Right (Negative)" 0 "Left (Positive)" ;
+VAL_ 341 EPS2_AbortFeedback_HAD 31 "Reserved" 30 "Reserved" 29 "Reserved" 28 "Reserved" 27 "Reserved" 26 "Reserved" 25 "Reserved" 24 "Reserved" 23 "Reserved" 22 "Reserved" 21 "Reserved" 20 "Reserved" 19 "Reserved" 18 "Reserved" 17 "Reserved" 16 "Reserved" 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Reserved" 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "Reserved" 2 "Irrecoverable interruption" 1 "Recoverable interruption" 0 "No driving interuption" ;
+VAL_ 342 EPS2_SACCStatus 7 "Reserved" 6 "Reserved" 5 "Transit" 4 "Not configured" 3 "Permanently fail" 2 "Active" 1 "Available for control" 0 "Temporary inhibit" ;
+VAL_ 342 EPS2_HWPStatus 7 "Reserved" 6 "Reserved" 5 "Transit" 4 "Not configured" 3 "Permanently fail" 2 "Active" 1 "Available for control" 0 "Temporary inhibit" ;
+VAL_ 342 EPS2_TJPStatus 7 "Reserved" 6 "Reserved" 5 "Transit" 4 "Not configured" 3 "Permanently fail" 2 "Active" 1 "Available for control" 0 "Temporary inhibit" ;
+VAL_ 342 EPS2_APAStatus 7 "Reserved" 6 "Reserved" 5 "Transit" 4 "Not configured" 3 "Permanently fail" 2 "Active" 1 "Available for control" 0 "Temporary inhibit" ;
+VAL_ 342 EPS2_RPAStatus 7 "Reserved" 6 "Reserved" 5 "Transit" 4 "Not configured" 3 "Permanently fail" 2 "Active" 1 "Available for control" 0 "Temporary inhibit" ;
+VAL_ 342 EPS2_AVPStatus 7 "Reserved" 6 "Reserved" 5 "Transit" 4 "Not configured" 3 "Permanently fail" 2 "Active" 1 "Available for control" 0 "Temporary inhibit" ;
+VAL_ 342 EPS2_DegradeLevel_HAD 15 "Critical Error(lose)" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "DM8" 7 "DM7" 6 "DM6" 5 "DM5" 4 "DM4" 3 "DM3" 2 "DM2" 1 "DM1" 0 "No Error" ;
+VAL_ 342 EPS2_DriftWarning 3 "Drft Warning" 2 "Corrected" 1 "Calculating" 0 "Normal" ;
+VAL_ 342 EPS2_AutoDrivingMode 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Reserved" 9 "Reserved" 8 "Reserved" 7 "AVP" 6 "RPA" 5 "APA" 4 "TJP" 3 "HWP" 2 "SACC" 1 "LKA" 0 "Idle" ;
+VAL_ 209 EPS_SteeringWheelAngle 32767 "SNA" ;
+VAL_ 209 EPS_SteeringWheelAngleSign 1 "Right " 0 "Left" ;
+VAL_ 209 EPS_SteeringWheelSpeed 32767 "SNA" ;
+VAL_ 209 EPS_SteeringWheelSpeedSign 1 "Right" 0 "Left " ;
+VAL_ 209 EPS_SAS_St 3 "Permanent Error Detected" 2 "Intermittent Error Detected" 1 "SAS Not Calibrated" 0 "SAS Angle And Speed Correct" ;
+VAL_ 150 SAS_SteeringWheelAngle 32767 "SNA" ;
+VAL_ 150 SAS_SteeringWheelAngleSign 1 "Right (Negative)" 0 "Left (Positive)" ;
+VAL_ 150 SAS_SteeringWheelSpeed 32767 "SNA" ;
+VAL_ 150 SAS_SteeringWheelSpeedSign 1 "Right (Negative)" 0 "Left (Positive)" ;
+VAL_ 150 SAS_ID 255 "SNA" ;
+VAL_ 150 SAS_Status 3 "Permanent Error Detected" 2 "Intermittent Error Detected" 1 "SAS Not Calibrated" 0 "SAS Angle And Speed Correct" ;
+VAL_ 665 EPS_B_A_ElectricLoad 255 "SNA" ;
+VAL_ 665 EPS_B_B_ElectricLoad 255 "SNA" ;
+VAL_ 316 eB_VLCSt_L3 1 "Active" 0 "Inactive" ;
+VAL_ 316 eB_VMC_Error_L3 3 "Reserved" 2 "Not available" 1 "Reduced" 0 "Available" ;
+VAL_ 316 eB_SuspendStatus_VMC 3 "Park Brake Suspend" 2 "Other Suspend" 1 "Driver Suspend" 0 "No Suspend" ;
+VAL_ 316 eB_ShutOffFinished_L3 1 "Active" 0 "Inactive" ;
+VAL_ 316 eB_BrakePedalStatus 1 "brake pedal applied" 0 "brake pedal not applied" ;
+VAL_ 316 eB_BrakePedalStatus_Q 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 316 eB_BrakePedalDominant 1 "Dominant" 0 "No dominant" ;
+VAL_ 316 eB_BrakePedalDominant_Q 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 316 eB_TargetGearReq_VMC_1 7 "Invalid" 6 "Reserved" 5 "Reserved" 4 "Target gear D" 3 "Target gear N" 2 "Target gear R" 1 "Target gear P" 0 "No Request" ;
+VAL_ 432 ECAS_Height_FL 255 "SNA" ;
+VAL_ 432 ECAS_Height_FR 255 "SNA" ;
+VAL_ 432 ECAS_Height_RL 255 "SNA" ;
+VAL_ 432 ECAS_Height_RR 255 "SNA" ;
+VAL_ 529 AxleLoad_Front 4095 "SNA" ;
+VAL_ 529 AxleLoad_Rear 4095 "SNA" ;
+VAL_ 532 DMS_ESCModeChangeCmd 7 "Sport" 6 "Sand" 5 "MUD Ruts" 4 "Off road" 3 "Snow" 2 "Eco" 1 "Auto" 0 "Inactive" ;
+VAL_ 532 DMS_EPSModeChangeCmd 3 "Comfort" 2 "Sport" 1 "Auto" 0 "Inactive" ;
+VAL_ 532 DMS_ECASModeChangeCmd 7 "Sand" 6 "Off road" 5 "Snow" 4 "Sport" 3 "Comfort" 2 "Eco" 1 "Auto" 0 "Inactive" ;
+VAL_ 532 DMS_AXGradient 1023 "SNA" ;
+VAL_ 532 DMS_AXGradientAccuracy 1 "Inaccurate" 0 "Accurate" ;
+VAL_ 532 DMS_HCUModeChangeCmd 7 "Extreme" 6 "Sand" 5 "Off Road" 4 "Grass Gravel Snow" 3 "Sport" 2 "ECO" 1 "Comfort" 0 "Inactive" ;
+VAL_ 532 DMS_AYGradient 1023 "SNA" ;
+VAL_ 532 DMS_AYGradientAccuracy 1 "Inaccurate" 0 "Accurate" ;
+VAL_ 534 DMS_VehicleModeInfo 15 "Invalid value" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Extreme" 9 "Mud Ruts" 8 "Sand" 7 "EV" 6 "Individual" 5 "Off road" 4 "Snow" 3 "Sport" 2 "Comfort" 1 "Eco" 0 "Auto" ;
+VAL_ 534 DMS_ErrorStatus 1 "Error" 0 "No error" ;
+VAL_ 534 DMS_ModeChangeInProcess 1 "In process" 0 "Not in process" ;
+VAL_ 534 DMS_IndividualMode_EPS 3 "Reserved" 2 "Comfort" 1 "Sport" 0 "Auto" ;
+VAL_ 534 DMS_IndividualMode_ECAS 7 "Reserved" 6 "Sand" 5 "Off road" 4 "Snow" 3 "Sport" 2 "Comfort" 1 "Eco" 0 "Auto" ;
+VAL_ 534 DMS_IndividualMode_HCU 7 "Reserved" 6 "Sand" 5 "Off road" 4 "Snow" 3 "Sport" 2 "Comfort" 1 "Eco" 0 "Auto" ;
+VAL_ 534 DMS_MainMode 15 "Reserved" 14 "Last Selection" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Extreme" 9 "Mud Ruts" 8 "Sand" 7 "Reserved" 6 "Individual" 5 "Off road" 4 "Snow" 3 "Sport" 2 "Comfort" 1 "Eco" 0 "Auto" ;
+VAL_ 534 DMS_TargetVehicleMode 15 "Invalid value" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "Reserved" 10 "Extreme" 9 "Mud Ruts" 8 "Sand" 7 "EV" 6 "Individual" 5 "Off road" 4 "Snow" 3 "Sport" 2 "Comfort" 1 "Eco" 0 "Auto" ;
+VAL_ 534 DMS_TipInfo 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "Reserved" 2 "Reserved" 1 "Speed too high,can not into Sport" 0 "No Tip" ;
+VAL_ 167 ESC_DriveMain2BackupState_2 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "B - Deactivation_Pending" 10 "A - Activated_RedundancyLost" 9 "9 - Activated_FailOperation" 8 "8 - Activated_FullAvailable" 7 "7 - Activation_PendingFailOperation" 6 "6 - Activation_PendingRedundancyLost" 5 "5 - Activation_Pending" 4 "4 - Activation_Preparation" 3 "3 - NotActivated_FullAvailable" 2 "2 - NotAvailable_Permanent" 1 "1 - NotAvailable_NotReleased" 0 "0 - NotAvailable_Temporary" ;
+VAL_ 164 ESC_usedChannel_2 3 "Instance2Com2" 2 "Instance2Com1" 1 "Instance1Com2" 0 "Instance1Com1" ;
+VAL_ 164 ESC_BrakeFxCapability_2 3 "Reserved" 2 "FullPerformance" 1 "ReducedPerformance" 0 "None" ;
+VAL_ 164 ESC_BrakeFxAvailability_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 164 ESC_AccStabAvail_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 164 ESC_DecStabAvail_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 164 ESC_isBrkFctReqFxBrkDomin_2 1 "Dominant" 0 "Not dominant" ;
+VAL_ 164 ESC_DecStabAvailForDriver_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 164 ESC_DecStabActivity_2 3 "Reserved" 2 "AtAllWheels" 1 "AtLeastOneWheel" 0 "None" ;
+VAL_ 164 ESC_AccStabActivity_2 1 "Active" 0 "None" ;
+VAL_ 164 ESC_YawRateStabAvailability_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 164 ESC_YawRateStabActivity_2 1 "Active" 0 "None" ;
+VAL_ 164 ESC_ParkBrakeCapability_2 3 "Reserved" 2 "Full" 1 "Reduced" 0 "None" ;
+VAL_ 164 ESC_ParkBrakeAvailability_2 3 "Full" 2 "FullNoDriverReleased" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 164 ESC_ParkBrakeState_2 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Released" 3 "Releasing" 2 "Applied" 1 "Applying" 0 "Unknown" ;
+VAL_ 164 ESC_isBrkFctReqPrkBrkDomin_2 1 "Dominant" 0 "Not dominant" ;
+VAL_ 164 ESC_DecStabCpblty_2 3 "Full" 2 "NoDragTorqueControl" 1 "Reduced" 0 "None" ;
+VAL_ 164 ESC_DecStabCpbltyForDriver_2 3 "Full" 2 "NoDragTorqueControl" 1 "Reduced" 0 "None" ;
+VAL_ 164 ESC_ParkBrakeSupportRequest_2 1 "ActiveRequest" 0 "NoRequest" ;
+VAL_ 165 ESC_DrvReqTarFxBrakeAvail_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 165 ESC_DrvPressBrakePedalAvail_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 165 ESC_isDrvPressingBrakePedal_2 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 165 ESC_DrvReqFxBrkDomAvail_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 165 ESC_isDrvReqFxBrakeDominant_2 1 "Dominant" 0 "Not dominant" ;
+VAL_ 165 ESC_DriverRequestParkBrake_2 3 "Reserved" 2 "Apply" 1 "Release" 0 "No request" ;
+VAL_ 165 ESC_isDrvReqParkBrkDominant_2 1 "Dominant" 0 "Not dominant" ;
+VAL_ 165 ESC_DrvReqParkBrakeAvail_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 165 ESC_BrkDiscTempStatus_2 3 "WarningLevel3" 2 "WarningLevel2" 1 "WarningLevel1" 0 "NormalRange" ;
+VAL_ 165 ESC_BrkDiscTempStatusAvail_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 174 eB_DriveBackup2MainState_2 15 "Reserved" 14 "Reserved" 13 "Reserved" 12 "Reserved" 11 "B - Deactivation_Pending" 10 "A - Activated_RedundancyLost" 9 "9 - Activated_FailOperation" 8 "8 - Activated_FullAvailable" 7 "7 - Activation_PendingFailOperation" 6 "6 - Activation_PendingRedundancyLost" 5 "5 - Activation_Pending" 4 "4 - Activation_Preparation" 3 "3 - NotActivated_FullAvailable" 2 "2 - NotAvailable_Permanent" 1 "1 - NotAvailable_NotReleased" 0 "0 - NotAvailable_Temporary" ;
+VAL_ 175 eB_usedChannel_2 3 "Instance2Com2" 2 "Instance2Com1" 1 "Instance1Com2" 0 "Instance1Com1" ;
+VAL_ 175 eB_BrakeFxCapability_2 3 "Reserved" 2 "FullPerformance" 1 "ReducedPerformance" 0 "None" ;
+VAL_ 175 eB_BrakeFxAvailability_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 175 eB_DecStabAvail_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 175 eB_isBrkFctReqFxBrkDomin_2 1 "Dominant" 0 "Not dominant" ;
+VAL_ 175 eB_DecStabAvailForDriver_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 175 eB_DecStabActivity_2 3 "Reserved" 2 "AtAllWheels" 1 "AtLeastOneWheel" 0 "None" ;
+VAL_ 175 eB_DecStabCpblty_2 3 "Full" 2 "NoDragTorqueControl" 1 "Reduced" 0 "None" ;
+VAL_ 175 eB_DecStabCpbltyForDriver_2 3 "Full" 2 "NoDragTorqueControl" 1 "Reduced" 0 "None" ;
+VAL_ 171 eB_DrvReqTarFxBrakeAvail_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 171 eB_DrvPressBrakePedalAvail_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 171 eB_isDrvPressingBrakePedal_2 1 "Pressed" 0 "Not Pressed" ;
+VAL_ 171 eB_DrvReqFxBrkDomAvail_2 3 "Reserved" 2 "Full" 1 "Fault" 0 "NotInitialized" ;
+VAL_ 171 eB_isDrvReqFxBrakeDominant_2 1 "Dominant" 0 "Not dominant" ;
+VAL_ 311 ESC_TorqueReq_VMC_2 131071 "SNA" ;
+VAL_ 311 ESC_TorqueReqSt_VMC_2 3 "Reserved" 2 "Reserved" 1 "Request" 0 "No Request" ;
+VAL_ 311 ESC_TargetGearReq_VMC_2 7 "Invalid" 6 "Reserved" 5 "Reserved" 4 "Target gear D" 3 "Target gear N" 2 "Target gear R" 1 "Target gear P" 0 "No Request" ;
+VAL_ 576 PositionLightSt_RL 1 "On" 0 "Off" ;
+VAL_ 576 PositionLightSt_RR 1 "On" 0 "Off" ;
+VAL_ 576 FogLightSt_Rear 1 "On" 0 "Off" ;
+VAL_ 576 FogLightSt_RL 1 "On" 0 "Off" ;
+VAL_ 576 FogLightSt_RR 1 "On" 0 "Off" ;
+VAL_ 576 FoglightFaultSt_Rear 1 "Fault" 0 "No fault" ;
+VAL_ 576 TurnLightFaultSt_RL 1 "Fault" 0 "No fault" ;
+VAL_ 576 TurnLightFaultSt_RR 1 "Fault" 0 "No fault" ;
+VAL_ 576 WiperSt_Rear 1 "On" 0 "Off" ;
+VAL_ 576 PositionLightFaultSt_Rear 1 "Fault" 0 "No fault" ;
+VAL_ 576 BrakeLightSt_RL 1 "On" 0 "Off" ;
+VAL_ 576 BrakeLightSt_RR 1 "On" 0 "Off" ;
+VAL_ 688 GW_IgnitionOffTime 4095 "SNA" ;
+VAL_ 688 GW_RemoteVehicleMode 1 "Remote Mode" 0 "Normal Mode" ;
+VAL_ 688 GW_OTAMode 7 "Reserved" 6 "Reserved" 5 "Reserved" 4 "Reserved" 3 "Reserved" 2 "Reserved" 1 "OTA Mode" 0 "Normal Mode" ;
+VAL_ 192 WheelSpeed_FL 32767 "SNA" ;
+VAL_ 192 WheelSpeed_FR 32767 "SNA" ;
+VAL_ 192 VehiclSpeed 32767 "SNA" ;
+VAL_ 194 WheelSpeed_RL 32767 "SNA" ;
+VAL_ 194 WheelSpeed_RR 32767 "SNA" ;
+VAL_ 194 MasterCylinderPressure 2047 "SNA" ;
+VAL_ 308 YawRate 4095 "SNA" ;
+VAL_ 308 YRSSt 1 "Not Calibrated" 0 "Calibrated" ;
+VAL_ 308 Acceleration_X 2047 "SNA" ;
+VAL_ 308 Acceleration_Y 2047 "SNA" ;
+VAL_ 308 ErrorSt_YRS 1 "Error" 0 "No Error" ;
+
