@@ -1,8 +1,5 @@
-from itertools import count
 import re
-from signal import Signals
 import xlrd
-import pandas as pd
 
 
 class TestCase:
@@ -145,6 +142,8 @@ while 1:
         IntergrationData_Cpp_Data.append(''.join(line))
 file.close()
 
+need_Msg = []
+
 file = open(r"IntergrationTestCase\AutoIntergrationTest\wreiteFile\IntergrationData.cpp", 'w', encoding="gbk")
 # write to c or h file
 for linenum in range(len(IntergrationData_Cpp_Data)):
@@ -158,27 +157,50 @@ for linenum in range(len(IntergrationData_Cpp_Data)):
                 file.write("\ttestCase_Struct.test_Function_Name.push_back(\"{0}\");\n".format(function.TestFunction_CaseName[cIndex]))
                 for x in range(len(function.Case_TestStep[cIndex])):
                     file.write("\ttestCase_Struct.case_LevelFlag.push_back(0);\n")
-                    file.write("\tttestCase_Struct.case_Level.push_back(\"{0}\");\n".format(function.TestFunction_CaseName[cIndex][x]))
+                    file.write("\ttestCase_Struct.case_Level.push_back(\"{0}\");\n".format(function.TestFunction_CaseName[cIndex][x]))
                     for j in range(len(function.Case_TestStep[cIndex][x])):
                         tx_Signal = re.match('^(?P<signalname>\w+)=(?P<Value>\w+)', function.Case_TestStep[cIndex][x][j])
                         if tx_Signal.group("signalname") in sheet2_SignalName:
+                            file.write("\tsignalInfo.signal_Name = \"{0}\";\n".format(tx_Signal.group("signalname")))
+
                             temp_Index = sheet2_SignalName.index(tx_Signal.group("signalname"))
                             # get signal info
                             msgName = sheet2_MsgName[temp_Index]
+                            file.write("\tsignalInfo.msg_Name = \"{0}\";\n".format(msgName))
+                            file.write("\tmsgData.msg_Name = \"{0}\";\n".format(msgName))
+
                             startByte = sheet2_StartByte[temp_Index]
+                            file.write("\tsignalInfo.signal_StartByte = {0};\n".format(startByte))
+
                             startBit = sheet2_StartBit[temp_Index]
+                            file.write("\tsignalInfo.signal_StartBit = {0};\n".format(startBit))
+
                             signalLength = sheet2_StartLength[temp_Index]
+                            file.write("\tsignalInfo.signal_Length = {0};\n".format(signalLength))
+
+                            
+
                             # Msg_Info = sheet2_SignalName[temp_Index]
                             dataType = sheet2_DataType[temp_Index]
                             factor = sheet2_Factor[temp_Index]
-                            offset = sheet2_Offset[temp_Index]
-                            msgId = sheet1_Id[sheet1_MsgName.index(msgName)]
-                            msgCycleTime = sheet1_CycleTime[sheet1_MsgName.index(msgName)]
-                            msgHasLCCS = sheet1_HasLCCK[sheet1_MsgName.index(msgName)]
-                            file.write("\tsignalInfo.msg_Name = \"{0}\";\n".format(msgName))
-                            file.write("\tsignalInfo.signal_Name = \"{0}\";\n".format(tx_Signal.group("signalname")))
-                            file.write("\tsignalInfo.id = {0};\n".format(msgId))
+                            file.write("\tsignalInfo.signal_Factor = {0};\n".format(factor))
 
+                            offset = sheet2_Offset[temp_Index]
+                            file.write("\tsignalInfo.signal_Offset = {0};\n".format(offset))
+
+                            msgId = sheet1_Id[sheet1_MsgName.index(msgName)]
+                            file.write("\tsignalInfo.id = {0};\n".format(msgId))
+                            file.write("\tmsgData.id = {0};\n".format(msgId))
+
+                            msgCycleTime = sheet1_CycleTime[sheet1_MsgName.index(msgName)]
+                            file.write("\tmsgData.cycle_Time = {0};\n".format(msgCycleTime))
+
+                            msgHasLCCS = sheet1_HasLCCK[sheet1_MsgName.index(msgName)]
+                            # file.write("\tmsgData.")
+                            
+                            file.write("\ttestCase_Struct.case_TestStep.push_back(signalInfo);\n")
+                            file.write("\ttestCase_Struct.Case_TestValue.push_back({0});\n".format(tx_Signal.group("Value")))
+                            file.write("\n\n")
                         else:
                             print("No Such SignalName\n")
 
