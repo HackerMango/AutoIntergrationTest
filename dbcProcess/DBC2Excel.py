@@ -274,7 +274,7 @@ for dbc_Name in file_dbc:
 
     for i in range(len(Excel_MsgName)):
         if Excel_SignalName[i] not in SigTableList_Result:
-            db.execute('INSERT into Signal_Table (MsgName, StartByte, StartBit, SignalLength, SignalName, DataType, SignalFactor, SignalOffset) VALUES (?,?,?,?,?,?,?,?)',
+            db.execute('INSERT into Signal_Table (SgMsgName, StartByte, StartBit, SignalLength, SignalName, DataType, SignalFactor, SignalOffset) VALUES (?,?,?,?,?,?,?,?)',
                         (Excel_MsgName[i], Excel_StartByte[i], Excel_StartBit[i], Excel_SignalSize[i], Excel_SignalName[i], Excel_DataType[i], Excel_factor[i], Excel_offset[i]))
     # write to Excel
     # xl = xlsxwriter.Workbook(r'Excel_File\\{0}_Msg.xlsx'.format(CANName))
