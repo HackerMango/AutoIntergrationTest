@@ -33,7 +33,7 @@ sig_Info = [list(x) for x in get_Data]
 # Execl_Book = xlrd.open_workbook("IntergrationTestCase\Data\Decy_Test.xlsx")
 
 # Pycharm Read File Path
-Execl_Book = xlrd.open_workbook("Decy_Test - 副本.xlsx")
+Execl_Book = xlrd.open_workbook("TestCase.xlsx")
 Excel_Sheet = Execl_Book.sheets()
 Test_Case_Data = []
 
@@ -72,7 +72,8 @@ for i in range(len(Test_Case_Data[0])):
                 Test_Array.append(RearSteer_TestCase)
                 break
 
-
+db_Cursor.execute('delete from RxInfo_Table')
+db_Cursor.execute('delete from TxInfo_Table')
 
 for fun in Test_Array:
 
@@ -88,15 +89,15 @@ for fun in Test_Array:
 
         for i in range(len(fun.Case_Level)):
             if (fun.TestFunction_CaseName[index] + '_{0}'.format(i)) not in step_Info:
-                db_Cursor.execute('INSERT into Step_Table (StepName, CaseName, StepCheck) VALUES (?, ?, ?)', (fun.TestFunction_CaseName[index] + '_{0}'.format(i), fun.TestFunction_CaseName[index], 0))
+                db_Cursor.execute('INSERT into Step_Table (StepName, StepCaseName, StepCheck) VALUES (?, ?, ?)', (fun.TestFunction_CaseName[index] + '_{0}'.format(i), fun.TestFunction_CaseName[index], 0))
             # db_Cursor.execute('INSERT into TestInfo_Table ()')
             for step in fun.Case_TestStep[index][i]:
                 sent_Info = re.match('^(?P<signalname>\w+)=(?P<Value>\w+)', step)
-                db_Cursor.execute('INSERT into TxInfo_Table (TxSignalName, TxSignalValue, StepName) VALUES (?, ?, ?)',
+                db_Cursor.execute('INSERT into TxInfo_Table (TxSignalName, TxSignalValue, TxStepName) VALUES (?, ?, ?)',
                                   (sent_Info.group('signalname'), sent_Info.group('Value'), fun.TestFunction_CaseName[index] + '_{0}'.format(i)))
-            for result in fun.Case_TestStep[index][i]:
+            for result in fun.Case_DesiredResult[index][i]:
                 recieve_Info = re.match('^(?P<signalname>\w+)=(?P<Value>\w+)', result)
-                db_Cursor.execute('INSERT into RxInfo_Table (RxSignalName, RxSignalValue, StepName) VALUES (?, ?, ?)',
+                db_Cursor.execute('INSERT into RxInfo_Table (RxSignalName, RxSignalValue, RxStepName) VALUES (?, ?, ?)',
                                   (recieve_Info.group('signalname'), recieve_Info.group('Value'), fun.TestFunction_CaseName[index] + '_{0}'.format(i)))
 
 db_Connection.commit()
