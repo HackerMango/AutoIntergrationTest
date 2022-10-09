@@ -29,11 +29,20 @@ db_Cursor.execute('SELECT * from Signal_Table')
 get_Data = db_Cursor.fetchall()
 sig_Info = [list(x) for x in get_Data]
 
+db_Cursor.execute('delete from Case_Table')
+db_Cursor.execute('update sqlite_sequence set seq=0 where name="Case_Table"')
+db_Cursor.execute('delete from RxInfo_Table')
+db_Cursor.execute('update sqlite_sequence set seq=0 where name="RxInfo_Table"')
+db_Cursor.execute('delete from TxInfo_Table')
+db_Cursor.execute('update sqlite_sequence set seq=0 where name="TxInfo_Table"')
+db_Cursor.execute('delete from Step_Table')
+db_Cursor.execute('update sqlite_sequence set seq=0 where name="Step_Table"')
+
 # Vs Code Read File Path
 # Execl_Book = xlrd.open_workbook("IntergrationTestCase\Data\Decy_Test.xlsx")
 
 # Pycharm Read File Path
-Execl_Book = xlrd.open_workbook("TestCase.xlsx")
+Execl_Book = xlrd.open_workbook("Decy_Case.xlsx")
 Excel_Sheet = Execl_Book.sheets()
 Test_Case_Data = []
 
@@ -60,15 +69,22 @@ for i in range(len(Test_Case_Data[0])):
                     Case_DesiredResult.append(Test_Case_Data[5][i].split(sep='\n'))
                     Case_LevelFlag.append(int(0))
                     i = i + 1
-                    if Test_Case_Data[1][i] == "用例" or i >= len(Test_Case_Data[0]) - 1 or Test_Case_Data[1][
-                        i] == "功能\nFunction":
-                        RearSteer_TestCase.Case_Level.append(Case_Level)
+                    if i >= len(Test_Case_Data[0]):
+                        RearSteer_TestCase.Case_Level.extend(Case_Level)
                         RearSteer_TestCase.Case_TestStep.append(Case_TestStep)
                         RearSteer_TestCase.Case_DesiredResult.append(Case_DesiredResult)
                         RearSteer_TestCase.Case_LevelFlag.append(Case_LevelFlag)
                         break
-
-            if Test_Case_Data[1][i] == "功能\nFunction" or i >= len(Test_Case_Data[0]) - 1:
+                    if Test_Case_Data[1][i] == "用例" or Test_Case_Data[1][i] == "功能\nFunction":
+                        RearSteer_TestCase.Case_Level.extend(Case_Level)
+                        RearSteer_TestCase.Case_TestStep.append(Case_TestStep)
+                        RearSteer_TestCase.Case_DesiredResult.append(Case_DesiredResult)
+                        RearSteer_TestCase.Case_LevelFlag.append(Case_LevelFlag)
+                        break
+            if i >= len(Test_Case_Data[0]):
+                Test_Array.append(RearSteer_TestCase)
+                break
+            if Test_Case_Data[1][i] == "功能\nFunction":
                 Test_Array.append(RearSteer_TestCase)
                 break
 
@@ -92,11 +108,11 @@ for fun in Test_Array:
                 db_Cursor.execute('INSERT into Step_Table (StepName, StepCaseName, StepCheck) VALUES (?, ?, ?)', (fun.TestFunction_CaseName[index] + '_{0}'.format(i), fun.TestFunction_CaseName[index], 0))
             # db_Cursor.execute('INSERT into TestInfo_Table ()')
             for step in fun.Case_TestStep[index][i]:
-                sent_Info = re.match('^(?P<signalname>\w+)=(?P<Value>\w+)', step)
+                sent_Info = re.match('^(?P<signalname>\w+)==(?P<Value>\w+)', step)
                 db_Cursor.execute('INSERT into TxInfo_Table (TxSignalName, TxSignalValue, TxStepName) VALUES (?, ?, ?)',
                                   (sent_Info.group('signalname'), sent_Info.group('Value'), fun.TestFunction_CaseName[index] + '_{0}'.format(i)))
             for result in fun.Case_DesiredResult[index][i]:
-                recieve_Info = re.match('^(?P<signalname>\w+)=(?P<Value>\w+)', result)
+                recieve_Info = re.match('^(?P<signalname>\w+)==(?P<Value>\w+)', result)
                 db_Cursor.execute('INSERT into RxInfo_Table (RxSignalName, RxSignalValue, RxStepName) VALUES (?, ?, ?)',
                                   (recieve_Info.group('signalname'), recieve_Info.group('Value'), fun.TestFunction_CaseName[index] + '_{0}'.format(i)))
 
