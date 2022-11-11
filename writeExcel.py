@@ -1,5 +1,6 @@
 import openpyxl as openpyxl
 from openpyxl.styles import Font
+from openpyxl.styles import Alignment
 import xlrd
 import sqlite3
 
@@ -84,8 +85,12 @@ for i in range(1, 41):
         table.cell(i, 11).value = Test_Case_Data[10][i - 1]
         table.cell(i, 10).value = Test_Case_Data[9][i - 1]
         if isinstance(Test_Case_Data[9][i - 1], int):
+            table.cell(i, 10).alignment = Alignment(horizontal='left', vertical='center', wrap_text=True)
             if Test_Case_Data[9][i - 1] == -1:
                 table.cell(i, 11).font = Font(color='c00000')
+                table.cell(i, 10).value = "F"
+            else:
+                table.cell(i, 10).value = "P"
 
 work_Book.save("行车_1.xlsx")
 
