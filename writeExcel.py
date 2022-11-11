@@ -1,12 +1,7 @@
-import json
-import re
-
 import openpyxl as openpyxl
 from openpyxl.styles import Font
 import xlrd
 import sqlite3
-
-import xlsxwriter
 
 db_Connection = sqlite3.connect(r'RearWheel.db')
 db_Cursor = db_Connection.cursor()
