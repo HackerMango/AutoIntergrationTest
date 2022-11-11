@@ -71,14 +71,13 @@ for row in range(nrows):
         if count_Test > row:
             row = count_Test
 
-worke_Book = openpyxl.load_workbook("行车_1.xlsx")
-sheets = worke_Book.get_sheet_names()
-table = worke_Book.get_sheet_by_name(sheets[0])
-table = worke_Book.active
+work_Book = openpyxl.load_workbook("行车_1.xlsx")
+table = work_Book["Sheet1"]
+table = work_Book.active
 
 merged_col = []
 merged_row = []
-for it_bottom in table.merged_cell_ranges:
+for it_bottom in table.merged_cells.ranges:
     if list(it_bottom.bounds)[1] not in merged_row:
         temp = list(it_bottom.bounds)[1]
         while temp <= list(it_bottom.bounds)[3]:
