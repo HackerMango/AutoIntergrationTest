@@ -2,6 +2,7 @@ import json
 import re
 
 import openpyxl as openpyxl
+from openpyxl.styles import Font
 import xlrd
 import sqlite3
 
@@ -16,7 +17,6 @@ rxInfo_Table = [list(x) for x in get_Data]
 db_Cursor.execute('SELECT * from Step_Table')
 get_Data = db_Cursor.fetchall()
 step_Table = [list(x) for x in get_Data]
-
 
 ActSignalValue = []
 Test_Result = []
@@ -59,7 +59,7 @@ count_Step = 0
 for row in range(nrows):
     if Step_Name[count_Step].find(Test_Case_Data[0][row]) != -1 and Test_Case_Data[1][row].find("用例") != -1:
         count_Test = row
-        while(Step_Name[count_Step].find(Test_Case_Data[0][row]) != -1 and count_Step < len(Step_Name)):
+        while (Step_Name[count_Step].find(Test_Case_Data[0][row]) != -1 and count_Step < len(Step_Name)):
             Test_Case_Data[10][count_Test + 1] = ActSignalValue[count_Step]
             Test_Case_Data[9][count_Test + 1] = Test_Result[count_Step]
             count_Test = count_Test + 1
@@ -89,8 +89,10 @@ for i in range(1, 41):
     if i not in merged_row:
         table.cell(i, 11).value = Test_Case_Data[10][i - 1]
         table.cell(i, 10).value = Test_Case_Data[9][i - 1]
+        if isinstance(Test_Case_Data[9][i - 1], int):
+            if Test_Case_Data[9][i - 1] == -1:
+                table.cell(i, 11).font = Font(color='c00000')
 
 worke_Book.save("行车_1.xlsx")
-
 
 print(Test_Case_Data[11][24])
