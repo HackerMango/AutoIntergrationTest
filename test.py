@@ -95,12 +95,15 @@ for fun in Test_Array:
     for index in range(len(fun.TestFunction_CaseName)):
         count = 0
         if fun.TestFunction_CaseName[index] not in case_Info:
-            db_Cursor.execute('INSERT into Case_Table (CaseName, Function_Name) VALUES (?, ?)', (fun.TestFunction_CaseName[index], fun.TestFunction_Name))
+            db_Cursor.execute('INSERT into Case_Table (CaseName, Function_Name) VALUES (?, ?)',
+                              (fun.TestFunction_CaseName[index], fun.TestFunction_Name))
 
         for j in range(len(fun.Case_LevelFlag[index])):
 
             if (fun.TestFunction_CaseName[index] + '_{0}'.format(count)) not in step_Info:
-                db_Cursor.execute('INSERT into Step_Table (StepName, StepCaseName, StepCheck) VALUES (?, ?, ?)', (fun.TestFunction_CaseName[index] + '_{0}'.format(count), fun.TestFunction_CaseName[index], 0))
+                db_Cursor.execute('INSERT into Step_Table (StepName, StepCaseName, StepCheck) VALUES (?, ?, ?)',
+                                  (fun.TestFunction_CaseName[index] + '_{0}'.format(count),
+                                   fun.TestFunction_CaseName[index], 0))
             # db_Cursor.execute('INSERT into TestInfo_Table ()')
             for step in fun.Case_TestStep[index][j]:
                 sent_Info = re.match('^(?P<signalname>\w+)==(?P<Value>\w+)', step)
