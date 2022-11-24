@@ -12,13 +12,6 @@ class TestCase:
         self.Case_TestStep = []
         self.Case_DesiredResult = []
 
-    def clearData(self):
-        self.TestFunction_Name = ""
-        self.TestFunction_CaseName = []
-        self.Case_Level = []
-        self.Case_TestStep = []
-        self.Case_DesiredResult = []
-
 
 db_Connection = sqlite3.connect(r'RearWheel.db')
 db_Cursor = db_Connection.cursor()
