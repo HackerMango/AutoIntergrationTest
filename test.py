@@ -41,7 +41,7 @@ db_Cursor.execute('update sqlite_sequence set seq=0 where name="Step_Table"')
 # Execl_Book = xlrd.open_workbook("IntergrationTestCase\Data\Decy_Test.xlsx")
 
 # Pycharm Read File Path
-Execl_Book = xlrd.open_workbook("行车.xlsx")
+Execl_Book = xlrd.open_workbook("泊车.xlsx")
 Excel_Sheet = Execl_Book.sheets()
 Test_Case_Data = []
 
