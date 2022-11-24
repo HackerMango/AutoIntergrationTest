@@ -84,6 +84,7 @@ for i in range(len(Test_Case_Data[0])):
 db_Cursor.execute('delete from RxInfo_Table where 1')
 db_Cursor.execute('delete from TxInfo_Table where 1')
 
+count = 0
 for fun in Test_Array:
 
     db_Cursor.execute('SELECT CaseName from Case_Table')
@@ -117,8 +118,6 @@ for fun in Test_Array:
                                   (recieve_Info.group('signalname'), recieve_Info.group('Value'),
                                    fun.TestFunction_CaseName[index] + '_{0}'.format(count)))
             count = count + 1
-
-
 
 db_Connection.commit()
 print("asd")
