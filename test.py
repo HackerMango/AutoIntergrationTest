@@ -120,4 +120,3 @@ for fun in Test_Array:
             count = count + 1
 
 db_Connection.commit()
-print("asd")
