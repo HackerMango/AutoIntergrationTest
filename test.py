@@ -84,7 +84,6 @@ for i in range(len(Test_Case_Data[0])):
 db_Cursor.execute('delete from RxInfo_Table where 1')
 db_Cursor.execute('delete from TxInfo_Table where 1')
 
-count = 0
 for fun in Test_Array:
 
     db_Cursor.execute('SELECT CaseName from Case_Table')
@@ -94,29 +93,27 @@ for fun in Test_Array:
     step_Info = [i for x in db_Cursor.fetchall() for i in x]
 
     for index in range(len(fun.TestFunction_CaseName)):
-        count = 0
         if fun.TestFunction_CaseName[index] not in case_Info:
             db_Cursor.execute('INSERT into Case_Table (CaseName, Function_Name) VALUES (?, ?)',
                               (fun.TestFunction_CaseName[index], fun.TestFunction_Name))
 
         for j in range(len(fun.Case_LevelFlag[index])):
 
-            if (fun.TestFunction_CaseName[index] + '_{0}'.format(count)) not in step_Info:
+            if (fun.TestFunction_CaseName[index] + '_{0}'.format(j)) not in step_Info:
                 db_Cursor.execute('INSERT into Step_Table (StepName, StepCaseName, StepCheck) VALUES (?, ?, ?)',
-                                  (fun.TestFunction_CaseName[index] + '_{0}'.format(count),
+                                  (fun.TestFunction_CaseName[index] + '_{0}'.format(j),
                                    fun.TestFunction_CaseName[index], 0))
             # db_Cursor.execute('INSERT into TestInfo_Table ()')
             for step in fun.Case_TestStep[index][j]:
                 sent_Info = re.match('^(?P<signalname>\\w+)==(?P<Value>\\w+)', step)
                 db_Cursor.execute('INSERT into TxInfo_Table (TxSignalName, TxSignalValue, TxStepName) VALUES (?, ?, ?)',
                                   (sent_Info.group('signalname'), sent_Info.group('Value'),
-                                   fun.TestFunction_CaseName[index] + '_{0}'.format(count)))
+                                   fun.TestFunction_CaseName[index] + '_{0}'.format(j)))
             for result in fun.Case_DesiredResult[index][j]:
                 receive_Info = re.match('^(?P<signalname>\\w+)==(?P<Value>\\w+)', result)
                 db_Cursor.execute('INSERT into RxInfo_Table (RxSignalName, RxSignalValue, RxStepName) '
                                   'VALUES (?, ?, ?)',
                                   (receive_Info.group('signalname'), receive_Info.group('Value'),
-                                   fun.TestFunction_CaseName[index] + '_{0}'.format(count)))
-            count = count + 1
+                                   fun.TestFunction_CaseName[index] + '_{0}'.format(j)))
 
 db_Connection.commit()
