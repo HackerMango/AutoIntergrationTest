@@ -112,15 +112,10 @@ for fun in Test_Array:
                                    fun.TestFunction_CaseName[index] + '_{0}'.format(count)))
             for result in fun.Case_DesiredResult[index][j]:
                 recieve_Info = re.match('^(?P<signalname>\\w+)==(?P<Value>\\w+)', result)
-                try:
-                    db_Cursor.execute('INSERT into RxInfo_Table (RxSignalName, RxSignalValue, RxStepName) '
-                                      'VALUES (?, ?, ?)',
-                                      (recieve_Info.group('signalname'), recieve_Info.group('Value'),
-                                       fun.TestFunction_CaseName[index] + '_{0}'.format(count)))
-                except:
-                    print(index)
-                    print(j)
-                    print(result)
+                db_Cursor.execute('INSERT into RxInfo_Table (RxSignalName, RxSignalValue, RxStepName) '
+                                  'VALUES (?, ?, ?)',
+                                  (recieve_Info.group('signalname'), recieve_Info.group('Value'),
+                                   fun.TestFunction_CaseName[index] + '_{0}'.format(count)))
             count = count + 1
 
 
