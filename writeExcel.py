@@ -45,18 +45,18 @@ Excel_Book = xlrd.open_workbook(src_ExcelFileName)
 Excel_Sheet = Excel_Book.sheets()
 Test_Case_Data = []
 
-nrows = Excel_Sheet[0].nrows
-ncols = Excel_Sheet[0].ncols
+n_Row = Excel_Sheet[0].nrows
+n_Col = Excel_Sheet[0].ncols
 
-for i in range(ncols):
+for i in range(n_Col):
     Test_Case_Data.append(Excel_Sheet[0].col_values(i)[:])
 
 count_Test = 0
 count_Step = 0
-for row in range(nrows):
+for row in range(n_Row):
     if Step_Name[count_Step].find(Test_Case_Data[0][row]) != -1 and Test_Case_Data[1][row].find("用例") != -1:
         count_Test = row
-        while (Step_Name[count_Step].find(Test_Case_Data[0][row]) != -1 and count_Step < len(Step_Name)):
+        while Step_Name[count_Step].find(Test_Case_Data[0][row]) != -1 and count_Step < len(Step_Name):
             Test_Case_Data[10][count_Test + 1] = ActSignalValue[count_Step]
             Test_Case_Data[9][count_Test + 1] = Test_Result[count_Step]
             count_Test = count_Test + 1
@@ -73,7 +73,7 @@ for row in range(nrows):
 
 work_Book = openpyxl.load_workbook(dir_ExcelFileName)
 table = work_Book["Sheet1"]
-table = work_Book.active
+table_1 = work_Book.active
 
 merged_col = []
 merged_row = []
