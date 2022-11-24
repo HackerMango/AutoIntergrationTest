@@ -106,11 +106,11 @@ for fun in Test_Array:
                                    fun.TestFunction_CaseName[index], 0))
             # db_Cursor.execute('INSERT into TestInfo_Table ()')
             for step in fun.Case_TestStep[index][j]:
-                sent_Info = re.match('^(?P<signalname>\w+)==(?P<Value>\w+)', step)
+                sent_Info = re.match('^(?P<signalname>\\w+)==(?P<Value>\\w+)', step)
                 db_Cursor.execute('INSERT into TxInfo_Table (TxSignalName, TxSignalValue, TxStepName) VALUES (?, ?, ?)',
                                   (sent_Info.group('signalname'), sent_Info.group('Value'), fun.TestFunction_CaseName[index] + '_{0}'.format(count)))
             for result in fun.Case_DesiredResult[index][j]:
-                recieve_Info = re.match('^(?P<signalname>\w+)==(?P<Value>\w+)', result)
+                recieve_Info = re.match('^(?P<signalname>\\w+)==(?P<Value>\\w+)', result)
                 try:
                     db_Cursor.execute('INSERT into RxInfo_Table (RxSignalName, RxSignalValue, RxStepName) VALUES (?, ?, ?)',
                                       (recieve_Info.group('signalname'), recieve_Info.group('Value'), fun.TestFunction_CaseName[index] + '_{0}'.format(count)))
