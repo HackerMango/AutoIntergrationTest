@@ -48,7 +48,7 @@ for i in range(len(Test_Case_Data[0])):
     if Test_Case_Data[1][i] == "功能\nFunction":
         RearSteer_TestCase.TestFunction_Name = Test_Case_Data[0][i]
         i = i + 1
-        while (1):
+        while 1:
             Case_Level = []
             Case_TestStep = []
             Case_DesiredResult = []
@@ -56,7 +56,7 @@ for i in range(len(Test_Case_Data[0])):
             if Test_Case_Data[1][i] == "用例":
                 RearSteer_TestCase.TestFunction_CaseName.append(Test_Case_Data[0][i])
                 i = i + 1
-                while (1):
+                while 1:
                     Case_Level.append(Test_Case_Data[3][i])
                     Case_TestStep.append(Test_Case_Data[4][i].split(sep="\n"))
                     Case_DesiredResult.append(Test_Case_Data[5][i].split(sep='\n'))
