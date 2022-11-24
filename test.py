@@ -24,13 +24,13 @@ get_Data = db_Cursor.fetchall()
 sig_Info = [list(x) for x in get_Data]
 
 db_Cursor.execute('delete from Case_Table where 1')
-db_Cursor.execute('update sqlite_sequence set seq=0 where name="Case_Table"')
+# db_Cursor.execute('update sqlite_sequence set seq=0 where name="Case_Table"')
 db_Cursor.execute('delete from RxInfo_Table where 1')
-db_Cursor.execute('update sqlite_sequence set seq=0 where name="RxInfo_Table"')
+# db_Cursor.execute('update sqlite_sequence set seq=0 where name="RxInfo_Table"')
 db_Cursor.execute('delete from TxInfo_Table where 1')
-db_Cursor.execute('update sqlite_sequence set seq=0 where name="TxInfo_Table"')
+# db_Cursor.execute('update sqlite_sequence set seq=0 where name="TxInfo_Table"')
 db_Cursor.execute('delete from Step_Table where 1')
-db_Cursor.execute('update sqlite_sequence set seq=0 where name="Step_Table"')
+# db_Cursor.execute('update sqlite_sequence set seq=0 where name="Step_Table"')
 # Vs Code Read File Path
 # Execl_Book = xlrd.open_workbook("IntergrationTestCase\Data\Decy_Test.xlsx")
 
