@@ -4,7 +4,11 @@ from openpyxl.styles import Alignment
 import xlrd
 import sqlite3
 
-db_Connection = sqlite3.connect(r'RearWheel.db')
+database_FileName = r'RearWheel_APA.db'
+src_ExcelFileName = "泊车.xlsx"
+dir_ExcelFileName = "泊车" + "_1" + ".xlsx"
+
+db_Connection = sqlite3.connect(database_FileName)
 db_Cursor = db_Connection.cursor()
 db_Cursor.execute('SELECT * from RxInfo_Table')
 get_Data = db_Cursor.fetchall()
@@ -37,7 +41,7 @@ while len(rxInfo_Table):
 
 for it_Step_Table in step_Table:
     Test_Result.append(it_Step_Table[3])
-Excel_Book = xlrd.open_workbook("行车_1.xlsx")
+Excel_Book = xlrd.open_workbook(src_ExcelFileName)
 Excel_Sheet = Excel_Book.sheets()
 Test_Case_Data = []
 
@@ -46,9 +50,6 @@ ncols = Excel_Sheet[0].ncols
 
 for i in range(ncols):
     Test_Case_Data.append(Excel_Sheet[0].col_values(i)[:])
-
-test_str = "A001-001_0"
-test_str_1 = "A001-001"
 
 count_Test = 0
 count_Step = 0
@@ -60,6 +61,9 @@ for row in range(nrows):
             Test_Case_Data[9][count_Test + 1] = Test_Result[count_Step]
             count_Test = count_Test + 1
             count_Step = count_Step + 1
+            if Test_Case_Data[1][row].find("功能\nFunction") != -1:
+                count_Test = count_Test + 1
+                count_Step = count_Step + 1
             if count_Step >= len(Step_Name):
                 break
         if count_Step >= len(Step_Name):
@@ -67,7 +71,7 @@ for row in range(nrows):
         if count_Test > row:
             row = count_Test
 
-work_Book = openpyxl.load_workbook("行车_1.xlsx")
+work_Book = openpyxl.load_workbook(dir_ExcelFileName)
 table = work_Book["Sheet1"]
 table = work_Book.active
 
@@ -80,7 +84,7 @@ for it_bottom in table.merged_cells.ranges:
             merged_row.append(temp)
             temp = temp + 1
 
-for i in range(1, 41):
+for i in range(1, len(Test_Case_Data[10]) + 1):
     if i not in merged_row:
         table.cell(i, 11).value = Test_Case_Data[10][i - 1]
         table.cell(i, 10).value = Test_Case_Data[9][i - 1]
@@ -90,8 +94,7 @@ for i in range(1, 41):
                 table.cell(i, 11).font = Font(color='c00000')
                 table.cell(i, 10).value = "F"
             else:
+                table.cell(i, 11).font = Font(color='000000')
                 table.cell(i, 10).value = "P"
 
-work_Book.save("行车_1.xlsx")
-
-print(Test_Case_Data[11][24])
+work_Book.save(dir_ExcelFileName)
