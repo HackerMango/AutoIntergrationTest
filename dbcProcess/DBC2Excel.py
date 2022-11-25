@@ -43,6 +43,8 @@ if os.path.exists("Excel_File"):
 else:
     os.makedirs("Excel_File")
 
+MsgInfo = None
+
 for dbc_Name in file_dbc:
     file = open("dbc_File\\" + dbc_Name, 'r', encoding="gbk")
 
