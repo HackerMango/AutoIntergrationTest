@@ -4,6 +4,22 @@ import os
 import sqlite3
 
 
+class DataStruct:
+    def __init__(self):
+        self.TxNode = []
+        self.ID_dec = []
+        self.MsgName = []
+        self.StartByte = []
+        self.StartBit = []
+        self.SignalName = []
+        self.SignalSize = []
+        self.factor = []
+        self.offset = []
+        self.min = []
+        self.max = []
+        self.DataType = []
+
+
 def str2hex(string):
     for index in range(len(string)):
         string[index] = hex(int(string[index]))
@@ -52,17 +68,7 @@ for dbc_Name in file_dbc:
     CANName = CANInfo.group('CanName')
 
     # some val read from dbc
-    Record_TxNode = []
-    Record_ID_dec = []
-    Record_MsgName = []
-    Record_StartByte = []
-    Record_StartBit = []
-    Record_SignalName = []
-    Record_SignalSize = []
-    Record_factor = []
-    Record_offset = []
-    Record_min = []
-    Record_max = []
+    DBC_Data = DataStruct()
     testData = []
 
     # read dbc
@@ -95,17 +101,17 @@ for dbc_Name in file_dbc:
                 '\\[(?P<min>[\\d.+-eE]+)\\|(?P<max>[\\d.+-eE]+)] \"(?P<unit>.*)\" (?P<RxNodeList>.*)',
                 strLine)
             if SignalInfo.group('is_little_endian') == '1' and SignalInfo.group('is_signed') == '+':
-                Record_TxNode.append(MsgInfo.group('TxNode'))
-                Record_ID_dec.append(MsgInfo.group('ID_dec'))
-                Record_MsgName.append(MsgInfo.group('MsgName'))
-                Record_StartByte.append(math.floor(int(SignalInfo.group('startBit')) / 8))
-                Record_StartBit.append(int(SignalInfo.group('startBit')) % 8)
-                Record_SignalName.append(SignalInfo.group('SignalName'))
-                Record_SignalSize.append(SignalInfo.group('signalSize'))
-                Record_factor.append(SignalInfo.group('factor'))
-                Record_offset.append(SignalInfo.group('offset'))
-                Record_min.append(SignalInfo.group('min'))
-                Record_max.append(SignalInfo.group('max'))
+                DBC_Data.TxNode.append(MsgInfo.group('TxNode'))
+                DBC_Data.ID_dec.append(MsgInfo.group('ID_dec'))
+                DBC_Data.MsgName.append(MsgInfo.group('MsgName'))
+                DBC_Data.StartByte.append(math.floor(int(SignalInfo.group('startBit')) / 8))
+                DBC_Data.StartBit.append(int(SignalInfo.group('startBit')) % 8)
+                DBC_Data.SignalName.append(SignalInfo.group('SignalName'))
+                DBC_Data.SignalSize.append(SignalInfo.group('signalSize'))
+                DBC_Data.factor.append(SignalInfo.group('factor'))
+                DBC_Data.offset.append(SignalInfo.group('offset'))
+                DBC_Data.min.append(SignalInfo.group('min'))
+                DBC_Data.max.append(SignalInfo.group('max'))
         else:
             continue
 
@@ -122,9 +128,9 @@ for dbc_Name in file_dbc:
 
     # filter out message what we need from dbc
     Msg_index = []
-    for i in range(len(Record_MsgName)):
+    for i in range(len(DBC_Data.MsgName)):
         for j in range(len(Need_Msg)):
-            if Record_MsgName[i] == Need_Msg[j]:
+            if DBC_Data.MsgName[i] == Need_Msg[j]:
                 Msg_index.append(i)
         # if Record_MsgName[i] == 'SVB1_1':
         #     Msg_index.append(i)
@@ -175,32 +181,21 @@ for dbc_Name in file_dbc:
             continue
 
     # define the message which will be writing to excel
-    Excel_TxNode = []
-    Excel_ID_dec = []
-    Excel_MsgName = []
-    Excel_StartByte = []
-    Excel_StartBit = []
-    Excel_SignalName = []
-    Excel_SignalSize = []
-    Excel_factor = []
-    Excel_offset = []
-    Excel_min = []
-    Excel_max = []
-    Excel_DataType = []
+    Excel_Data = DataStruct()
 
     # filter out message
     for i in range(len(Msg_index)):
-        Excel_TxNode.append(Record_TxNode[Msg_index[i]])
-        Excel_ID_dec.append(Record_ID_dec[Msg_index[i]])
-        Excel_MsgName.append(Record_MsgName[Msg_index[i]])
-        Excel_StartByte.append(Record_StartByte[Msg_index[i]])
-        Excel_StartBit.append(Record_StartBit[Msg_index[i]])
-        Excel_SignalName.append(Record_SignalName[Msg_index[i]])
-        Excel_SignalSize.append(Record_SignalSize[Msg_index[i]])
-        Excel_factor.append(Record_factor[Msg_index[i]])
-        Excel_offset.append(Record_offset[Msg_index[i]])
-        Excel_min.append(Record_min[Msg_index[i]])
-        Excel_max.append(Record_max[Msg_index[i]])
+        Excel_Data.TxNode.append(DBC_Data.TxNode[Msg_index[i]])
+        Excel_Data.ID_dec.append(DBC_Data.ID_dec[Msg_index[i]])
+        Excel_Data.MsgName.append(DBC_Data.MsgName[Msg_index[i]])
+        Excel_Data.StartByte.append(DBC_Data.StartByte[Msg_index[i]])
+        Excel_Data.StartBit.append(DBC_Data.StartBit[Msg_index[i]])
+        Excel_Data.SignalName.append(DBC_Data.SignalName[Msg_index[i]])
+        Excel_Data.SignalSize.append(DBC_Data.SignalSize[Msg_index[i]])
+        Excel_Data.factor.append(DBC_Data.factor[Msg_index[i]])
+        Excel_Data.offset.append(DBC_Data.offset[Msg_index[i]])
+        Excel_Data.min.append(DBC_Data.min[Msg_index[i]])
+        Excel_Data.max.append(DBC_Data.max[Msg_index[i]])
 
     for i in range(len(SendType)):
         if SendType[i] == '5':
@@ -218,70 +213,71 @@ for dbc_Name in file_dbc:
         if SendType[i] == '1':
             SendType[i] = 'Spontaneous'
 
-    str2hex(Excel_ID_dec)
+    str2hex(Excel_Data.ID_dec)
     str2hex(InvalidValue_ID_dec)
     str2hex(SendType_ID_dec)
     str2hex(CycleTime_ID_dec)
     str2hex(InvalidValue)
 
-    for i in range(len(Excel_factor)):
-        if Excel_factor[i] == '1':
-            if float(Excel_min[i]) < 0:
-                if int(Excel_SignalSize[i]) <= 8:
-                    Excel_DataType.append('int8_T')
-                elif int(Excel_SignalSize[i]) <= 16:
-                    Excel_DataType.append('int16_T')
-                elif int(Excel_SignalSize[i]) <= 32:
-                    Excel_DataType.append('int32_T')
+    for i in range(len(Excel_Data.factor)):
+        if Excel_Data.factor[i] == '1':
+            if float(Excel_Data.min[i]) < 0:
+                if int(Excel_Data.SignalSize[i]) <= 8:
+                    Excel_Data.DataType.append('int8_T')
+                elif int(Excel_Data.SignalSize[i]) <= 16:
+                    Excel_Data.DataType.append('int16_T')
+                elif int(Excel_Data.SignalSize[i]) <= 32:
+                    Excel_Data.DataType.append('int32_T')
                 else:
                     print('No this DataType')
             else:
-                if int(Excel_SignalSize[i]) <= 8:
-                    Excel_DataType.append('uint8_T')
-                elif int(Excel_SignalSize[i]) <= 16:
-                    Excel_DataType.append('uint16_T')
-                elif int(Excel_SignalSize[i]) <= 32:
-                    Excel_DataType.append('uint32_T')
+                if int(Excel_Data.SignalSize[i]) <= 8:
+                    Excel_Data.DataType.append('uint8_T')
+                elif int(Excel_Data.SignalSize[i]) <= 16:
+                    Excel_Data.DataType.append('uint16_T')
+                elif int(Excel_Data.SignalSize[i]) <= 32:
+                    Excel_Data.DataType.append('uint32_T')
                 else:
                     print('No this DataType')
         else:
-            Excel_DataType.append('real32_T')
+            Excel_Data.DataType.append('real32_T')
 
     Unique_MsgName = []
     temp = ''
-    for i in range(len(Excel_MsgName)):
-        if temp != Excel_MsgName[i]:
+    for i in range(len(Excel_Data.MsgName)):
+        if temp != Excel_Data.MsgName[i]:
             Unique_MsgName.append(i)
-            temp = Excel_MsgName[i]
+            temp = Excel_Data.MsgName[i]
 
     for i in Unique_MsgName:
         flag = 1
-        for msgName_It in range(len(Excel_MsgName)):
-            temp = Excel_MsgName[msgName_It]
-            temp1 = Excel_SignalName[msgName_It]
-            if Excel_MsgName[i] == Excel_MsgName[msgName_It]:
-                if re.findall('livecounter', Excel_SignalName[msgName_It], re.IGNORECASE) or \
-                        re.findall('checksum', Excel_SignalName[msgName_It], re.IGNORECASE):
+        for msgName_It in range(len(Excel_Data.MsgName)):
+            temp = Excel_Data.MsgName[msgName_It]
+            temp1 = Excel_Data.SignalName[msgName_It]
+            if Excel_Data.MsgName[i] == Excel_Data.MsgName[msgName_It]:
+                if re.findall('livecounter', Excel_Data.SignalName[msgName_It], re.IGNORECASE) or \
+                        re.findall('checksum', Excel_Data.SignalName[msgName_It], re.IGNORECASE):
                     flag = 1
                     break
                 else:
                     flag = 0
         time = 0
         for j in range(len(CycleTime_ID_dec)):
-            if CycleTime_ID_dec[j] == Excel_ID_dec[i]:
+            if CycleTime_ID_dec[j] == Excel_Data.ID_dec[i]:
                 time = CycleTime[j]
 
-        if Excel_MsgName[i] not in MsgTableList_Result:
+        if Excel_Data.MsgName[i] not in MsgTableList_Result:
             db.execute('INSERT into Msg_Table (MsgName, CHeckMiss, CycleTime, CheckLCCS, MsgID) VALUES (?,?,?,?,?)',
-                       (Excel_MsgName[i], flag, time, flag, int(Excel_ID_dec[i], 16)))
+                       (Excel_Data.MsgName[i], flag, time, flag, int(Excel_Data.ID_dec[i], 16)))
 
-    for i in range(len(Excel_MsgName)):
-        if Excel_SignalName[i] not in SigTableList_Result:
+    for i in range(len(Excel_Data.MsgName)):
+        if Excel_Data.SignalName[i] not in SigTableList_Result:
             db.execute('INSERT into Signal_Table (SgMsgName, StartByte, StartBit, SignalLength, '
                        'SignalName, DataType, SignalFactor, SignalOffset) '
                        'VALUES (?,?,?,?,?,?,?,?)',
-                       (Excel_MsgName[i], Excel_StartByte[i], Excel_StartBit[i], Excel_SignalSize[i],
-                        Excel_SignalName[i], Excel_DataType[i], Excel_factor[i], Excel_offset[i]))
+                       (Excel_Data.MsgName[i], Excel_Data.StartByte[i],
+                        Excel_Data.StartBit[i], Excel_Data.SignalSize[i],
+                        Excel_Data.SignalName[i], Excel_Data.DataType[i], Excel_Data.factor[i], Excel_Data.offset[i]))
     # write to Excel
     # xl = xlsxwriter.Workbook(r'Excel_File\\{0}_Msg.xlsx'.format(CANName))
     # sheet_1 = xl.add_worksheet('sheet1')
