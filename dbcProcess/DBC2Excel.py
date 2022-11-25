@@ -88,9 +88,9 @@ for dbc_Name in file_dbc:
             MsgInfo = re.search('^BO_ (?P<ID_dec>\\w+) (?P<MsgName>\\w+) *: (?P<DLC>\\w+) (?P<TxNode>\\w+)', strLine)
         elif strLine.startswith('SG_ '):
             SignalInfo = re.search(
-                '^SG_ (?P<SignalName>\\w+) : (?P<startBit>\\d+)\|(?P<signalSize>\\d+)@(?P<is_little_endian>\\d+)('
-                '?P<is_signed>[\+|\-]) \((?P<factor>[\\d.+\-eE]+),(?P<offset>[\\d.+\-eE]+)\) \[(?P<min>[\\d.+\-eE]+)\|('
-                '?P<max>[\\d.+\-eE]+)] \"(?P<unit>.*)\" (?P<RxNodeList>.*)',
+                '^SG_ (?P<SignalName>\\w+) : (?P<startBit>\\d+)\\|(?P<signalSize>\\d+)@(?P<is_little_endian>\\d+)'
+                '(?P<is_signed>[+|-]) \\((?P<factor>[\\d.+-eE]+),(?P<offset>[\\d.+-eE]+)\\) '
+                '\\[(?P<min>[\\d.+-eE]+)\\|(?P<max>[\\d.+-eE]+)] \"(?P<unit>.*)\" (?P<RxNodeList>.*)',
                 strLine)
             if SignalInfo.group('is_little_endian') == '1' and SignalInfo.group('is_signed') == '+':
                 Record_TxNode.append(MsgInfo.group('TxNode'))
