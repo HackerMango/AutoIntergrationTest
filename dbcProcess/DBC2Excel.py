@@ -1,17 +1,18 @@
 import math
 import re
-import xlsxwriter
 import os
 import sqlite3
+
 
 def str2hex(string):
     for index in range(len(string)):
         string[index] = hex(int(string[index]))
     return string
 
-connet = sqlite3.connect(r'..\RearWheel.db')
 
-db = connet.cursor()
+db_Connect = sqlite3.connect(r'..\RearWheel.db')
+
+db = db_Connect.cursor()
 db.execute('SELECT MsgName from Msg_Table')
 MsgTable_Select_Result = db.fetchall()
 
@@ -43,10 +44,9 @@ else:
     os.makedirs("Excel_File")
 
 for dbc_Name in file_dbc:
-#    DBC_Name = 'CAN1_FAW_E115_ADAS_CANDBC_V1.2.dbc'
     file = open("dbc_File\\" + dbc_Name, 'r', encoding="gbk")
 
-    CANInfo = re.match('^\w+_\w+_\w+_(?P<CanName>\w+)_\w+', dbc_Name)
+    CANInfo = re.match('^\\w+_\\w+_\\w+_(?P<CanName>\\w+)_\\w+', dbc_Name)
     CANName = CANInfo.group('CanName')
 
     # some val read from dbc
@@ -85,12 +85,12 @@ for dbc_Name in file_dbc:
     for i in range(N_Lines):
         strLine = testData[i]
         if strLine.startswith('BO_ '):
-            MsgInfo = re.search('^BO\_ (?P<ID_dec>\w+) (?P<MsgName>\w+) *: (?P<DLC>\w+) (?P<TxNode>\w+)', strLine)
+            MsgInfo = re.search('^BO_ (?P<ID_dec>\\w+) (?P<MsgName>\\w+) *: (?P<DLC>\\w+) (?P<TxNode>\\w+)', strLine)
         elif strLine.startswith('SG_ '):
             SignalInfo = re.search(
-                '^SG\_ (?P<SignalName>\w+) : (?P<startBit>\d+)\|(?P<signalSize>\d+)@(?P<is_little_endian>\d+)('
-                '?P<is_signed>[\+|\-]) \((?P<factor>[0-9.+\-eE]+),(?P<offset>[0-9.+\-eE]+)\) \[(?P<min>[0-9.+\-eE]+)\|('
-                '?P<max>[0-9.+\-eE]+)\] \"(?P<unit>.*)\" (?P<RxNodeList>.*)',
+                '^SG_ (?P<SignalName>\\w+) : (?P<startBit>\\d+)\|(?P<signalSize>\\d+)@(?P<is_little_endian>\\d+)('
+                '?P<is_signed>[\+|\-]) \((?P<factor>[\\d.+\-eE]+),(?P<offset>[\\d.+\-eE]+)\) \[(?P<min>[\\d.+\-eE]+)\|('
+                '?P<max>[\\d.+\-eE]+)] \"(?P<unit>.*)\" (?P<RxNodeList>.*)',
                 strLine)
             if SignalInfo.group('is_little_endian') == '1' and SignalInfo.group('is_signed') == '+':
                 Record_TxNode.append(MsgInfo.group('TxNode'))
@@ -153,18 +153,18 @@ for dbc_Name in file_dbc:
     for i in range(len(testData)):
         strLine = testData[i]
         if strLine.startswith('BA_ '):
-            BAInfo = re.match('^BA\_ +\"(?P<BA_Type>[A-Za-z0-9]+)+\" +(.+)', strLine)
+            BAInfo = re.match('^BA_ +\"(?P<BA_Type>[A-Za-z\\d]+)+\" +(.+)', strLine)
             if BAInfo.group('BA_Type') == 'GenMsgCycleTime':
-                CycleTimeInfo = re.match('^BA\_ \"GenMsgCycleTime\" BO\_ (?P<ID_dec>\w+) (?P<CycleTime>.+);', strLine)
+                CycleTimeInfo = re.match('^BA_ \"GenMsgCycleTime\" BO_ (?P<ID_dec>\\w+) (?P<CycleTime>.+);', strLine)
                 CycleTime.append(CycleTimeInfo.group('CycleTime'))
                 CycleTime_ID_dec.append(CycleTimeInfo.group('ID_dec'))
             if BAInfo.group('BA_Type') == 'GenMsgSendType':
-                SendTypeInfo = re.match('^BA\_ \"GenMsgSendType\" BO\_ (?P<ID_dec>\w+) (?P<SendType>.+);', strLine)
+                SendTypeInfo = re.match('^BA_ \"GenMsgSendType\" BO_ (?P<ID_dec>\\w+) (?P<SendType>.+);', strLine)
                 SendType.append(SendTypeInfo.group('SendType'))
                 SendType_ID_dec.append(SendTypeInfo.group('ID_dec'))
             if BAInfo.group('BA_Type') == 'GenSigInvalidValue':
                 InvalidValueInfo = re.match(
-                    '^BA\_ \"GenSigInvalidValue\" SG\_ (?P<ID_dec>\w+) (?P<SignalName>\w+) (?P<InvalidValue>.+);',
+                    '^BA_ \"GenSigInvalidValue\" SG_ (?P<ID_dec>\\w+) (?P<SignalName>\\w+) (?P<InvalidValue>.+);',
                     strLine)
                 InvalidValue.append(InvalidValueInfo.group('InvalidValue'))
                 InvalidValue_ID_dec.append(InvalidValueInfo.group('ID_dec'))
@@ -254,11 +254,12 @@ for dbc_Name in file_dbc:
 
     for i in Unique_MsgName:
         flag = 1
-        for l in range(len(Excel_MsgName)):
-            temp = Excel_MsgName[l]
-            temp1 = Excel_SignalName[l]
-            if Excel_MsgName[i] == Excel_MsgName[l]:
-                if re.findall('livecounter', Excel_SignalName[l], re.IGNORECASE) or re.findall('checksum', Excel_SignalName[l], re.IGNORECASE):
+        for msgName_It in range(len(Excel_MsgName)):
+            temp = Excel_MsgName[msgName_It]
+            temp1 = Excel_SignalName[msgName_It]
+            if Excel_MsgName[i] == Excel_MsgName[msgName_It]:
+                if re.findall('livecounter', Excel_SignalName[msgName_It], re.IGNORECASE) or \
+                        re.findall('checksum', Excel_SignalName[msgName_It], re.IGNORECASE):
                     flag = 1
                     break
                 else:
@@ -268,14 +269,17 @@ for dbc_Name in file_dbc:
             if CycleTime_ID_dec[j] == Excel_ID_dec[i]:
                 time = CycleTime[j]
 
-
         if Excel_MsgName[i] not in MsgTableList_Result:
-            db.execute('INSERT into Msg_Table (MsgName, CHeckMiss, CycleTime, CheckLCCS, MsgID) VALUES (?,?,?,?,?)', (Excel_MsgName[i], flag, time, flag, int(Excel_ID_dec[i], 16)))
+            db.execute('INSERT into Msg_Table (MsgName, CHeckMiss, CycleTime, CheckLCCS, MsgID) VALUES (?,?,?,?,?)',
+                       (Excel_MsgName[i], flag, time, flag, int(Excel_ID_dec[i], 16)))
 
     for i in range(len(Excel_MsgName)):
         if Excel_SignalName[i] not in SigTableList_Result:
-            db.execute('INSERT into Signal_Table (SgMsgName, StartByte, StartBit, SignalLength, SignalName, DataType, SignalFactor, SignalOffset) VALUES (?,?,?,?,?,?,?,?)',
-                        (Excel_MsgName[i], Excel_StartByte[i], Excel_StartBit[i], Excel_SignalSize[i], Excel_SignalName[i], Excel_DataType[i], Excel_factor[i], Excel_offset[i]))
+            db.execute('INSERT into Signal_Table (SgMsgName, StartByte, StartBit, SignalLength, '
+                       'SignalName, DataType, SignalFactor, SignalOffset) '
+                       'VALUES (?,?,?,?,?,?,?,?)',
+                       (Excel_MsgName[i], Excel_StartByte[i], Excel_StartBit[i], Excel_SignalSize[i],
+                        Excel_SignalName[i], Excel_DataType[i], Excel_factor[i], Excel_offset[i]))
     # write to Excel
     # xl = xlsxwriter.Workbook(r'Excel_File\\{0}_Msg.xlsx'.format(CANName))
     # sheet_1 = xl.add_worksheet('sheet1')
@@ -309,7 +313,8 @@ for dbc_Name in file_dbc:
     #         temp = Excel_MsgName[l]
     #         temp1 = Excel_SignalName[l]
     #         if Excel_MsgName[i] == Excel_MsgName[l]:
-    #             if re.findall('livecounter', Excel_SignalName[l], re.IGNORECASE) or re.findall('checksum', Excel_SignalName[l], re.IGNORECASE):
+    #             if re.findall('livecounter', Excel_SignalName[l], re.IGNORECASE) or
+    #             re.findall('checksum', Excel_SignalName[l], re.IGNORECASE):
     #                 sheet_1.write_string(sheet1_Count, 4, 'True')
     #                 sheet_1.write_string(sheet1_Count, 7, 'True')
     #                 sheet_1.write_string(sheet1_Count, 8, 'True')
@@ -341,7 +346,8 @@ for dbc_Name in file_dbc:
     #
     # sheet2_Count = 1
     # for i in range(len(Excel_MsgName)):
-    #     # if re.findall('livecounter', Excel_SignalName[i], re.IGNORECASE) or re.findall('checksum', Excel_SignalName[i], re.IGNORECASE):
+    #     # if re.findall('livecounter', Excel_SignalName[i], re.IGNORECASE) or
+    #     re.findall('checksum', Excel_SignalName[i], re.IGNORECASE):
     #     if re.findall('checksum', Excel_SignalName[i], re.IGNORECASE):
     #         continue
     #     sheet_2.write_string(sheet2_Count, 0, Excel_MsgName[i])
@@ -368,4 +374,4 @@ for dbc_Name in file_dbc:
     #     sheet2_Count = sheet2_Count + 1
     # xl.close()
 
-connet.commit()
+db_Connect.commit()
