@@ -1,9 +1,5 @@
 /Data/Decy_Test - 副本.xlsx
-/dbcProcess/Excel_File/
 /dbcProcess/dbc_File/
-*.xlsx
-RearWheel_APA.db
-RearWheel_LKA.db
 /.idea/dataSources.xml
 /.idea/AutoIntergrationTest.iml
 /.idea/dataSources/d4ec84c3-28c1-4efe-aa2e-2dac38554aae.xml
@@ -16,3 +12,4 @@ RearWheel_LKA.db
 /.idea/leetcode/statistics.xml
 /.idea/vcs.xml
 /.idea/.gitignore
+/.idea
