@@ -9,6 +9,7 @@ class DataStruct:
         self.TxNode = None
         self.ID_dec = None
         self.MsgName = None
+        self.MsgDLC = None
         self.StartByte = None
         self.StartBit = None
         self.SignalName = None
@@ -48,10 +49,12 @@ for select in SigTable_Select_Result:
 #         INSERT
 #         '''
 
+target_DbcFile = "FAW_E001B_Backbone_PDCF_CANDBC_V0.8.dbc"
+
 file_dbc = []
 for root, dirs, files in os.walk('dbc_File'):
     for file in files:
-        if os.path.splitext(file)[1] == '.dbc':
+        if os.path.splitext(file)[1] == '.dbc' and file == target_DbcFile:
             file_dbc.append(file)
 
 if os.path.exists("Excel_File"):
@@ -105,6 +108,7 @@ for dbc_Name in file_dbc:
                 temp_DataStruct.TxNode = MsgInfo.group('TxNode')
                 temp_DataStruct.ID_dec = MsgInfo.group('ID_dec')
                 temp_DataStruct.MsgName = MsgInfo.group('MsgName')
+                temp_DataStruct.MsgDLC = MsgInfo.group('DLC')
                 temp_DataStruct.StartByte = math.floor(int(SignalInfo.group('startBit')) / 8)
                 temp_DataStruct.StartBit = int(SignalInfo.group('startBit')) % 8
                 temp_DataStruct.SignalName = SignalInfo.group('SignalName')
@@ -222,6 +226,8 @@ for dbc_Name in file_dbc:
                     Excel_Data[i].DataType = 'int16_T'
                 elif int(Excel_Data[i].SignalSize) <= 32:
                     Excel_Data[i].DataType = 'int32_T'
+                elif int(Excel_Data[i].SignalSize) <= 64:
+                    Excel_Data[i].DataType = 'int64_T'
                 else:
                     print('No this DataType')
             else:
@@ -231,6 +237,8 @@ for dbc_Name in file_dbc:
                     Excel_Data[i].DataType = 'uint16_T'
                 elif int(Excel_Data[i].SignalSize) <= 32:
                     Excel_Data[i].DataType = 'uint32_T'
+                elif int(Excel_Data[i].SignalSize) <= 64:
+                    Excel_Data[i].DataType = 'uint64_T'
                 else:
                     print('No this DataType')
         else:
@@ -261,8 +269,9 @@ for dbc_Name in file_dbc:
                 time = CycleTime[j]
 
         if Excel_Data[i].MsgName not in MsgTableList_Result:
-            db.execute('INSERT into Msg_Table (MsgName, CHeckMiss, CycleTime, CheckLCCS, MsgID) VALUES (?,?,?,?,?)',
-                       (Excel_Data[i].MsgName, flag, time, flag, int(Excel_Data[i].ID_dec, 16)))
+            db.execute('INSERT into Msg_Table (MsgName, CHeckMiss, CycleTime, CheckLCCS, MsgID, DLC) '
+                       'VALUES (?,?,?,?,?,?)',
+                       (Excel_Data[i].MsgName, flag, time, flag, int(Excel_Data[i].ID_dec, 16), Excel_Data[i].MsgDLC))
 
     for i in range(len(Excel_Data)):
         if Excel_Data[i].SignalName not in SigTableList_Result:
