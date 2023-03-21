@@ -10,6 +10,7 @@ class NeedMsg:
         self.can_Name = None
         self.msg_Name = None
 
+
 class DataStruct:
     def __init__(self):
         self.TxNode = None
@@ -236,7 +237,6 @@ for dbc_Name in file_dbc:
         if SendType[i] == '1':
             SendType[i] = 'Spontaneous'
 
-    # str2hex(Excel_Data.ID_dec)
     for index in range(len(Excel_Data)):
         Excel_Data[index].ID_dec = hex(int(Excel_Data[index].ID_dec))
     str2hex(InvalidValue_ID_dec)
@@ -303,7 +303,6 @@ for dbc_Name in file_dbc:
     db_Connect.commit()
 
     for i in range(len(Excel_Data)):
-
         if Excel_Data[i].SignalName not in SigTableList_Result:
             db.execute("SELECT Msg_TableID from Msg_Table where MsgName == '%s'" % Excel_Data[i].MsgName)
             MsgTable_ID = db.fetchall()
@@ -313,98 +312,4 @@ for dbc_Name in file_dbc:
                        (MsgTable_ID[0][0], Excel_Data[i].StartByte,
                         Excel_Data[i].StartBit, Excel_Data[i].SignalSize,
                         Excel_Data[i].SignalName, Excel_Data[i].DataType, Excel_Data[i].factor, Excel_Data[i].offset))
-    # write to Excel
-    # xl = xlsxwriter.Workbook(r'Excel_File\\{0}_Msg.xlsx'.format(CANName))
-    # sheet_1 = xl.add_worksheet('sheet1')
-    # sheet_2 = xl.add_worksheet('sheet2')
-    #
-    # sheet_1.write_string(0, 0, 'ID')
-    # sheet_1.write_string(0, 1, 'SendNode')
-    # sheet_1.write_string(0, 2, 'AffectNode')
-    # sheet_1.write_string(0, 3, 'MsgName')
-    # sheet_1.write_string(0, 4, 'CheckMsgMiss')
-    # sheet_1.write_string(0, 5, 'CycleTime')
-    # sheet_1.write_string(0, 6, 'SendType')
-    # sheet_1.write_string(0, 7, 'HasLCCS')
-    # sheet_1.write_string(0, 8, 'CheckCSLC')
-    #
-    # sheet1_Count = 1
-    # strLine = ''
-    # for i in Unique_MsgName:
-    #     sheet_1.write_string(sheet1_Count, 0, Excel_ID_dec[i])
-    #     sheet_1.write_string(sheet1_Count, 1, Excel_TxNode[i])
-    #     sheet_1.write_string(sheet1_Count, 2, '')
-    #     strLine = Excel_MsgName[i]
-    #     sheet_1.write_string(sheet1_Count, 3, strLine)
-    #     for j in range(len(CycleTime_ID_dec)):
-    #         if CycleTime_ID_dec[j] == Excel_ID_dec[i]:
-    #             sheet_1.write_string(sheet1_Count, 5, CycleTime[j])
-    #     for k in range(len(SendType_ID_dec)):
-    #         if SendType_ID_dec[k] == Excel_ID_dec[i]:
-    #             sheet_1.write_string(sheet1_Count, 6, SendType[k])
-    #     for l in range(len(Excel_MsgName)):
-    #         temp = Excel_MsgName[l]
-    #         temp1 = Excel_SignalName[l]
-    #         if Excel_MsgName[i] == Excel_MsgName[l]:
-    #             if re.findall('livecounter', Excel_SignalName[l], re.IGNORECASE) or
-    #             re.findall('checksum', Excel_SignalName[l], re.IGNORECASE):
-    #                 sheet_1.write_string(sheet1_Count, 4, 'True')
-    #                 sheet_1.write_string(sheet1_Count, 7, 'True')
-    #                 sheet_1.write_string(sheet1_Count, 8, 'True')
-    #                 break
-    #             else:
-    #                 sheet_1.write_string(sheet1_Count, 4, 'False')
-    #                 sheet_1.write_string(sheet1_Count, 7, 'False')
-    #                 sheet_1.write_string(sheet1_Count, 8, 'False')
-    #
-    #     sheet1_Count = sheet1_Count + 1
-    #
-    # sheet_2.write_string(0, 0, 'MsgName')
-    # sheet_2.write_string(0, 1, 'CycleTime')
-    # sheet_2.write_string(0, 2, 'StartByte')
-    # sheet_2.write_string(0, 3, 'StartBit')
-    # sheet_2.write_string(0, 4, 'SignalLength')
-    # sheet_2.write_string(0, 5, 'SignalName')
-    # sheet_2.write_string(0, 6, 'CheckInvalid')
-    # sheet_2.write_string(0, 7, 'InvalidTime')
-    # sheet_2.write_string(0, 8, 'InvalidValue')
-    # sheet_2.write_string(0, 9, 'NeedByApp')
-    # sheet_2.write_string(0, 10, 'DataType')
-    # sheet_2.write_string(0, 11, 'factor')
-    # sheet_2.write_string(0, 12, 'offset')
-    # sheet_2.write_string(0, 13, 'RangeCheck')
-    # sheet_2.write_string(0, 14, 'Min')
-    # sheet_2.write_string(0, 15, 'Max')
-    # sheet_2.write_string(0, 16, 'CheckFailedValue')
-    #
-    # sheet2_Count = 1
-    # for i in range(len(Excel_MsgName)):
-    #     # if re.findall('livecounter', Excel_SignalName[i], re.IGNORECASE) or
-    #     re.findall('checksum', Excel_SignalName[i], re.IGNORECASE):
-    #     if re.findall('checksum', Excel_SignalName[i], re.IGNORECASE):
-    #         continue
-    #     sheet_2.write_string(sheet2_Count, 0, Excel_MsgName[i])
-    #     for j in range(len(CycleTime_ID_dec)):
-    #         if Excel_ID_dec[i] == CycleTime_ID_dec[j]:
-    #             sheet_2.write_string(sheet2_Count, 1, CycleTime[j])
-    #     sheet_2.write_string(sheet2_Count, 2, str(Excel_StartByte[i]))
-    #     sheet_2.write_string(sheet2_Count, 3, str((Excel_StartBit[i])))
-    #     sheet_2.write_string(sheet2_Count, 4, str(Excel_SignalSize[i]))
-    #     sheet_2.write_string(sheet2_Count, 5, Excel_SignalName[i])
-    #     sheet_2.write_string(sheet2_Count, 6, '')
-    #     sheet_2.write_string(sheet2_Count, 7, '')
-    #     for k in range(len(InvalidValue_ID_dec)):
-    #         if Excel_ID_dec[i] == InvalidValue_ID_dec[k]:
-    #             sheet_2.write_string(sheet2_Count, 8, InvalidValue[k])
-    #     sheet_2.write_string(sheet2_Count, 9, 'true')
-    #     sheet_2.write_string(sheet2_Count, 10, Excel_DataType[i])
-    #     sheet_2.write_string(sheet2_Count, 11, Excel_factor[i])
-    #     sheet_2.write_string(sheet2_Count, 12, Excel_offset[i])
-    #     sheet_2.write_string(sheet2_Count, 13, '')
-    #     sheet_2.write_string(sheet2_Count, 14, Excel_min[i])
-    #     sheet_2.write_string(sheet2_Count, 15, Excel_max[i])
-    #     sheet_2.write_string(sheet2_Count, 16, '')
-    #     sheet2_Count = sheet2_Count + 1
-    # xl.close()
-
 db_Connect.commit()
