@@ -31,8 +31,6 @@ db_Cursor.execute('delete from TxInfo_Table where 1')
 # db_Cursor.execute('update sqlite_sequence set seq=0 where name="TxInfo_Table"')
 db_Cursor.execute('delete from Step_Table where 1')
 # db_Cursor.execute('update sqlite_sequence set seq=0 where name="Step_Table"')
-# Vs Code Read File Path
-# Execl_Book = xlrd.open_workbook("IntergrationTestCase\Data\Decy_Test.xlsx")
 
 # Pycharm Read File Path
 Execl_Book = xlrd.open_workbook("泊车.xlsx")
@@ -105,15 +103,15 @@ for fun in Test_Array:
                                    fun.TestFunction_CaseName[index], 0))
             # db_Cursor.execute('INSERT into TestInfo_Table ()')
             for step in fun.Case_TestStep[index][j]:
-                sent_Info = re.match('^(?P<signalname>\\w+)==(?P<Value>\\w+)', step)
+                sent_Info = re.match('^(?P<signalName>\\w+)==(?P<Value>\\w+)', step)
                 db_Cursor.execute('INSERT into TxInfo_Table (TxSignalName, TxSignalValue, TxStepName) VALUES (?, ?, ?)',
-                                  (sent_Info.group('signalname'), sent_Info.group('Value'),
+                                  (sent_Info.group('signalName'), sent_Info.group('Value'),
                                    fun.TestFunction_CaseName[index] + '_{0}'.format(j)))
             for result in fun.Case_DesiredResult[index][j]:
-                receive_Info = re.match('^(?P<signalname>\\w+)==(?P<Value>\\w+)', result)
+                receive_Info = re.match('^(?P<signalName>\\w+)==(?P<Value>\\w+)', result)
                 db_Cursor.execute('INSERT into RxInfo_Table (RxSignalName, RxSignalValue, RxStepName) '
                                   'VALUES (?, ?, ?)',
-                                  (receive_Info.group('signalname'), receive_Info.group('Value'),
+                                  (receive_Info.group('signalName'), receive_Info.group('Value'),
                                    fun.TestFunction_CaseName[index] + '_{0}'.format(j)))
 
 db_Connection.commit()
