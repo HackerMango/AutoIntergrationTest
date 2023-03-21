@@ -1,8 +1,14 @@
+import copy
 import math
 import re
 import os
 import sqlite3
 
+
+class NeedMsg:
+    def __init__(self):
+        self.can_Name = None
+        self.msg_Name = None
 
 class DataStruct:
     def __init__(self):
@@ -45,16 +51,10 @@ for select in MsgTable_Select_Result:
 for select in SigTable_Select_Result:
     SigTableList_Result.append(select[0])
 
-# sql = '''
-#         INSERT
-#         '''
-
-target_DbcFile = "FAW_E001B_Backbone_PDCF_CANDBC_V0.8.dbc"
-
 file_dbc = []
 for root, dirs, files in os.walk('dbc_File'):
     for file in files:
-        if os.path.splitext(file)[1] == '.dbc' and file == target_DbcFile:
+        if os.path.splitext(file)[1] == '.dbc':
             file_dbc.append(file)
 
 if os.path.exists("Excel_File"):
@@ -64,11 +64,32 @@ else:
 
 MsgInfo = None
 
+file = open('dbc_File\\' + 'test.txt', 'r', encoding='utf-8')
+
+Need_Msg = []
+
+while 1:
+    lines = file.readlines(1)
+    str0 = ''.join(lines)
+    str1 = str0.replace('\n', '')
+    Need_Msg.append(str1)
+    if not lines:
+        break
+file.close()
+Need_Msg.pop()
+Txt_MsgInfo = []
+temp_NeedMsg = NeedMsg()
+for i in Need_Msg:
+    temp_NeedMsg.can_Name = i.split(" ")[1]
+    temp_NeedMsg.msg_Name = i.split(" ")[0]
+    Txt_MsgInfo.append(copy.copy(temp_NeedMsg))
+
 for dbc_Name in file_dbc:
     file = open("dbc_File\\" + dbc_Name, 'r', encoding="gbk")
 
-    CANInfo = re.match('^\\w+_\\w+_\\w+_(?P<CanName>\\w+)_\\w+', dbc_Name)
-    CANName = CANInfo.group('CanName')
+    CANInfo = re.match('^FAW_(?P<CarClassName>\\w+)_(?P<CanName>\\w+)_(?P<ECUName>\\w+)_\\w+_\\w+', dbc_Name)
+    CANName = (CANInfo.group('CanName'))
+    CARName = CANInfo.group('CarClassName')
 
     # some val read from dbc
     DBC_Data = []
@@ -121,23 +142,29 @@ for dbc_Name in file_dbc:
         else:
             continue
 
-    file = open('dbc_File\\' + 'CDS_Chassis1.txt', 'r', encoding='utf-8')
-    Need_Msg = []
-    while 1:
-        lines = file.readlines(1)
-        str0 = ''.join(lines)
-        str1 = str0.replace('\n', '')
-        Need_Msg.append(str1)
-        if not lines:
-            break
-    file.close()
-
     # filter out message what we need from dbc
     Msg_index = []
-    for i in range(len(DBC_Data)):
-        for j in range(len(Need_Msg)):
-            if DBC_Data[i].MsgName == Need_Msg[j]:
+    i = 0
+    while i < len(DBC_Data):
+        if i != 0 and len(Msg_index) > 0:
+            if Msg_index[-1] != i - 1:
+                while DBC_Data[i].MsgName == DBC_Data[i - 1].MsgName:
+                    i = i + 1
+                    if i >= len(DBC_Data):
+                        break
+        elif i != 0 and len(Msg_index) == 0:
+            while DBC_Data[i].MsgName == DBC_Data[i - 1].MsgName:
+                i = i + 1
+                if i >= len(DBC_Data):
+                    break
+        for j in range(len(Txt_MsgInfo)):
+            if i >= len(DBC_Data):
+                break
+            if DBC_Data[i].MsgName == Txt_MsgInfo[j].msg_Name and CANName == Txt_MsgInfo[j].can_Name:
                 Msg_index.append(i)
+        if i >= len(DBC_Data):
+            break
+        i = i + 1
         # if Record_MsgName[i] == 'SVB1_1':
         #     Msg_index.append(i)
         # if Record_MsgName[i] == 'ABS_1':
@@ -269,16 +296,21 @@ for dbc_Name in file_dbc:
                 time = CycleTime[j]
 
         if Excel_Data[i].MsgName not in MsgTableList_Result:
-            db.execute('INSERT into Msg_Table (MsgName, CHeckMiss, CycleTime, CheckLCCS, MsgID, DLC) '
-                       'VALUES (?,?,?,?,?,?)',
-                       (Excel_Data[i].MsgName, flag, time, flag, int(Excel_Data[i].ID_dec, 16), Excel_Data[i].MsgDLC))
+            db.execute('INSERT into Msg_Table (MsgName, CHeckMiss, CycleTime, CheckLCCS, MsgID, DLC, CANName) '
+                       'VALUES (?,?,?,?,?,?,?)',
+                       (Excel_Data[i].MsgName, flag, time, flag, int(Excel_Data[i].ID_dec, 16),
+                        Excel_Data[i].MsgDLC, CANName))
+    db_Connect.commit()
 
     for i in range(len(Excel_Data)):
+
         if Excel_Data[i].SignalName not in SigTableList_Result:
-            db.execute('INSERT into Signal_Table (SgMsgName, StartByte, StartBit, SignalLength, '
+            db.execute("SELECT Msg_TableID from Msg_Table where MsgName == '%s'" % Excel_Data[i].MsgName)
+            MsgTable_ID = db.fetchall()
+            db.execute('INSERT into Signal_Table (Msg_TableID, StartByte, StartBit, SignalLength, '
                        'SignalName, DataType, SignalFactor, SignalOffset) '
                        'VALUES (?,?,?,?,?,?,?,?)',
-                       (Excel_Data[i].MsgName, Excel_Data[i].StartByte,
+                       (MsgTable_ID[0][0], Excel_Data[i].StartByte,
                         Excel_Data[i].StartBit, Excel_Data[i].SignalSize,
                         Excel_Data[i].SignalName, Excel_Data[i].DataType, Excel_Data[i].factor, Excel_Data[i].offset))
     # write to Excel
