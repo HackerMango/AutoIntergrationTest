@@ -33,7 +33,7 @@ db_Cursor.execute('delete from Step_Table where 1')
 # db_Cursor.execute('update sqlite_sequence set seq=0 where name="Step_Table"')
 
 # Pycharm Read File Path
-Execl_Book = xlrd.open_workbook("泊车.xlsx")
+Execl_Book = xlrd.open_workbook("Data/Excel_Data/test.xlsx")
 Excel_Sheet = Execl_Book.sheets()
 Test_Case_Data = []
 
