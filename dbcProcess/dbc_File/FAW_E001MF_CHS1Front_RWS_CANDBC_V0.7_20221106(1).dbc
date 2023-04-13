@@ -1,0 +1,383 @@
+VERSION ""
+
+
+NS_ : 
+        NS_DESC_
+        CM_
+        BA_DEF_
+        BA_
+        VAL_
+        CAT_DEF_
+        CAT_
+        FILTER
+        BA_DEF_DEF_
+        EV_DATA_
+        ENVVAR_DATA_
+        SGTYPE_
+        SGTYPE_VAL_
+        BA_DEF_SGTYPE_
+        BA_SGTYPE_
+        SIG_TYPE_REF_
+        VAL_TABLE_
+        SIG_GROUP_
+        SIG_VALTYPE_
+        SIGTYPE_VALTYPE_
+        BO_TX_BU_
+        BA_DEF_REL_
+        BA_REL_
+        BA_DEF_DEF_REL_
+        BU_SG_REL_
+        BU_EV_REL_
+        BU_BO_REL_
+        SG_MUL_VAL_
+
+BS_:
+
+BU_: RWS Gateway IBC 
+
+
+BO_ 188 RWS_1: 8 RWS
+ SG_ Checksum_RWS_1 : 0|8@1+ (1,0) [0|255] "" Gateway,IBC
+ SG_ RearWheelAngle : 8|12@1+ (0.01,-20.48) [-20.48|20.47] "бу" Gateway,IBC
+ SG_ RearWheelAngle_QF : 22|2@1+ (1,0) [0|3] "" Gateway,IBC
+ SG_ RearWheelAngleSpeed : 24|13@1+ (0.01,-40.96) [-40.96|40.95] "бу/s" Gateway,IBC
+ SG_ WorkingSt_RWS : 40|3@1+ (1,0) [0|7] "" Gateway,IBC
+ SG_ ErrorSt_RWS : 43|2@1+ (1,0) [0|3] "" Gateway,IBC
+ SG_ LiveCounter_RWS_1 : 60|4@1+ (1,0) [0|15] "" Gateway,IBC
+
+BO_ 189 RWS_2: 8 RWS
+ SG_ Checksum_RWS_2 : 0|8@1+ (1,0) [0|255] "" Gateway,IBC
+ SG_ MaxAngle_RWS : 8|12@1+ (0.01,-20.48) [-20.48|20.47] "бу" Gateway,IBC
+ SG_ MaxAngleGrad_RWS : 24|13@1+ (0.01,-40.96) [-40.96|40.95] "бу/s" Gateway,IBC
+ SG_ LiveCounter_RWS_2 : 60|4@1+ (1,0) [0|15] "" Gateway,IBC
+
+BO_ 678 GPS_1: 8 Gateway
+ SG_ GPSTime_Hour : 0|5@1+ (1,0) [0|23] "hour" RWS
+ SG_ GPSTime_Minute : 8|6@1+ (1,0) [0|59] "minute" RWS
+ SG_ GPSTime_Second : 16|6@1+ (1,0) [0|59] "minute" RWS
+ SG_ GPSTime_Year : 24|7@1+ (1,2011) [2011|2138] "year" RWS
+ SG_ GPSTime_Month : 32|4@1+ (1,1) [1|12] "month" RWS
+ SG_ GPSTime_Day : 40|7@1+ (1,1) [1|31] "day" RWS
+
+BO_ 147 HCU_2_7: 8 Gateway
+ SG_ HCU_EVReady : 44|2@1+ (1,0) [0|3] "" RWS
+
+BO_ 656 IC_1: 8 Gateway
+ SG_ OdometerValue : 24|25@1+ (0.1,0) [0|3355443.1] "km" RWS
+
+BO_ 190 RVA_1: 8 Gateway
+ SG_ Checksum_RVA_1 : 0|8@1+ (1,0) [0|255] "" RWS
+ SG_ SteerRearControlAngleReq_RVA : 8|12@1+ (0.01,-20.48) [-20.48|20.47] "бу" RWS
+ SG_ SteerRearControlSt_RVA : 20|2@1+ (1,0) [0|3] "" RWS
+ SG_ Livecounter_RVA_1 : 60|4@1+ (1,0) [0|15] "" RWS
+
+BO_ 192 ABS_1: 32 IBC
+ SG_ Checksum_ABS_1 : 0|8@1+ (1,0) [0|255] "" RWS
+ SG_ WheelSpeed_FL : 8|15@1+ (0.01,0) [0|327.67] "km/h" RWS
+ SG_ WheelSpeed_FR : 24|15@1+ (0.01,0) [0|327.67] "km/h" RWS
+ SG_ WheelSpeed_RL : 40|15@1+ (0.01,0) [0|327.67] "km/h" RWS
+ SG_ WheelSpeed_RR : 56|15@1+ (0.01,0) [0|327.67] "km/h" RWS
+ SG_ VehicleSpeed : 120|15@1+ (0.01,0) [0|327.67] "km/h" RWS
+ SG_ VehiclSpeed_Q : 135|1@1+ (1,0) [0|1] "" RWS
+ SG_ DrivingDirection : 136|2@1+ (1,0) [0|3] "" RWS
+ SG_ DrivingDirection_Q : 138|1@1+ (1,0) [0|1] "" RWS
+ SG_ LiveCounter_ABS_1 : 252|4@1+ (1,0) [0|15] "" RWS
+
+
+CM_ "Version:V0.0 draft , Date:2022-9-14 , Author:Li Xiang , Check:Nan Yang , Review:Li Changlong , Approval: , Description:1.RWS node is added under chassis 1 CAN. ;
+ ";
+
+CM_ SG_ 188 Checksum_RWS_1 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 188 RearWheelAngle "This signal indicates the angle of rear wheel
+anticlockwise=positive, clockwise=negative";
+CM_ SG_ 188 RearWheelAngle_QF "This signal indicates the quality factor of rear wheel angle:
+0x0 stands for inaccurate data (Invalid)
+0x1 stands for temporary undefined data (initial)
+0x2 stands for data accuracy not within specification (inaccurate)
+0x3 stands for undefined data accuracy (Valid)";
+CM_ SG_ 188 RearWheelAngleSpeed "This signal indicates the angle speed of rear wheel";
+CM_ SG_ 188 WorkingSt_RWS "This signal indicates the working state of RWS:
+0x0 stands for Initialisation
+0x1 stands for Pending
+0x2 stands for Normal
+0x3 stands for Red
+0x4 stands for Yellow
+0x5 stands for Ramping
+0x6 stands for Inactive
+0x7 stands for Diagnosis";
+CM_ SG_ 188 ErrorSt_RWS "This signal indicates the system error status of RWS:
+0x0 stands for system no error reports
+0x1 stands for Error_Yellow
+0x2 stands for Error_Red
+0x3 is reserved";
+CM_ SG_ 188 LiveCounter_RWS_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 бн15, 0, 1 бн";
+CM_ SG_ 189 Checksum_RWS_2 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 189 MaxAngle_RWS "Function safety allowed max. steer angle depends on vehicle speed from RWS actuator
+anticlockwise=positive, clockwise=negative";
+CM_ SG_ 189 MaxAngleGrad_RWS "This signal indicates the angle speed of rear wheel";
+CM_ SG_ 189 LiveCounter_RWS_2 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 бн15, 0, 1 бн";
+CM_ SG_ 678 GPSTime_Hour "Indicates the GPS hour sent by GPS.";
+CM_ SG_ 678 GPSTime_Minute "Indicates the GPS minute  sent by GPS.";
+CM_ SG_ 678 GPSTime_Second "Indicates the GPS second sent by GPS.";
+CM_ SG_ 678 GPSTime_Year "Indicates the GPS year sent by GPS.";
+CM_ SG_ 678 GPSTime_Month "Indicates the GPS month sent by GPS.";
+CM_ SG_ 678 GPSTime_Day "Indicates the GPS day sent by GPS.";
+CM_ SG_ 147 HCU_EVReady "EV system can run or not";
+CM_ SG_ 656 OdometerValue "This signal is drive distance since prime start .";
+CM_ SG_ 190 Checksum_RVA_1 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 190 SteerRearControlAngleReq_RVA "Target angle request from Master Controller";
+CM_ SG_ 190 SteerRearControlSt_RVA "Control status for angle request, corporate with steer angle request to realize rear axle angle control";
+CM_ SG_ 190 Livecounter_RVA_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 бн15, 0, 1 бн";
+CM_ SG_ 192 Checksum_ABS_1 "The checksum is used to check whether the data from the CPU buffer are shifted without transmission errors to the CAN communication controller buffer and vice versa.";
+CM_ SG_ 192 WheelSpeed_FL "This signal is front left wheel speed which sent by ABS with filtering. ";
+CM_ SG_ 192 WheelSpeed_FR "This signal is front right wheel speed which sent by ABS with filtering.";
+CM_ SG_ 192 WheelSpeed_RL "This signal is rear left wheel speed which sent by ABS with filtering.";
+CM_ SG_ 192 WheelSpeed_RR "This signal is rear right wheel speed which sent by ABS with filtering.";
+CM_ SG_ 192 VehicleSpeed "The signal describes the raw vehicle speed calculated by ABS. The ABS calculates the vehicle speed based on the raw wheel speed signals from the wheel speed sensors. The vehicle speed output could be the average of the wheel speeds of the driven axle.";
+CM_ SG_ 192 VehiclSpeed_Q "Qualifier for VehicleSpeed";
+CM_ SG_ 192 DrivingDirection "The signal indicates driving direction of the vehicle.";
+CM_ SG_ 192 DrivingDirection_Q "Qualifier for DrivingDirection";
+CM_ SG_ 192 LiveCounter_ABS_1 "The Livecounter is used to check the signal consistency of the messages . If the signals are consecutive, the LiveCounter should also be sequential in the way 0, 1, 2 ...X(depends on E2E usage), 0, 1 бн";
+BA_DEF_ BO_  "TpJ1939VarDlc" ENUM  "No","Yes";
+BA_DEF_  "ProtocolType" STRING ;
+BA_DEF_ BU_  "NmAsrCanMsgReducedTime" INT 0 65535;
+
+BA_DEF_ BO_  "NmAsrMessage" ENUM  "no","yes";
+BA_DEF_ BO_  "GenMsgILSupport" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgStartDelayTime" INT 0 50000;
+BA_DEF_ BO_  "GenMsgDelayTime" INT 0 50000;
+BA_DEF_ BO_  "DiagResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagRequest" ENUM  "No","Yes";
+BA_DEF_ BO_  "DiagState" ENUM  "No","Yes";
+BA_DEF_ BO_  "CanTpSTmin" INT 0 0;
+BA_DEF_ BO_  "CanTpBs" INT 0 255;
+BA_DEF_ BO_  "CanTpFcFrameId" HEX 0 2147483647;
+BA_DEF_ BO_  "DiagUUDTResponse" ENUM  "No","Yes";
+BA_DEF_ BO_  "GenMsgCycleTimeFast" INT 0 50000;
+BA_DEF_ BO_  "GenMsgNrOfRepetition" INT 0 65535;
+BA_DEF_ BU_  "NmAsrNode" ENUM  "no","yes";
+BA_DEF_ BU_  "NmAsrNodeIdentifier" HEX 0 255;
+BA_DEF_  "NmAsrBaseAddress" HEX 0 2047;
+BA_DEF_  "NmAsrMessageCount" INT 1 256;
+BA_DEF_  "NmType" STRING ;
+BA_DEF_  "NmAsrCanMsgCycleOffset" INT 0 65535;
+BA_DEF_  "Baudrate" INT 0 1000000;
+BA_DEF_  "Manufacturer" STRING ;
+BA_DEF_  "NmAsrWaitBusSleepTime" INT 0 65535;
+BA_DEF_  "NmAsrTimeoutTime" INT 0 65535;
+BA_DEF_  "NmAsrRepeatMessageTime" INT 0 65535;
+BA_DEF_  "NmAsrCanMsgCycleTime" INT 0 65535;
+
+BA_DEF_ SG_  "GenSigInactiveValue" INT 0 0;
+
+
+BA_DEF_  "BusType" STRING ;
+BA_DEF_REL_ BU_SG_REL_  "GenSigTimeoutTime" INT 0 5000;
+BA_DEF_REL_ BU_SG_REL_  "GenSigFirstTimeoutTime" INT 0 50000;
+BA_DEF_ BO_  "FAWChineseMsgName" STRING ;
+
+
+
+
+
+BA_DEF_  "DBName" STRING ;
+BA_DEF_  "VersionNumber" INT 0 0;
+BA_DEF_  "VersionDay" INT 0 31;
+BA_DEF_  "VersionMonth" INT 0 12;
+BA_DEF_  "VersionYear" INT 0 99;
+BA_DEF_ BO_  "GenMsgSendType" ENUM  "Cyclic","not_used","not_used","not_used","not_used","Cyclic","not_used","IfActive","NoMsgSendType","Spontaneous","CyclicAndSpontaneous","NoMsgSendType";
+BA_DEF_ BO_  "GenMsgCycleTime" INT 0 0;
+BA_DEF_ SG_  "GenSigSendType" ENUM  "Cyclic","OnWrite","OnWriteWithRepetition","OnChange","OnChangeWithRepetition","IfActive","IfActiveWithRepetition","NoSigSendType";
+BA_DEF_ SG_  "GenSigStartValue" INT 0 0;
+BA_DEF_ SG_  "GenSigInvalidValue" INT 0 0;
+BA_DEF_ SG_  "GenSigStartRemark" STRING ;
+BA_DEF_ SG_  "GenSigInvalidRemark" STRING ;
+BA_DEF_ SG_  "FAWChineseSigName" STRING ;
+BA_DEF_ SG_  "FAWRouteSigName" STRING ;
+BA_DEF_ SG_  "GenSigEvent" STRING ;
+BA_DEF_ SG_  "GenSigExtEvent" STRING ;
+
+BA_DEF_DEF_  "TpJ1939VarDlc" "No";
+BA_DEF_DEF_  "ProtocolType" "*";
+BA_DEF_DEF_  "NmAsrCanMsgReducedTime" 50;
+
+BA_DEF_DEF_  "NmAsrMessage" "no";
+BA_DEF_DEF_  "GenMsgILSupport" "Yes";
+BA_DEF_DEF_  "GenMsgStartDelayTime" 0;
+BA_DEF_DEF_  "GenMsgDelayTime" 0;
+BA_DEF_DEF_  "DiagResponse" "No";
+BA_DEF_DEF_  "DiagRequest" "No";
+BA_DEF_DEF_  "DiagState" "No";
+BA_DEF_DEF_  "CanTpSTmin" 1;
+BA_DEF_DEF_  "CanTpBs" 0;
+BA_DEF_DEF_  "CanTpFcFrameId" 2147483647;
+BA_DEF_DEF_  "DiagUUDTResponse" "No";
+BA_DEF_DEF_  "GenMsgCycleTimeFast" 0;
+BA_DEF_DEF_  "GenMsgNrOfRepetition" 0;
+BA_DEF_DEF_  "NmAsrNode" "no";
+BA_DEF_DEF_  "NmAsrNodeIdentifier" 0;
+BA_DEF_DEF_  "NmAsrBaseAddress" 1280;
+BA_DEF_DEF_  "NmAsrMessageCount" 128;
+BA_DEF_DEF_  "NmType" "NmAsr";
+BA_DEF_DEF_  "NmAsrCanMsgCycleOffset" 0;
+BA_DEF_DEF_  "Baudrate" 500000;
+BA_DEF_DEF_  "Manufacturer" "FAW";
+BA_DEF_DEF_  "NmAsrWaitBusSleepTime" 750;
+BA_DEF_DEF_  "NmAsrTimeoutTime" 1000;
+BA_DEF_DEF_  "NmAsrRepeatMessageTime" 400;
+BA_DEF_DEF_  "NmAsrCanMsgCycleTime" 100;
+
+BA_DEF_DEF_  "GenSigInactiveValue" 0;
+
+
+BA_DEF_DEF_  "BusType" "CAN";
+BA_DEF_DEF_REL_ "GenSigTimeoutTime" 0;
+BA_DEF_DEF_REL_ "GenSigFirstTimeoutTime" 0;
+BA_DEF_DEF_  "FAWChineseMsgName" "";
+
+
+
+BA_DEF_DEF_  "DBName" "";
+BA_DEF_DEF_  "VersionNumber" 0;
+BA_DEF_DEF_  "VersionDay" 1;
+BA_DEF_DEF_  "VersionMonth" 1;
+BA_DEF_DEF_  "VersionYear" 0;
+BA_DEF_DEF_  "GenMsgSendType" "Cyclic";
+BA_DEF_DEF_  "GenMsgCycleTime" 0;
+BA_DEF_DEF_  "GenSigSendType" "NoSigSendType";
+BA_DEF_DEF_  "GenSigStartValue" 0;
+BA_DEF_DEF_  "GenSigInvalidValue" 0;
+BA_DEF_DEF_  "GenSigStartRemark" "";
+BA_DEF_DEF_  "GenSigInvalidRemark" "";
+BA_DEF_DEF_  "FAWChineseSigName" "";
+BA_DEF_DEF_  "FAWRouteSigName" "";
+BA_DEF_DEF_  "GenSigEvent" "";
+BA_DEF_DEF_  "GenSigExtEvent" "";
+BA_ "DBName" "FAW_E001MF_CHS1Front_RWS_CANDBC";
+BA_ "VersionNumber" 0.7;
+BA_ "VersionDay" 2;
+BA_ "VersionMonth" 11;
+BA_ "VersionYear" 22;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 188 Checksum_RWS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ IBC SG_ 188 Checksum_RWS_1 100;
+BA_ "GenSigStartRemark" SG_ 188 Checksum_RWS_1 "V";
+BA_ "GenMsgCycleTime" BO_ 188 10;
+BA_ "GenMsgSendType" BO_ 188 0;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 188 RearWheelAngle 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ IBC SG_ 188 RearWheelAngle 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 188 RearWheelAngle_QF 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ IBC SG_ 188 RearWheelAngle_QF 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 188 RearWheelAngleSpeed 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ IBC SG_ 188 RearWheelAngleSpeed 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 188 WorkingSt_RWS 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ IBC SG_ 188 WorkingSt_RWS 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 188 ErrorSt_RWS 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ IBC SG_ 188 ErrorSt_RWS 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 188 LiveCounter_RWS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ IBC SG_ 188 LiveCounter_RWS_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 189 Checksum_RWS_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ IBC SG_ 189 Checksum_RWS_2 100;
+BA_ "GenSigStartRemark" SG_ 189 Checksum_RWS_2 "V";
+BA_ "GenMsgCycleTime" BO_ 189 10;
+BA_ "GenMsgSendType" BO_ 189 0;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 189 MaxAngle_RWS 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ IBC SG_ 189 MaxAngle_RWS 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 189 MaxAngleGrad_RWS 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ IBC SG_ 189 MaxAngleGrad_RWS 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ Gateway SG_ 189 LiveCounter_RWS_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ IBC SG_ 189 LiveCounter_RWS_2 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 678 GPSTime_Hour 1000;
+BA_ "GenSigStartValue" SG_ 678 GPSTime_Hour 30;
+BA_ "GenSigInvalidValue" SG_ 678 GPSTime_Hour 31;
+BA_ "GenMsgCycleTime" BO_ 678 100;
+BA_ "GenMsgSendType" BO_ 678 0;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 678 GPSTime_Minute 1000;
+BA_ "GenSigStartValue" SG_ 678 GPSTime_Minute 62;
+BA_ "GenSigInvalidValue" SG_ 678 GPSTime_Minute 63;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 678 GPSTime_Second 1000;
+BA_ "GenSigStartValue" SG_ 678 GPSTime_Second 62;
+BA_ "GenSigInvalidValue" SG_ 678 GPSTime_Second 63;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 678 GPSTime_Year 1000;
+BA_ "GenSigStartValue" SG_ 678 GPSTime_Year 126;
+BA_ "GenSigInvalidValue" SG_ 678 GPSTime_Year 127;
+BA_ "GenSigStartRemark" SG_ 678 GPSTime_Year "O";
+BA_ "GenSigInvalidRemark" SG_ 678 GPSTime_Year "O";
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 678 GPSTime_Month 1000;
+BA_ "GenSigStartValue" SG_ 678 GPSTime_Month 14;
+BA_ "GenSigInvalidValue" SG_ 678 GPSTime_Month 15;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 678 GPSTime_Day 1000;
+BA_ "GenSigStartValue" SG_ 678 GPSTime_Day 126;
+BA_ "GenSigInvalidValue" SG_ 678 GPSTime_Day 127;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 147 HCU_EVReady 100;
+BA_ "GenMsgCycleTime" BO_ 147 10;
+BA_ "GenMsgSendType" BO_ 147 0;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 656 OdometerValue 1000;
+BA_ "GenSigInvalidValue" SG_ 656 OdometerValue 33554431;
+BA_ "GenSigStartRemark" SG_ 656 OdometerValue "L";
+BA_ "GenSigInvalidRemark" SG_ 656 OdometerValue "O";
+BA_ "GenMsgCycleTime" BO_ 656 100;
+BA_ "GenMsgSendType" BO_ 656 0;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 190 Checksum_RVA_1 100;
+BA_ "GenSigStartRemark" SG_ 190 Checksum_RVA_1 "V";
+BA_ "GenMsgCycleTime" BO_ 190 10;
+BA_ "GenMsgSendType" BO_ 190 0;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 190 SteerRearControlAngleReq_RVA 100;
+BA_ "GenSigStartValue" SG_ 190 SteerRearControlAngleReq_RVA 4094;
+BA_ "GenSigInvalidValue" SG_ 190 SteerRearControlAngleReq_RVA 4095;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 190 SteerRearControlSt_RVA 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 190 Livecounter_RVA_1 100;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 192 Checksum_ABS_1 50;
+BA_ "GenSigStartRemark" SG_ 192 Checksum_ABS_1 "V";
+BA_ "GenMsgCycleTime" BO_ 192 5;
+BA_ "GenMsgSendType" BO_ 192 0;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 192 WheelSpeed_FL 50;
+BA_ "GenSigStartValue" SG_ 192 WheelSpeed_FL 32766;
+BA_ "GenSigInvalidValue" SG_ 192 WheelSpeed_FL 32767;
+BA_ "GenSigStartRemark" SG_ 192 WheelSpeed_FL "O";
+BA_ "GenSigInvalidRemark" SG_ 192 WheelSpeed_FL "O";
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 192 WheelSpeed_FR 50;
+BA_ "GenSigStartValue" SG_ 192 WheelSpeed_FR 32766;
+BA_ "GenSigInvalidValue" SG_ 192 WheelSpeed_FR 32767;
+BA_ "GenSigStartRemark" SG_ 192 WheelSpeed_FR "O";
+BA_ "GenSigInvalidRemark" SG_ 192 WheelSpeed_FR "O";
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 192 WheelSpeed_RL 50;
+BA_ "GenSigStartValue" SG_ 192 WheelSpeed_RL 32766;
+BA_ "GenSigInvalidValue" SG_ 192 WheelSpeed_RL 32767;
+BA_ "GenSigStartRemark" SG_ 192 WheelSpeed_RL "O";
+BA_ "GenSigInvalidRemark" SG_ 192 WheelSpeed_RL "O";
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 192 WheelSpeed_RR 50;
+BA_ "GenSigStartValue" SG_ 192 WheelSpeed_RR 32766;
+BA_ "GenSigInvalidValue" SG_ 192 WheelSpeed_RR 32767;
+BA_ "GenSigStartRemark" SG_ 192 WheelSpeed_RR "O";
+BA_ "GenSigInvalidRemark" SG_ 192 WheelSpeed_RR "O";
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 192 VehicleSpeed 50;
+BA_ "GenSigStartValue" SG_ 192 VehicleSpeed 32766;
+BA_ "GenSigInvalidValue" SG_ 192 VehicleSpeed 32767;
+BA_ "GenSigStartRemark" SG_ 192 VehicleSpeed "O";
+BA_ "GenSigInvalidRemark" SG_ 192 VehicleSpeed "O";
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 192 VehiclSpeed_Q 50;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 192 DrivingDirection 50;
+BA_ "GenSigInvalidValue" SG_ 192 DrivingDirection 3;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 192 DrivingDirection_Q 50;
+BA_REL_ "GenSigTimeoutTime" BU_SG_REL_ RWS SG_ 192 LiveCounter_ABS_1 50;
+VAL_ 188 RearWheelAngle_QF 3 "Valid" 2 "Inaccurate" 1 "Initial" 0 "Invalid" ;
+VAL_ 188 WorkingSt_RWS 7 "Diagnosis" 6 "Inactive" 5 "Ramping" 4 "Yellow" 3 "Red" 2 "Normal" 1 "Pending" 0 "Initialisation" ;
+VAL_ 188 ErrorSt_RWS 3 "Reserved" 2 "Critical Error" 1 "General Error" 0 "No Error" ;
+VAL_ 678 GPSTime_Hour 31 "SNA" ;
+VAL_ 678 GPSTime_Minute 63 "SNA" ;
+VAL_ 678 GPSTime_Second 63 "SNA" ;
+VAL_ 678 GPSTime_Year 127 "SNA" ;
+VAL_ 678 GPSTime_Month 15 "SNA" ;
+VAL_ 678 GPSTime_Day 127 "SNA" ;
+VAL_ 147 HCU_EVReady 3 "Not_Used" 2 "Enable_Running" 1 "Preparing" 0 "Not_useable" ;
+VAL_ 656 OdometerValue 33554431 "SNA" ;
+VAL_ 190 SteerRearControlAngleReq_RVA 4095 "SNA" ;
+VAL_ 190 SteerRearControlSt_RVA 3 "Error" 2 "Request" 1 "Not Request" 0 "Initial" ;
+VAL_ 192 WheelSpeed_FL 32767 "SNA" ;
+VAL_ 192 WheelSpeed_FR 32767 "SNA" ;
+VAL_ 192 WheelSpeed_RL 32767 "SNA" ;
+VAL_ 192 WheelSpeed_RR 32767 "SNA" ;
+VAL_ 192 VehicleSpeed 32767 "SNA" ;
+VAL_ 192 VehiclSpeed_Q 1 "Faulty" 0 "Normal" ;
+VAL_ 192 DrivingDirection 3 "Undefined" 2 "Backward" 1 "Forward" 0 "Stop" ;
+VAL_ 192 DrivingDirection_Q 1 "Faulty" 0 "Normal" ;
