@@ -37,6 +37,8 @@ def str2hex(string) -> list:
 db_Connect = sqlite3.connect(r'..\RearWheel.db')
 
 db = db_Connect.cursor()
+db.execute('delete from Msg_Table where 1')
+db.execute('delete from Signal_Table where 1')
 db.execute('SELECT MsgName from Msg_Table')
 MsgTable_Select_Result = db.fetchall()
 
@@ -306,7 +308,7 @@ for dbc_Name in file_dbc:
         if Excel_Data[i].SignalName not in SigTableList_Result:
             db.execute("SELECT Msg_TableID from Msg_Table where MsgName == '%s'" % Excel_Data[i].MsgName)
             MsgTable_ID = db.fetchall()
-            db.execute('INSERT into Signal_Table (Msg_TableID, StartByte, StartBit, SignalLength, '
+            db.execute('INSERT into Signal_Table (ST_Msg_TableID, StartByte, StartBit, SignalLength, '
                        'SignalName, DataType, SignalFactor, SignalOffset) '
                        'VALUES (?,?,?,?,?,?,?,?)',
                        (MsgTable_ID[0][0], Excel_Data[i].StartByte,
